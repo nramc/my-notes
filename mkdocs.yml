@@ -1,3 +1,12 @@
 site_name: My Notes
 theme:
   name: material
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nramc
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ram_n_74
+
