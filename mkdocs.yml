@@ -9,7 +9,42 @@ copyright: Copyright &copy; 2024 Ramachandran Nellaiyappan
 
 
 theme:
+  language: en
+  font:
+    code: Roboto Mono
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
   name: material
+  features:
+    - navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.path
+    - navigation.top
+    - header.autohide
+    - search.suggest
+    - search.share
+    #- navigation.footer
+
+plugins:
+  - search
 
 nav:
   - Home: index.md
@@ -18,9 +53,16 @@ nav:
   - About: about.md
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nramc
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/ram_n_74
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ramachandran-nellaiyappan/
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:ramachandrannellai@gmail.com
+
+
 
