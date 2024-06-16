@@ -1,4 +1,13 @@
 site_name: My Notes
+
+# Repository
+repo_name: nramc/my-notes
+repo_url: https://github.com/nramc/my-notes
+
+# Copyright
+copyright: Copyright &copy; 2024 Ramachandran Nellaiyappan
+
+
 theme:
   name: material
 
