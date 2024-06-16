@@ -2,6 +2,11 @@ site_name: My Notes
 theme:
   name: material
 
+nav:
+  - Home: index.md
+  - Java: java-notes.md
+  - Kubernetes: kubernetes-notes.md
+  - About: about.md
 
 extra:
   social:
