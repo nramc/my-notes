@@ -25,6 +25,6 @@ pyyaml_env_tag==0.1
 regex==2024.5.15
 requests==2.32.3
 six==1.16.0
-urllib3==2.2.1
+urllib3==2.2.2
 watchdog==4.0.1
 wheel @ file:///usr/local/Cellar/python%403.12/3.12.4/libexec/wheel-0.43.0-py3-none-any.whl#sha256=ff23205a590f2b902a2a21151019e96b93ab4a1409d7c9748b6bd210f4c0f44d
