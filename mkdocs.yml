@@ -48,9 +48,13 @@ plugins:
 
 nav:
   - Home: index.md
-  - Java: java-notes.md
-  - Kubernetes: kubernetes-notes.md
-  - About: about.md
+  - Java:
+      - 'Java Notes': 'java/java-notes.md'
+  - Kubernetes:
+      - 'Logs Verification': 'kubernetes/logs-verification.md'
+  - Improvements:
+      - 'Code Health': 'improvements/code-health-improvement.md'
+  - About: 'about.md'
 
 extra:
   generator: false
