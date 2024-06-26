@@ -42,19 +42,8 @@ theme:
     - search.suggest
     - search.share
     #- navigation.footer
-
-plugins:
-  - search
-
-nav:
-  - Home: index.md
-  - Java:
-      - 'Java Notes': 'java/java-notes.md'
-  - Kubernetes:
-      - 'Logs Verification': 'kubernetes/logs-verification.md'
-  - Improvements:
-      - 'Code Health': 'improvements/code-health-improvement.md'
-  - About: 'about.md'
+    - content.code.copy
+    - content.code.select
 
 extra:
   generator: false
@@ -67,6 +56,29 @@ extra:
       link: https://www.linkedin.com/in/ramachandran-nellaiyappan/
     - icon: fontawesome/solid/paper-plane
       link: mailto:ramachandrannellai@gmail.com
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+
+nav:
+  - Home: index.md
+  - Java:
+      - 'Java Notes': 'java/java-notes.md'
+  - Kubernetes:
+      - 'Logs Verification': 'kubernetes/logs-verification.md'
+  - Improvements:
+      - 'Code Health': 'improvements/code-health-improvement.md'
+  - About: 'about.md'
 
 
 
