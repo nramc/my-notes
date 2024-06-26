@@ -45,17 +45,6 @@ theme:
     - content.code.copy
     - content.code.select
 
-extra:
-  generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/nramc
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/ram_n_74
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/ramachandran-nellaiyappan/
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:ramachandrannellai@gmail.com
 
 plugins:
   - search
@@ -70,6 +59,17 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nramc
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ram_n_74
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ramachandran-nellaiyappan/
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:ramachandrannellai@gmail.com
 
 nav:
   - Home: index.md
