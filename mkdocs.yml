@@ -75,6 +75,8 @@ nav:
   - Home: index.md
   - Java:
       - 'Java Notes': 'java/java-notes.md'
+  - Development:
+      - 'Validations': 'development/validations.md'
   - Kubernetes:
       - 'Logs Verification': 'kubernetes/logs-verification.md'
   - Improvements:
