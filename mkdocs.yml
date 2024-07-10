@@ -77,6 +77,9 @@ nav:
       - 'Java Notes': 'java/java-notes.md'
   - Development:
       - 'Validations': 'development/validations.md'
+      - 'Developer Workstation': 'development/workstation-tools.md'
+  - Testing:
+      - 'Tools': 'testings/testing-tools.md'
   - Kubernetes:
       - 'Logs Verification': 'kubernetes/logs-verification.md'
   - Improvements:
