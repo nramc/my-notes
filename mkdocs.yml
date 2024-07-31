@@ -84,10 +84,11 @@ nav:
       - 'Logs Verification': 'kubernetes/logs-verification.md'
   - Improvements:
       - 'Code Health': 'improvements/code-health-improvements.md'
-      - 'Documentation' : 'improvements/documentation-improvements.md'
+      - 'Documentation': 'improvements/documentation-improvements.md'
       - 'Web Application': 'improvements/web-application-improvements.md'
   - Security:
       - 'Secure Coding': 'security/secure-coding.md'
+      - 'User Registration': 'security/user-registration.md'
   - About: 'about.md'
 
 
