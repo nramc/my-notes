@@ -619,9 +619,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#envfile" class="md-nav__link">
+  <a href="#envfile-manage-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      EnvFile
+      EnvFile: Manage Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkcert-local-trust-store-for-local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkcert: Local Trust store for Local Development
     </span>
   </a>
   
@@ -1017,9 +1026,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#envfile" class="md-nav__link">
+  <a href="#envfile-manage-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      EnvFile
+      EnvFile: Manage Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkcert-local-trust-store-for-local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkcert: Local Trust store for Local Development
     </span>
   </a>
   
@@ -1045,11 +1063,24 @@
 
 <h1 id="developer-workstation-tools">Developer Workstation Tools</h1>
 <p>Tools helps developer to improve productivity and simplify running application or services smoothly, conveniently</p>
-<h2 id="envfile">EnvFile</h2>
+<h2 id="envfile-manage-environment-variables">EnvFile: Manage Environment Variables</h2>
 <ul>
 <li><a href="https://plugins.jetbrains.com/plugin/7861-envfile">EnvFile</a> allows you to set environment variables for your run
   configurations from one or multiple files</li>
 <li>It supports YAML, JSON and .env formats</li>
+</ul>
+<h2 id="mkcert-local-trust-store-for-local-development">mkcert: Local Trust store for Local Development</h2>
+<ul>
+<li><a href="https://github.com/FiloSottile/mkcert">mkcert</a> A simple zero-config tool to make locally trusted development
+  certificates with any names you'd like</li>
+<li>Using certificates from real certificate authorities(CAs) for development can be dangerous or impossible (for hosts
+  like example.test, localhost or 127.0.0.1), but self-signed certificates cause trust errors.</li>
+<li>Managing your own CA is the best solution, but usually involves arcane commands, specialized knowledge and manual
+  steps.</li>
+<li><a href="https://github.com/FiloSottile/mkcert">mkcert</a> automatically creates and installs a local CA in the system root
+  store, and generates locally-trusted certificates.</li>
+<li><a href="https://github.com/FiloSottile/mkcert">mkcert</a> does not automatically configure servers to use the
+  certificates, though, that's up to you.</li>
 </ul>
 
 
