@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -925,9 +925,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ide-setup" class="md-nav__link">
+  <a href="#clean-as-you-code" class="md-nav__link">
     <span class="md-ellipsis">
-      IDE Setup
+      Clean As You Code
     </span>
   </a>
   
@@ -1026,9 +1026,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ide-setup" class="md-nav__link">
+  <a href="#clean-as-you-code" class="md-nav__link">
     <span class="md-ellipsis">
-      IDE Setup
+      Clean As You Code
     </span>
   </a>
   
@@ -1062,20 +1062,22 @@
 
 
 <h1 id="secure-coding">Secure Coding</h1>
-<h2 id="ide-setup">IDE Setup</h2>
+<h2 id="clean-as-you-code">Clean As You Code</h2>
 <ul>
 <li><a href="https://www.sonarsource.com/products/sonarlint/">SonarLint</a> Plugin for IDE: Detect bugs and code smells as early as
   possible while you code
-  You can even bind you organisation's quality gate if exists any</li>
+  You can even bind your organisation's quality gate rules if exists any</li>
+<li><a href="https://docs.sonarsource.com/sonarcloud/improving/clean-as-you-code/">SonarCloud</a> does support Clean as You code
+  policy for your open source projects. It is free of cost for open source projects.</li>
 </ul>
 <h2 id="xss-encode-for-client">XSS: Encode for client</h2>
 <ul>
 <li>
 <p><a href="https://owasp.org/www-project-java-encoder/">OWASP Java Encoder</a> helps to encode values based on client use case to
-  avoid any XSS attack </p>
+  avoid any XSS attack</p>
 </li>
 <li>
-<p>Similar to html, dedicated methods available for CSS(<code>forCssString</code>) and JS (<code>forJavaScript</code>) as well </p>
+<p>Similar to html, dedicated methods available for CSS(<code>forCssString</code>) and JS (<code>forJavaScript</code>) as well</p>
 </li>
 <li>Similarly different encoding methods available for script/style
   attribute(<code>forJavaScriptAttribute, forCssString-</code>), block (<code>forJavaScriptBlock</code>) and URL
