@@ -78,6 +78,7 @@ nav:
   - Development:
       - 'Validations': 'development/validations.md'
       - 'Developer Workstation': 'development/workstation-tools.md'
+      - 'Local Development Essentials': 'development/local-development.md'
   - Testing:
       - 'Tools': 'testings/testing-tools.md'
   - Kubernetes:
