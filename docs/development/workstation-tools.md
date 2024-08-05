@@ -2,6 +2,11 @@
 
 Tools helps developer to improve productivity and simplify running application or services smoothly, conveniently
 
+## Clean as You Code
+
+- [SonarLint](https://www.sonarsource.com/products/sonarlint/) Plugin for IDE: Detect bugs and code smells as early as
+  possible while you code
+
 ## EnvFile: Manage Environment Variables
 
 - [EnvFile](https://plugins.jetbrains.com/plugin/7861-envfile) allows you to set environment variables for your run
@@ -20,3 +25,9 @@ Tools helps developer to improve productivity and simplify running application o
   store, and generates locally-trusted certificates.
 - [mkcert](https://github.com/FiloSottile/mkcert) does not automatically configure servers to use the
   certificates, though, that's up to you.
+
+## Design and Document your feature
+
+- [PlantUML](https://plantuml.com/) IDE plugin helps us to write varies diagrams by writing code for documenting your
+  feature
+
