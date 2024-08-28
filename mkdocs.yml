@@ -81,6 +81,7 @@ nav:
       - 'Local Development Essentials': 'development/local-development.md'
   - Testing:
       - 'Tools': 'testings/testing-tools.md'
+      - 'Automation tips': 'testings/automation-tips.md'
   - Kubernetes:
       - 'Logs Verification': 'kubernetes/logs-verification.md'
   - Improvements:
