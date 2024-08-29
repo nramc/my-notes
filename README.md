@@ -2,7 +2,7 @@
 
 Collection of my learnings, code snippets, notes and HowTos for reference.
 
-You can refer the notes in website [https://nramc.github.io/my-notes/](https://nramc.github.io/my-notes/) 
+[You can refer the same notes in website at your convenient](https://nramc.github.io/my-notes/).
 
 ## Getting Started
 
