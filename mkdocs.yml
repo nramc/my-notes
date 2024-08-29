@@ -74,6 +74,7 @@ extra:
 nav:
   - Home: index.md
   - Java:
+      - 'Email Template': 'java/email-templates.md'
       - 'Java Notes': 'java/java-notes.md'
   - Development:
       - 'Validations': 'development/validations.md'
