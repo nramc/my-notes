@@ -1,11 +1,12 @@
-# My Notes (Ram's Notes)
+# Notes
 
-Collection of my learning, code snippets and notes for reference.
-[https://nramc.github.io/my-notes/](https://nramc.github.io/my-notes/)
+Collection of my learnings, code snippets, notes and HowTos for reference.
+
+You can refer the notes in website [https://nramc.github.io/my-notes/](https://nramc.github.io/my-notes/) 
 
 ## Getting Started
 
-Please find below steps to setup and run application in your workstation.
+Please find below steps to set up and run application in your workstation.
 
 ### Prerequisites
 
