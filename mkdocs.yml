@@ -1,4 +1,5 @@
 site_name: My Notes
+site_url: https://nramc.github.io/my-notes/
 
 # Repository
 repo_name: nramc/my-notes
@@ -11,6 +12,7 @@ copyright: Copyright &copy; 2024 Ramachandran Nellaiyappan
 theme:
   language: en
   font:
+    text: Roboto
     code: Roboto Mono
   palette:
     # Palette toggle for automatic mode
@@ -45,6 +47,8 @@ theme:
     - content.code.copy
     - content.code.select
 
+extra_css:
+  - stylesheets/custom.css
 
 plugins:
   - search
