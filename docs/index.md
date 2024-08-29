@@ -5,7 +5,6 @@ navigation.path: false
 
 # Welcome.!
 
-Your ultimate playbook for coding snippets, best practices, procedures, and HowTos based on my experience and
-reference.
+The Ultimate Playbook for coding snippets, references, procedures and How-Tos based on real life experience.
  
 
