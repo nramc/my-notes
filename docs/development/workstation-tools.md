@@ -1,6 +1,45 @@
 # Developer Workstation Tools
 
-Tools helps developer to improve productivity and simplify running application or services smoothly, conveniently
+Tools helps developer to improve productivity and simplify running application or services smoothly, conveniently.
+
+## Useful simple Git configuration
+
+- When you work with two or more different Git accounts and want to have different configuration for each account, you
+  can use conditional git configuration. For example, in my case I want to have my organisation account configurations
+  like company email address for internal organisation repositories and my personal email address for Open Source
+  repositories.
+
+    ``` bash
+    # create dedciated git config for personal account in user home directory and define config.
+    # in my case i want to use short name and personal email address for open source projects
+    cat .gitconfig-github 
+    [user]
+      name = Ram
+      email = ramachandrannellai@gmail.com
+  
+    # configure the config in main .gitconfig conditionally
+    cat .gitconfig
+    # my organisation based config
+    [user]
+      name = Ramachandran Nellaiyappan
+      email = ramachandran.nellaiyappan@mycompany.com
+    
+    [includeIf "gitdir:~/Ram/github/"]
+      path = .gitconfig-github
+    
+    ```
+
+- my favorite one line log format, it might help you as well
+
+  ```bash
+    git config --global alias.onelog 'log --graph --decorate --pretty="%C(white) Hash: %h %C(red)Date: %ad %C(yellow) %C(blue) Author: %an %C(green)Message: %s " --date=human'
+  ```
+
+- one of my most frequently used git command
+
+  ```bash
+    git config --global alias.undo 'reset --soft HEAD~1'
+  ```
 
 ## Clean as You Code
 
