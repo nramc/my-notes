@@ -95,7 +95,7 @@ nav:
       - 'Web Application': 'improvements/web-application-improvements.md'
   - Security:
       - 'Secure Coding': 'security/secure-coding.md'
-      - 'User Registration': 'security/user-registration.md'
+      - 'Secure Password': 'security/password-security.md'
   - About: 'about.md'
 
 
