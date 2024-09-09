@@ -20,13 +20,13 @@
   ```java
   // when you want to place json properties inside <script type="application/json">${toJson()}</script> in html
   public String toJson() {
-  ObjectMapper objectMapper = new ObjectMapper();
-  try {
-  return Encode.forHtmlContent(objectMapper.writeValueAsString(this));
-  } catch (JsonProcessingException ex) {
-  log.error("Serialization error.", ex);
-  }
-  return null;
+    ObjectMapper objectMapper = new ObjectMapper();
+    try {
+      return Encode.forHtmlContent(objectMapper.writeValueAsString(this));
+    } catch (JsonProcessingException ex) {
+      log.error("Serialization error.", ex);
+    }
+    return null;
   }
   ```
 
