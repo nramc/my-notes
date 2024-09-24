@@ -1,6 +1,6 @@
 # Notes
 
-Collection of my learnings, code snippets, notes and HowTos for reference.
+The Ultimate Playbook for developers with coding snippets, references, procedures and How-To guides crafted with real time experience.
 
 [You can refer the same notes in website at your convenient](https://nramc.github.io/my-notes/).
 
