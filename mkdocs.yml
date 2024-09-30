@@ -97,7 +97,7 @@ nav:
       - 'Secure Coding': 'security/secure-coding.md'
       - 'Secure Password': 'security/password-security.md'
   - How-Tos:
-      - 'OpenRewrite': 'how-to-articles/open-rewrite.md'
+      - 'OpenRewrite Integration': 'how-to-articles/open-rewrite.md'
   - Career:
       - 'Professional Feedback': 'career/feedback-template.md'
   - About: 'about.md'

@@ -213,6 +213,7 @@ To achieve the approach, follow below steps,
     - org.openrewrite.recommendations.CodeHealth
     - org.openrewrite.recommendations.DependencyManagement
     - org.openrewrite.maven.BestPractices
+    - org.openrewrite.java.logging.slf4j.Slf4jBestPractices
     - org.openrewrite.recipes.JavaRecipeBestPractices
    
   ---
