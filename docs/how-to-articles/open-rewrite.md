@@ -118,11 +118,14 @@ To achieve the approach, follow below steps,
 
 - To control `rewrite:run` and `rewrite:dryRun` goals, define two toggle and set default values
   ```xml
+  <properties>
     <!-- open-rewrite "run" toggle which make changes in source code: default enabled  -->
     <rewrite-maven-plugin.skip.run-execution>false</rewrite-maven-plugin.skip.run-execution>
     
     <!-- open-rewrite "dryRun" toggle which does make changes, instead provide report for anticipated changes: default enabled  -->
     <rewrite-maven-plugin.skip.dry-run-execution>false</rewrite-maven-plugin.skip.dry-run-execution>
+    ...
+  </properties>
   ```
 - Disable `rewrite:run` toggle for CI profile based `CI` env variable.
 - Please find below pom.xml which contains CI profile with toggle and dryRun execute in CI pipeline and recipes applied
