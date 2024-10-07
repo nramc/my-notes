@@ -2,7 +2,9 @@
 
 The Ultimate Playbook for developers with coding snippets, references, procedures and How-To guides crafted with real time experience.
 
-[You can refer the same notes in website at your convenient](https://nramc.github.io/my-notes/).
+[Website](https://nramc.github.io/my-notes/)
+[![Website](https://img.shields.io/badge/online-website.svg?style=for-the-badge&style=flat)](https://nramc.github.io/my-notes/)
+
 
 ## Getting Started
 
