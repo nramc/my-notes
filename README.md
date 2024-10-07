@@ -1,4 +1,4 @@
-# Notes
+# Personal Knwoledge Management System - My Notes
 
 The Ultimate Playbook for developers with coding snippets, references, procedures and How-To guides crafted with real time experience.
 
