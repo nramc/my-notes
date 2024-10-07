@@ -2,70 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://nramc.github.io/my-notes/index.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/about.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/career/feedback-template.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/development/local-development.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/development/validations.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/development/workstation-tools.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
+    </url>
+    <url>
+         <loc>https://nramc.github.io/my-notes/how-to-articles/http-client-intellij-plugin.html</loc>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/how-to-articles/open-rewrite.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/code-health-improvements.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/documentation-improvements.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/web-application-improvements.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/email-templates.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/java-notes.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/kubernetes/logs-verification.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/security/password-security.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/security/secure-coding.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/testings/automation-tips.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/testings/testing-tools.html</loc>
-         <lastmod>2024-09-30</lastmod>
+         <lastmod>2024-10-07</lastmod>
     </url>
 </urlset>
