@@ -12,3 +12,10 @@
   IDE
 - The plugin provides a bunch of tools for Restful Service development
 - It has great integration support for Spring MVC and Spring Boot
+
+## HTTP Client - IntelliJ IDE Plugin
+
+- [HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html) helps to create, edit, and
+  execute HTTP requests directly in the IntelliJ IDEA code editor.
+- It provides varies features like configuring env variable file with support for environments like dev, qa and live.
+- Please refer [HowTo:HTTP Client - IntelliJ Plugin](../how-to-articles/http-client-intellij-plugin.md)

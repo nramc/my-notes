@@ -98,6 +98,7 @@ nav:
       - 'Secure Password': 'security/password-security.md'
   - How-Tos:
       - 'OpenRewrite Integration': 'how-to-articles/open-rewrite.md'
+      - 'HTTP Client - IntelliJ Plugin': 'how-to-articles/http-client-intellij-plugin.md'
   - Career:
       - 'Professional Feedback': 'career/feedback-template.md'
   - About: 'about.md'
