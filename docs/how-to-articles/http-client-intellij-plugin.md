@@ -42,7 +42,7 @@ some_url: https://example.com
 # Constant values
 @usecase = REGISTRATION
 
-### Registeration
+### Registration
 # this is pre javascript block executed before http request executed
 < {%
 const pepperVal = request.environment.get("someConfidentialEnvironmentSpecificValue")
