@@ -89,6 +89,7 @@ nav:
       - 'Automation tips': 'testings/automation-tips.md'
   - Kubernetes:
       - 'Logs Verification': 'kubernetes/logs-verification.md'
+      - 'Useful Commands': 'kubernetes/useful-commands.md'
   - Improvements:
       - 'Code Health': 'improvements/code-health-improvements.md'
       - 'Documentation': 'improvements/documentation-improvements.md'
