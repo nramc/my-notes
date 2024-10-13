@@ -1,10 +1,9 @@
 # Personal Knwoledge Management System - My Notes
 
-The Ultimate Playbook for developers with coding snippets, references, procedures and How-To guides crafted with real time experience.
+The Ultimate Playbook for developers with coding snippets, references, procedures and How-To guides crafted with real
+time experience.
 
-[Website](https://nramc.github.io/my-notes/)
-[![Website](https://img.shields.io/badge/online-website.svg?style=for-the-badge&style=flat)](https://nramc.github.io/my-notes/)
-
+[![Website](https://img.shields.io/badge/website-online-brightgreen.svg)](https://nramc.github.io/my-notes/)
 
 ## Getting Started
 
