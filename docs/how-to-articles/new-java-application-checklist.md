@@ -1,3 +1,9 @@
+<style>
+ ul {
+    font-size: 0.7rem;
+}
+</style>
+
 # Checklist for New Java Application or Service
 
 This article outlines the essential steps and considerations for Creating a new Java Application or Service
