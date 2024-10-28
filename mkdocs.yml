@@ -62,6 +62,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tasklist:
+        custom_checkbox: true
 
 extra:
   generator: false
@@ -98,8 +100,9 @@ nav:
       - 'Secure Coding': 'security/secure-coding.md'
       - 'Secure Password': 'security/password-security.md'
       - 'Penetration Testing': 'security/penetration-testing.md'
-  - How-Tos:
+  - How-To:
       - 'OpenRewrite Integration': 'how-to-articles/open-rewrite.md'
+      - 'New Java Application': 'how-to-articles/new-java-application-checklist.md'
       - 'HTTP Client - IntelliJ Plugin': 'how-to-articles/http-client-intellij-plugin.md'
   - Career:
       - 'Professional Feedback': 'career/feedback-template.md'
