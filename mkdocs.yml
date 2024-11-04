@@ -96,6 +96,7 @@ nav:
       - 'Code Health': 'improvements/code-health-improvements.md'
       - 'Documentation': 'improvements/documentation-improvements.md'
       - 'Web Application': 'improvements/web-application-improvements.md'
+      - 'Data Quality': 'improvements/data-quality.md'
   - Security:
       - 'Secure Coding': 'security/secure-coding.md'
       - 'Secure Password': 'security/password-security.md'
