@@ -224,15 +224,12 @@ To achieve the approach, follow below steps,
   name: io.github.nramc.recipes.testing
   recipeList:
     - org.openrewrite.java.testing.mockito.MockitoBestPractices
-    - org.openrewrite.java.testing.junit5.CleanupAssertions
+    - org.openrewrite.java.testing.junit5.JUnit5BestPractices
+    - org.openrewrite.java.testing.cleanup.BestPractices
     - org.openrewrite.recipes.RecipeTestingBestPractices
-    - org.openrewrite.java.testing.junit5.StaticImports
-    - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
-    - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
-    - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipe
     - org.openrewrite.java.testing.testcontainers.TestContainersBestPractices
-   
-   
+    
+    
   ---
   ```
 
