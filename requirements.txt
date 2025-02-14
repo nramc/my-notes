@@ -1,5 +1,4 @@
 mkdocs
 mkdocs-material
 Pygments
-mkdocs-obsidian-interactive-graph-plugin
 
