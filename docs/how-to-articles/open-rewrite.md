@@ -1,6 +1,6 @@
 ---
 tags:
- - latest
+  - latest
 ---
 
 <style>
@@ -154,7 +154,7 @@ To achieve the approach, follow below steps,
   </profiles>
   ```
 - Configure plugin with different executions with toggle,
-  ```html
+  ```xml
   <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
