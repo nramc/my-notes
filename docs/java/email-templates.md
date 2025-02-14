@@ -1,3 +1,7 @@
+---
+tags:
+  - Java
+---
 # Email Template
 
 ## Freemarker

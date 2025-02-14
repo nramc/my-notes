@@ -1,3 +1,8 @@
+---
+tags:
+ - latest
+---
+
 <style>
  #why-do-we-need-openrewrite + ul, #key-takeaways + ul {
     font-size: 0.7rem;
