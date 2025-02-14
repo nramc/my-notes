@@ -40,19 +40,27 @@ theme:
     #- navigation.tabs.sticky
     - navigation.path
     - navigation.top
+    - navigation.indexes
     - header.autohide
     - search.suggest
     - search.share
     #- navigation.footer
     - content.code.copy
     - content.code.select
+    - toc.follow
 
 extra_css:
-  - stylesheets/custom.css
+  - assets/stylesheets/custom.css
 
 plugins:
   - search
   - offline
+  - meta
+  - tags:
+#      tags: false
+      listings_sort_by: !!python/name:material.plugins.tags.item_title
+      listings_tags_sort_by: !!python/name:material.plugins.tags.tag_name_casefold
+
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -63,7 +71,12 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tasklist:
-        custom_checkbox: true
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra:
   generator: false
@@ -78,7 +91,9 @@ extra:
       link: mailto:ramachandrannellai@gmail.com
 
 nav:
-  - Home: index.md
+  - Home:
+      - '': index.md
+      - 'Sitemap': 'tags.md'
   - Java:
       - 'Email Template': 'java/email-templates.md'
       - 'Java Notes': 'java/java-notes.md'

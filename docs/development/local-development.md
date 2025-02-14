@@ -1,3 +1,8 @@
+---
+tags:
+  - Productivity
+---
+
 # Local Development Essentials
 
 ## Testing E-Mail Sending Feature

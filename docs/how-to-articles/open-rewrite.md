@@ -1,3 +1,8 @@
+---
+tags:
+  - latest
+---
+
 <style>
  #why-do-we-need-openrewrite + ul, #key-takeaways + ul {
     font-size: 0.7rem;
@@ -149,7 +154,7 @@ To achieve the approach, follow below steps,
   </profiles>
   ```
 - Configure plugin with different executions with toggle,
-  ```html
+  ```xml
   <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
