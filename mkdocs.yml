@@ -41,7 +41,7 @@ theme:
     - navigation.path
     - navigation.top
     - navigation.indexes
-    - header.autohide
+    - header
     - search.suggest
     - search.share
     #- navigation.footer
