@@ -1,4 +1,4 @@
 mkdocs
 mkdocs-material
 Pygments
-
+mkdocs-pagetree-plugin
