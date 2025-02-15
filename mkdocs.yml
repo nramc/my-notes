@@ -57,9 +57,9 @@ plugins:
   - offline
   - meta
   - tags:
-#      tags: false
       listings_sort_by: !!python/name:material.plugins.tags.item_title
       listings_tags_sort_by: !!python/name:material.plugins.tags.tag_name_casefold
+  - pagetree
 
 
 markdown_extensions:
@@ -92,8 +92,9 @@ extra:
 
 nav:
   - Home:
-      - '': index.md
-      - 'Sitemap': 'tags.md'
+      - 'Introduction': 'index.md'
+      - 'Sitemap': 'table-of-index.md'
+      - 'Tags': 'tags.md'
   - Java:
       - 'Email Template': 'java/email-templates.md'
       - 'Java Notes': 'java/java-notes.md'
