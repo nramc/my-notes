@@ -41,6 +41,7 @@ theme:
     - navigation.path
     - navigation.top
     - navigation.indexes
+    - navigation.instant.progress
     - header
     - search.suggest
     - search.share
@@ -92,7 +93,7 @@ extra:
 
 nav:
   - Home:
-      - 'Introduction': 'index.md'
+      - 'Welcome': 'index.md'
       - 'Sitemap': 'table-of-index.md'
       - 'Tags': 'tags.md'
   - Java:
