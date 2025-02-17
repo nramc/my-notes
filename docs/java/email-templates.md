@@ -1,6 +1,7 @@
 ---
 tags:
-  - Java
+  - Email
+  - Template
 ---
 # Email Template
 

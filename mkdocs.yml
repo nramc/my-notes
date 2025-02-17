@@ -105,11 +105,11 @@ nav:
         - 'Local Development Essentials': 'java/development/local-development.md'
       - 'Java Notes': 'java/java-notes.md'
   - Testing:
-      - 'Tools': 'testings/testing-tools.md'
-      - 'Automation tips': 'testings/automation-tips.md'
+      - 'IntelliJ IDE Testing Plugins': 'testings/intellij-testing-tools.md'
+      - 'Automation Testing Tips': 'testings/automation-tips.md'
   - Kubernetes:
-      - 'Logs Verification': 'kubernetes/logs-verification.md'
-      - 'Useful Commands': 'kubernetes/useful-commands.md'
+      - 'Kubernetes Logs Verification': 'kubernetes/logs-verification.md'
+      - 'Useful Kubernetes Commands': 'kubernetes/useful-commands.md'
   - Improvements:
       - 'Improve Code Health': 'improvements/code-health-improvements.md'
       - 'Improve Data Quality': 'improvements/data-quality.md'
