@@ -42,7 +42,7 @@ hide:
 
 - please find below sample http script from `src/test/http-client/scripts/`
 
-```
+```http request
 
 # Constant values
 @usecase = REGISTRATION
