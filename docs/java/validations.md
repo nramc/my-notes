@@ -1,7 +1,14 @@
 ---
+author: Ramachandran Nellaiyappan
+createdAt: 01.07.2024
+updatedAt: 16.02.2025
+categories:
+  - Validations
 tags:
-  - Java
+  - Validations
+  - Secure Coding
 ---
+
 # Validation
 
 ## Phone Number Validation

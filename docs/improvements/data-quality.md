@@ -1,3 +1,13 @@
+---
+author: Ramachandran Nellaiyappan
+createdAt: 04.11.2024
+updatedAt: 
+categories:
+  - Data Quality
+tags:
+  - Data Quality
+  - Validations
+---
 # Improve Data Quality
 
 List of improvements to improve application data quality.
@@ -5,7 +15,7 @@ List of improvements to improve application data quality.
 ## Mobile Phone Number
 
 - Validate mobile number based on real time criteria based country code and length. Refer article for more
-  info [Phone Number Validation](./../development/validations.md#phone-number-validation).
+  info [Phone Number Validation](../java/validations.md#phone-number-validation).
 
 ## Address Data
 

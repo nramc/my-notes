@@ -1,4 +1,13 @@
-# Improvements for Web Application
+---
+author: Ramachandran Nellaiyappan
+createdAt: 08.07.2024
+updatedAt: 
+categories:
+  - Improvements
+tags:
+  - Web Application
+---
+# Improve Web Application
 
 ## HotKeys - Keyboard Shortcuts
 

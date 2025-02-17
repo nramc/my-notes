@@ -1,7 +1,16 @@
 ---
+author: Ramachandran Nellaiyappan
+createdAt: 10.07.2024
+updatedAt: 16.02.2025
+categories:
+  - Developer Tools
+  - Workstation Setup
 tags:
   - Productivity
+  - Workstation Setup
+  - Developer Tools
 ---
+
 # Developer Workstation Tools
 
 Tools helps developer to improve productivity and simplify running application or services smoothly, conveniently.

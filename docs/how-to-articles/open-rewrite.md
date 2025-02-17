@@ -1,13 +1,17 @@
 ---
+author: Ramachandran Nellaiyappan
+createdAt: 27.09.2025
+updatedAt: 16.02.2025
+categories:
+  - Java
 tags:
-  - latest
+  - Code Refactoring
+  - Automation
+  - Secure Coding
+  - Clean Code
+  - Java
+  - Maven
 ---
-
-<style>
- #why-do-we-need-openrewrite + ul, #key-takeaways + ul {
-    font-size: 0.7rem;
-}
-</style>
 
 # OpenRewrite Integration
 
@@ -215,14 +219,9 @@ To achieve the approach, follow below steps,
   recipeList:
     - org.openrewrite.staticanalysis.CommonStaticAnalysis
     - org.openrewrite.staticanalysis.CodeCleanup
-    - org.openrewrite.java.security.JavaSecurityBestPractices
-    - org.openrewrite.java.security.OwaspTopTen
     - org.openrewrite.java.RemoveUnusedImports
-    - org.openrewrite.recommendations.CodeHealth
-    - org.openrewrite.recommendations.DependencyManagement
     - org.openrewrite.maven.BestPractices
     - org.openrewrite.java.logging.slf4j.Slf4jBestPractices
-    - org.openrewrite.recipes.JavaRecipeBestPractices
    
   ---
   type: specs.openrewrite.org/v1beta/recipe
@@ -231,7 +230,6 @@ To achieve the approach, follow below steps,
     - org.openrewrite.java.testing.mockito.MockitoBestPractices
     - org.openrewrite.java.testing.junit5.JUnit5BestPractices
     - org.openrewrite.java.testing.cleanup.BestPractices
-    - org.openrewrite.recipes.RecipeTestingBestPractices
     - org.openrewrite.java.testing.testcontainers.TestContainersBestPractices
     
     

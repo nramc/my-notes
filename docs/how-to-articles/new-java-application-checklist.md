@@ -1,10 +1,17 @@
-<style>
- ul {
-    font-size: 0.7rem;
-}
-</style>
+---
+author: Ramachandran Nellaiyappan
+createdAt: 28.10.2024
+updatedAt: 
+categories:
+  - Java
+tags:
+  - Application Checklist
+  - Java
+hide:
+  - toc
+---
 
-# Checklist for New Java Application or Service
+# Checklist for creating Java Application/Service
 
 This article outlines the essential steps and considerations for Creating a new Java Application or Service
 
