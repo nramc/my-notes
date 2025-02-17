@@ -9,6 +9,7 @@ tags:
   - Productivity
   - Workstation Setup
   - Developer Tools
+  - latest
 ---
 
 # Developer Workstation Tools

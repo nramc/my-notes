@@ -11,6 +11,7 @@ tags:
   - Clean Code
   - Java
   - Maven
+  - latest
 ---
 
 # OpenRewrite Integration

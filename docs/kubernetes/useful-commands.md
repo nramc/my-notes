@@ -6,6 +6,7 @@ categories:
   - Scripts
 tags:
   - Scripts
+  - latest
 ---
 
 # Useful Kubernetes Commands
