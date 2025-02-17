@@ -1,6 +1,13 @@
 ---
+author: Ramachandran Nellaiyappan
+createdAt: 05.08.2024
+updatedAt: 16.02.2025
+categories:
+  - Workstation Setup
 tags:
   - Productivity
+  - Workstation Setup 
+  - latest
 ---
 
 # Local Development Essentials

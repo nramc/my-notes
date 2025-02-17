@@ -1,3 +1,13 @@
+---
+author: Ramachandran Nellaiyappan
+createdAt: 15.02.2025
+updatedAt: 
+categories:
+  - Sitemap
+hide:
+  - toc
+---
+
 # Sitemap
 
 This page provides an overview of the entire content structure of this knowledge management system. It serves as a quick

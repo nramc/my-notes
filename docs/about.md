@@ -1,8 +1,10 @@
-<style>
- article {
-    font-size: 0.7rem !important;
-}
-</style>
+---
+author: Ramachandran Nellaiyappan
+createdAt: 04.11.2024
+updatedAt: 
+hide:
+  - navigation
+---
 
 # About Us
 

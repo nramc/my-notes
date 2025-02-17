@@ -1,11 +1,16 @@
 ---
-title: HTTP Client - IntelliJ Plugin
-summary: A brief description of my document.
-authors:
-  - Waylan Limberg
-  - Tom Christie
-date: 2018-07-10
-some_url: https://example.com
+author: Ramachandran Nellaiyappan
+createdAt: 07.10.2024
+updatedAt: 
+categories:
+  - How-To
+tags:
+  - Http Client
+  - Productivity
+  - Workstation-Setup
+  - Testing
+hide:
+  - toc
 ---
 
 # HTTP Client - IntelliJ Plugin
@@ -37,7 +42,7 @@ some_url: https://example.com
 
 - please find below sample http script from `src/test/http-client/scripts/`
 
-```
+```http request
 
 # Constant values
 @usecase = REGISTRATION
