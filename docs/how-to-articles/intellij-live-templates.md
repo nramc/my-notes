@@ -67,7 +67,7 @@ ENDPOINT -> "/api/example"
 
 ## MkDocs
 
-**MkDocs Meta Data**
+**MkDocs Metadata**
 
 ```shell
 # Template Name: mkdocs-meta-data
