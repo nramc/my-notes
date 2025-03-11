@@ -63,3 +63,26 @@ void $TEST_METHOD$() throws Exception {
 TEST_METHOD -> methodName()
 ENDPOINT -> "/api/example"
 ```
+
+
+## MkDocs
+
+**MkDocs Meta Data**
+
+```shell
+# Template Name: mkdocs-meta-data
+---
+author: $USER$
+createdAt: $DATE$
+updatedAt: 
+categories:
+  - $END$
+tags:
+  - todo
+---
+
+# Parameter bindings:
+USER -> "Ramachandran Nellaiyappan"
+DATE -> date("d.MM.YYYY")
+
+```
