@@ -125,6 +125,7 @@ nav:
       - 'OpenRewrite Integration': 'how-to-articles/open-rewrite.md'
       - 'New Java Application': 'how-to-articles/new-java-application-checklist.md'
       - 'HTTP Client - IntelliJ Plugin': 'how-to-articles/http-client-intellij-plugin.md'
+      - 'IntelliJ Live Templates': 'how-to-articles/intellij-live-templates.md'
   - Career:
       - 'Professional Feedback': 'career/feedback-template.md'
   - About: 'about.md'

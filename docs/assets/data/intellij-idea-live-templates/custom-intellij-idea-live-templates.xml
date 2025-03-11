@@ -1,0 +1,114 @@
+<templateSet group="Ram-custom-templates">
+  <template name="mkdocs-meta-data" value="---&#10;author: $USER$&#10;createdAt: $DATE$&#10;updatedAt: &#10;categories:&#10;  - $END$&#10;tags:&#10;  - todo&#10;---" description="insert mkdocs meta data into page" toReformat="false" toShortenFQNames="true">
+    <variable name="USER" expression="" defaultValue="&quot;Ramachandran Nellaiyappan&quot;" alwaysStopAt="true" />
+    <variable name="DATE" expression="date(&quot;d.MM.YYYY&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="Angular" value="false" />
+      <option name="AsciiDoc" value="false" />
+      <option name="CSS" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="KUBERNETES_RESOURCE" value="false" />
+      <option name="MAVEN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PROTO" value="false" />
+      <option name="PROTOTEXT" value="false" />
+      <option name="Properties" value="false" />
+      <option name="Python" value="false" />
+      <option name="QUTE" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="SpringMVC" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="Vue" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="today" value="$DATE$" description="dd.mm.yyyy" toReformat="false" toShortenFQNames="true">
+    <variable name="DATE" expression="date(&quot;d.MM.YYYY&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="Angular" value="false" />
+      <option name="AsciiDoc" value="false" />
+      <option name="CSS" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="KUBERNETES_RESOURCE" value="false" />
+      <option name="MAVEN" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PROTO" value="false" />
+      <option name="PROTOTEXT" value="false" />
+      <option name="Properties" value="false" />
+      <option name="QUTE" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="SpringMVC" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="Vue" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="test" value="@org.junit.jupiter.api.Test&#10;void $END$() {&#10;&#10;}" description="generate test method" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CONSUMER" value="true" />
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="factoryMethod" value="public static $CLASS_NAME$ valueOf($PARAM_TYPE$ $PARAM_NAME$) {&#10;    return new $CLASS_NAME$($PARAM_NAME$);&#10;}" description="Create valueOf() factory method" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAM_TYPE" expression="guessElementType()" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAM_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="commandLineRunner" value="@org.springframework.context.annotation.Bean&#10;CommandLineRunner $BEAN_NAME$() {&#10;    return args -&gt; {};&#10;}" description="Create Spring CommandLineRunner inline class" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="BEAN_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="mvctest" value="@org.junit.jupiter.api.Test&#10;void $TEST_METHOD$() throws Exception {&#10;    mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get(&quot;$ENDPOINT$&quot;))&#10;            .andDo(org.springframework.test.web.servlet.result.MockMvcResultHandlers.print())&#10;            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.status().isOk());&#10;}" description="Create Spring MVC Test with Mock MVC test context" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TEST_METHOD" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENDPOINT" expression="" defaultValue="&quot;/api/example&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="COMPLETION" value="false" />
+      <option name="JAVA_CODE" value="true" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_CONSUMER" value="false" />
+      <option name="JAVA_ELSE_PLACE" value="false" />
+      <option name="JAVA_EXPRESSION" value="false" />
+      <option name="JAVA_STATEMENT" value="false" />
+      <option name="JAVA_STRING" value="false" />
+    </context>
+  </template>
+  <template name="constant" value="private static final $VAR_TYPE$ $VAR_NAME$ = &quot;$VALUE$&quot;;&#10;" description="Create constant variable with private static final ..." toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_TYPE" expression="&quot;String&quot; / &quot;int&quot; / &quot;boolean&quot; / &quot;List&lt;String&gt;&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR_NAME" expression="variableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="guessValue($VAR_TYPE$)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
