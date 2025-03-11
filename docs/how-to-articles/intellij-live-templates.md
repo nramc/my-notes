@@ -48,3 +48,18 @@ CommandLineRunner $BEAN_NAME$() {
 BEAN_NAME -> suggestVariableName()
 
 ```
+
+**Spring Mock MVC Test**
+```shell
+# Template Name: mvcTest
+@org.junit.jupiter.api.Test
+void $TEST_METHOD$() throws Exception {
+    mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("$ENDPOINT$"))
+            .andDo(org.springframework.test.web.servlet.result.MockMvcResultHandlers.print())
+            .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.status().isOk());
+}
+
+# Parameter binding:
+TEST_METHOD -> methodName()
+ENDPOINT -> "/api/example"
+```
