@@ -23,15 +23,28 @@ You can place them inside your IntelliJ IDEA in
 **Static Factory Method**
 
 ```shell
-# template
+# Template Name: factoryMethod
 public static $CLASS_NAME$ valueOf($PARAM_TYPE$ $PARAM_NAME$) {
     return new $CLASS_NAME$($PARAM_NAME$);
 }
 
-# binding parameters with expression
+# Parameters binding: 
 CLASS_NAME -> className()
 PARAM_TYPE -> guessElementType()
 PARAM_NAME -> suggestVariableName()
 
 ```
 
+**Command Line Runner**
+```shell
+
+# Template Name: commandLineRunner
+@Bean
+CommandLineRunner $BEAN_NAME$() {
+    return args -> {};
+}
+
+# Parameters binding: 
+BEAN_NAME -> suggestVariableName()
+
+```
