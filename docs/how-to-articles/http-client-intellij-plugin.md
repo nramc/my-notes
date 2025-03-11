@@ -42,7 +42,7 @@ hide:
 
 - please find below sample http script from `src/test/http-client/scripts/`
 
-```http request
+```
 
 # Constant values
 @usecase = REGISTRATION
@@ -66,7 +66,7 @@ Content-Type: application/vnd.registration+json
 {
   "name": "My Name",
   "emailAddress": "my-email-address@example.com",
-  "payload": "{\"signature\": \"{{hashedEntity}}\"}",
+  "signature": "{{hashedEntity}}",
 }
 
 // this is post javascript block executed after http request executed
