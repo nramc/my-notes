@@ -64,6 +64,16 @@ TEST_METHOD -> methodName()
 ENDPOINT -> "/api/example"
 ```
 
+**Constant**
+```shell
+# Template Name: constant
+private static final $VAR_TYPE$ $VAR_NAME$ = "$VALUE$";
+
+# Parameter bindings:
+VAR_TYPE -> "String" / "int" / "boolean" / "List<String>"
+VAR_NAME -> variableName()
+VALUE -> guessValue($VAR_TYPE$)
+```
 
 ## MkDocs
 
