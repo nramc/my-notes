@@ -11,6 +11,13 @@ tags:
 
 # IntelliJ IDEA Live Templates
 
+You can download all below live templates as a file.
+
+[Download File](../assets/data/intellij-idea-live-templates/custom-intellij-idea-live-templates.xml){ .md-button .md-button--primary }
+
+You can place them inside your IntelliJ IDEA in
+`~/Library/Application Support/JetBrains/<IntelliJIdea version>/templates/`
+
 ## Java
 
 **Static Factory Method**
@@ -27,3 +34,4 @@ PARAM_TYPE -> guessElementType()
 PARAM_NAME -> suggestVariableName()
 
 ```
+
