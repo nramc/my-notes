@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
@@ -1651,36 +1651,39 @@
 <ul>
 <li>please find below sample http script from <code>src/test/http-client/scripts/</code></li>
 </ul>
-<p>```http request</p>
-<h1 id="constant-values">Constant values</h1>
-<p>@usecase = REGISTRATION</p>
-<h3 id="registration">Registration</h3>
-<h1 id="this-is-pre-javascript-block-executed-before-http-request-executed">this is pre javascript block executed before http request executed</h1>
-<p>&lt; {%
-const pepperVal = request.environment.get("someConfidentialEnvironmentSpecificValue")
-const dateUtcIsoFormat = new Date().toISOString().split('T')[0];
-const formattedEntityVal = pepperVal + ':' + dateUtcIsoFormat;</p>
-<p>const hashedEntity = crypto.sha256().updateWithText(formattedEntityVal, 'UTF-8').digest().toBase64(true);</p>
-<p>// Dynamically derived value added to request context and can be used in http request
-request.variables.set("dynamicHashedEntity", hashedEntity)</p>
-<p>%}
-POST {{appURL}}
-Content-Type: application/vnd.registration+json</p>
-<p>{
-  "name": "My Name",
-  "emailAddress": "my-email-address@example.com",
-  "payload": "{\"signature\": \"{{hashedEntity}}\"}",
-}</p>
-<p>// this is post javascript block executed after http request executed</p>
-<blockquote>
-<p>{%
-client.test("Request executed successfully", function () {
-client.assert(response.status === 201, "Response failed");
-client.global.set("emailToken", response.body.code)
-});
-%}</p>
-</blockquote>
-<p>```</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Constant values
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>@usecase = REGISTRATION
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>### Registration
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a># this is pre javascript block executed before http request executed
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt; {%
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>const pepperVal = request.environment.get(&quot;someConfidentialEnvironmentSpecificValue&quot;)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>const dateUtcIsoFormat = new Date().toISOString().split(&#39;T&#39;)[0];
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>const formattedEntityVal = pepperVal + &#39;:&#39; + dateUtcIsoFormat;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>const hashedEntity = crypto.sha256().updateWithText(formattedEntityVal, &#39;UTF-8&#39;).digest().toBase64(true);
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>// Dynamically derived value added to request context and can be used in http request
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>request.variables.set(&quot;dynamicHashedEntity&quot;, hashedEntity)
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>%}
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>POST {{appURL}}
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>Content-Type: application/vnd.registration+json
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>{
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  &quot;name&quot;: &quot;My Name&quot;,
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  &quot;emailAddress&quot;: &quot;my-email-address@example.com&quot;,
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  &quot;signature&quot;: &quot;{{hashedEntity}}&quot;,
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>}
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>// this is post javascript block executed after http request executed
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>&gt; {%
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>client.test(&quot;Request executed successfully&quot;, function () {
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>client.assert(response.status === 201, &quot;Response failed&quot;);
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>client.global.set(&quot;emailToken&quot;, response.body.code)
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>});
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>%}
+</span></code></pre></div>
 
 
 
@@ -1803,7 +1806,7 @@ client.global.set("emailToken", response.body.code)
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.indexes", "navigation.instant.progress", "navigation.path", "header", "search.suggest", "search.share", "content.code.copy", "content.code.select", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../assets/mkdocs_pagetree_plugin.js"></script>
       
