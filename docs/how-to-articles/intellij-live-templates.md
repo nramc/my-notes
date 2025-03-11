@@ -39,7 +39,7 @@ PARAM_NAME -> suggestVariableName()
 ```shell
 
 # Template Name: commandLineRunner
-@Bean
+@org.springframework.context.annotation.Bean
 CommandLineRunner $BEAN_NAME$() {
     return args -> {};
 }
