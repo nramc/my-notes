@@ -1,4 +1,5 @@
 ---
+title: "IntelliJ IDEA Live Templates"
 author: Ramachandran Nellaiyappan
 date: 2025-03-11
 updated:

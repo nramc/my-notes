@@ -56,6 +56,9 @@ extra_css:
   - assets/stylesheets/custom.css
   - assets/stylesheets/card-layout.css
 
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js
+
 plugins:
   - search
   - offline

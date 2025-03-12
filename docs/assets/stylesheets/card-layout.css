@@ -51,3 +51,8 @@
 .md-post--excerpt .md-post__content {
     display: block;
 }
+
+.md-post__content .read-more {
+    font-size: 16px;
+    font-weight: normal;
+}

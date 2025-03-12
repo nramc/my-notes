@@ -1,5 +1,6 @@
 ---
 author: Ramachandran Nellaiyappan
+title: "HTTP Client - IntelliJ Plugin"
 date: 2024-10-07
 updated: 
 categories:
