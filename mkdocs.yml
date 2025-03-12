@@ -71,7 +71,6 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences:
@@ -79,6 +78,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
 
 extra:
   generator: true
