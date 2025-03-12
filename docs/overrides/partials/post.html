@@ -1,0 +1,53 @@
+<article class="md-post md-post--excerpt card">
+    <header class="md-post__header">
+        <div class="md-post__meta md-meta">
+            <ul class="md-meta__list">
+                <li class="md-meta__item">
+                    <time datetime="{{ post.config.date.created }}">
+                        {{ post.config.date.created.strftime('%d %b %Y') }}
+                    </time>
+                </li>
+                {% if post.categories %}
+                <li class="md-meta__item">
+                    Categories:
+                    {% for category in post.categories %}
+                    <a href="{{ category.url | url }}" class="md-meta__link">
+                        {{ category.title }}
+                    </a>
+                    {% if loop.revindex > 1 %}, {% endif %}
+                    {% endfor %}
+                </li>
+                {% endif %}
+                {% if post.meta.tags %}
+                <li class="md-meta__item">
+                    Tags:
+                    {% for tag in post.meta.tags %}
+                    {{ tag }}
+                    {% if loop.revindex > 1 %}, {% endif %}
+                    {% endfor %}
+                </li>
+                {% endif %}
+                {% if post.config.readtime %}
+                {% set time = post.config.readtime %}
+                <li class="md-meta__item readtime">
+                    {% if time == 1 %}
+                    {{ lang.t("readtime.one") }}
+                    {% else %}
+                    {{ lang.t("readtime.other") | replace("#", time) }}
+                    {% endif %}
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
+
+    <!-- Clickable Post Title -->
+    <h2 class="md-post__title">
+        <a href="{{ post.url }}" class="md-post__link">{{ post.title }}</a>
+    </h2>
+
+    <div class="md-post__content md-typeset">
+        <p>{{ post.excerpt | default(post.content | truncate(150)) }}</p>
+        <a href="{{ post.url }}" class="read-more">Read More →</a>
+    </div>
+</article>
