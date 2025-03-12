@@ -1,0 +1,58 @@
+/* Card container to style individual blog posts */
+.card {
+    border-radius: 8px;
+    border: 2px solid whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image inside the card */
+.md-post__header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Meta info (date, tags, etc.) styling */
+.md-meta__list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.65rem;
+    color: #555;
+}
+
+.md-meta__item {
+    margin-bottom: 10px;
+}
+
+.md-meta__link {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.md-meta__link:hover {
+    color: #005fa3;
+}
+
+/* Post content styling */
+.md-post__content {
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Excerpt styling */
+.md-post--excerpt {
+    margin-bottom: 1rem;
+}
+
+.md-post--excerpt .md-post__content {
+    display: block;
+}
+
+.md-post__content .read-more {
+    font-size: 16px;
+    font-weight: normal;
+}
