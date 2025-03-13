@@ -84,9 +84,11 @@ VALUE -> guessValue($VAR_TYPE$)
 ```shell
 # Template Name: mkdocs-meta-data
 ---
+title: $TITLE$
+description: $DESCRIPTION$
 author: $USER$
-createdAt: $DATE$
-updatedAt: 
+date: $DATE$
+updated: 
 categories:
   - $END$
 tags:
@@ -95,6 +97,6 @@ tags:
 
 # Parameter bindings:
 USER -> "Ramachandran Nellaiyappan"
-DATE -> date("d.MM.YYYY")
+DATE -> date("YYYY-MM-d")
 
 ```
