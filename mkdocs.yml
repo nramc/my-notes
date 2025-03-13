@@ -13,6 +13,10 @@ theme:
   language: en
   name: material
   custom_dir: docs/overrides
+  icon:
+    logo: octicons/codescan-16
+    repo: fontawesome/brands/github
+  favicon: assets/logo/favicon.svg
   font:
     text: Roboto
     code: Roboto Mono
@@ -34,8 +38,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  icon:
-    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     #- navigation.tabs.sticky
@@ -75,6 +77,7 @@ plugins:
       archive: false
       pagination: true
       pagination_per_page: 10
+  - social
 
 
 

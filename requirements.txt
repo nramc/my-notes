@@ -2,3 +2,4 @@ mkdocs
 mkdocs-material
 Pygments
 mkdocs-pagetree-plugin
+mkdocs-material[imaging]
