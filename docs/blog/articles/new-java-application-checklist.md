@@ -1,5 +1,6 @@
 ---
 title: "Checklist for creating Java Application/Service"
+description: "Ensure a smooth Java app launch with this checklist—setup, coding, testing, and deployment essentials!"
 author: Ramachandran Nellaiyappan
 date: 2024-10-28
 updated: 
