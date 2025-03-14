@@ -1,3 +1,10 @@
 body {
     font-size: 16px;
 }
+
+.link-sm {
+    font-size: 12px; /* Smaller font */
+    margin: 5px; /* Adjust margin */
+    color: white;
+    text-decoration: none;
+}
