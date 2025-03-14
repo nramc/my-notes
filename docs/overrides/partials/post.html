@@ -74,7 +74,7 @@
     <div class="md-post__content md-typeset">
         <p class="md-typeset">{{ post.excerpt | default(post.content | striptags | truncate(150, True)) }}</p>
         <a href="{{ post.url | url }}" class="read-more">
-            Read More
+            Read More <i class="icon-normal fa-solid fa-circle-arrow-right"></i>  <!-- Right Arrow Icon -->
         </a>
     </div>
 </article>
