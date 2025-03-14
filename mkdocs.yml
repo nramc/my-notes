@@ -13,6 +13,10 @@ theme:
   language: en
   name: material
   custom_dir: docs/overrides
+  icon:
+    logo: octicons/codescan-16
+    repo: fontawesome/brands/github
+  favicon: assets/logo/favicon.svg
   font:
     text: Roboto
     code: Roboto Mono
@@ -34,8 +38,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  icon:
-    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     #- navigation.tabs.sticky
@@ -56,8 +58,8 @@ extra_css:
   - assets/stylesheets/custom.css
   - assets/stylesheets/card-layout.css
 
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js
+hooks:
+  - hooks/socialmedia.py
 
 plugins:
   - search
@@ -75,6 +77,7 @@ plugins:
       archive: false
       pagination: true
       pagination_per_page: 10
+  - social
 
 
 
@@ -94,6 +97,10 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - admonition
   - pymdownx.details
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
   generator: true

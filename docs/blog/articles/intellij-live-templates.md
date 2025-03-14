@@ -1,5 +1,6 @@
 ---
 title: "IntelliJ IDEA Live Templates"
+description: "Boost coding efficiency with IntelliJ IDEA Live Templates—save time with reusable code snippets."
 author: Ramachandran Nellaiyappan
 date: 2025-03-11
 updated:
@@ -84,9 +85,11 @@ VALUE -> guessValue($VAR_TYPE$)
 ```shell
 # Template Name: mkdocs-meta-data
 ---
+title: $TITLE$
+description: $DESCRIPTION$
 author: $USER$
-createdAt: $DATE$
-updatedAt: 
+date: $DATE$
+updated: 
 categories:
   - $END$
 tags:
@@ -95,6 +98,6 @@ tags:
 
 # Parameter bindings:
 USER -> "Ramachandran Nellaiyappan"
-DATE -> date("d.MM.YYYY")
+DATE -> date("YYYY-MM-d")
 
 ```

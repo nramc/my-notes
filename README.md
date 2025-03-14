@@ -1,4 +1,4 @@
-# Personal Knwoledge Management System - My Notes
+# Personal Knowledge Management System—My Notes
 
 The Ultimate Playbook for developers with coding snippets, references, procedures and How-To guides crafted with real
 time experience.
@@ -7,7 +7,7 @@ time experience.
 
 ## Getting Started
 
-Please find below steps to set up and run application in your workstation.
+Please find the below steps to set up and run application in your workstation.
 
 ### Prerequisites
 
@@ -20,18 +20,25 @@ setup.
     ```bash
     git clone https://github.com/nramc/my-notes.git 
     ```
-2. Run Application
+2. Install required dependencies
+   ```bash
+      python3 -m venv dev 
+      source dev/bin/activate
+      pip install -r requirements.txt
+   ```
+3. Run Application
     ```bash
-    mkdocs serve
+      python -m mkdocs serve
     ```
-3. Open up http://127.0.0.1:8000/ in your browser, and you'll see the home page being displayed
+4. Open up http://127.0.0.1:8000/ in your browser, and you'll see the home page being displayed
 
 ### Contribution
 
 Any contributions you make are greatly appreciated.
 
 If you like the project and have a suggestion that would make this better, please fork the repo and create a pull
-request. You can also simply open an issue with the tag "enhancement".
+request.
+You can also open an issue with the tag "enhancement."
 
 1. Fork the Project
 2. Create your Feature Branch (git checkout -b feature/AmazingFeature)

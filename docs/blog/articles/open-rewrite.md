@@ -1,5 +1,6 @@
 ---
 title: "OpenRewrite Integration"
+description: "Automate code refactoring with OpenRewrite—improve quality, security, and maintainability effortlessly!"
 author: Ramachandran Nellaiyappan
 date: 2025-09-27
 updated: 16.02.2025

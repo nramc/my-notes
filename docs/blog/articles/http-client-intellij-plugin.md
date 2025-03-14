@@ -1,8 +1,9 @@
 ---
 author: Ramachandran Nellaiyappan
 title: "HTTP Client - IntelliJ Plugin"
+description: "Perform pre/post actions before/after making actual http calls and supports env specific configurations."
 date: 2024-10-07
-updated: 
+updated:
 categories:
   - Testing
 tags:
@@ -18,11 +19,11 @@ hide:
 
 - [HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html) helps to create, edit, and
   execute HTTP requests directly in the IntelliJ IDEA code editor.
-- It provides varies features like configuring env variable file with support for environments like dev, qa and live
+- It provides varies features like a configuring env variable file with support for environments like dev, qa and live
 
 ## Environment files
 
-- create environment file in project test source directory `src/test/http-client/http-client.env.json`
+- create an environment file in project test source directory `src/test/http-client/http-client.env.json`
 - Configure environment variables based on different environments
 
 ```json
