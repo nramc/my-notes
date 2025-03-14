@@ -41,12 +41,14 @@ theme:
         name: Switch to light mode
   features:
     - navigation.tabs
+#    - navigation.sections
     #- navigation.tabs.sticky
     - navigation.path
     - navigation.top
     - navigation.indexes
     - navigation.instant.progress
     - navigation.path
+#    - navigation.expand
     - header
     - search.suggest
     - search.share
@@ -61,6 +63,8 @@ extra_css:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js
+  - assets/javascripts/navigation-expand.js
+
 
 hooks:
   - hooks/socialmedia.py
