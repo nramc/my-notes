@@ -1,4 +1,5 @@
 site_name: My Notes
+site_description: "Playbook for developers with coding snippets, references, procedures and HowTo guides crafted with real time experience."
 site_url: https://nramc.github.io/my-notes/
 
 # Repository
@@ -57,6 +58,9 @@ theme:
 extra_css:
   - assets/stylesheets/custom.css
   - assets/stylesheets/card-layout.css
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js
 
 hooks:
   - hooks/socialmedia.py
@@ -125,8 +129,8 @@ nav:
       - 'Validations': 'java/validations.md'
       - 'Email Template': 'java/email-templates.md'
       - 'Development Tools':
-        - 'Developer Workstation Tools': 'java/development/workstation-tools.md'
-        - 'Local Development Essentials': 'java/development/local-development.md'
+          - 'Developer Workstation Tools': 'java/development/workstation-tools.md'
+          - 'Local Development Essentials': 'java/development/local-development.md'
       - 'Java Notes': 'java/java-notes.md'
   - Testing:
       - 'IntelliJ IDE Testing Plugins': 'testings/intellij-testing-tools.md'
