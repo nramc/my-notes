@@ -78,7 +78,7 @@ plugins:
       listings_tags_sort_by: !!python/name:material.plugins.tags.tag_name_casefold
   - pagetree
   - blog:
-      post_date_format: short
+      post_date_format: "d MMM Y"
       blog_toc: false
       post_dir: "{blog}/articles"
       post_url_format: "/{file}"
