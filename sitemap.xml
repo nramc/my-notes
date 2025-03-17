@@ -105,10 +105,6 @@
          <lastmod>2025-03-17</lastmod>
     </url>
     <url>
-         <loc>https://nramc.github.io/my-notes/blog/category/automation.html</loc>
-         <lastmod>2025-03-17</lastmod>
-    </url>
-    <url>
          <loc>https://nramc.github.io/my-notes/blog/category/workstation-setup.html</loc>
          <lastmod>2025-03-17</lastmod>
     </url>
@@ -118,6 +114,10 @@
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/category/testing.html</loc>
+         <lastmod>2025-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://nramc.github.io/my-notes/blog/category/automation.html</loc>
          <lastmod>2025-03-17</lastmod>
     </url>
 </urlset>
