@@ -2,7 +2,9 @@
 title: "IntelliJ IDEA Live Templates"
 description: "Boost coding efficiency with IntelliJ IDEA Live Templates—save time with reusable code snippets."
 author: Ramachandran Nellaiyappan
-date: 2025-03-11
+date:
+  created: 2025-03-11
+  updated: 2025-03-17
 updated:
 categories:
   - Workstation Setup
@@ -18,7 +20,7 @@ links:
 
 !!! tip "You can download all below live templates as a file"
 
-    [Download File](../../assets/data/intellij-idea-live-templates/custom-intellij-idea-live-templates.xml){ .md-button .md-button--primary }
+    [Download File](../../assets/data/intellij-idea-live-templates/custom-intellij-idea-live-templates.xml){ .md-button .md-button--primary target="_blank" }
 
     You can place them inside your IntelliJ IDEA in `~/Library/Application Support/JetBrains/<IntelliJIdea version>/templates/`
 
@@ -104,12 +106,15 @@ VALUE -> guessValue($VAR_TYPE$)
 title: $TITLE$
 description: $DESCRIPTION$
 author: $USER$
-date: $DATE$
-updated: 
+date:
+    created: $DATE$
+    updated: 
 categories:
   - $END$
 tags:
   - todo
+links:
+  - "[Author] Ram": $AUTHOR_PROFILE_URL$
 ---
 
 # Parameter bindings:

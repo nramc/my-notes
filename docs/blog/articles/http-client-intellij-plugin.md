@@ -2,8 +2,9 @@
 author: Ramachandran Nellaiyappan
 title: "HTTP Client - IntelliJ Plugin"
 description: "Perform pre/post actions before/after making actual http calls and supports env specific configurations."
-date: 2024-10-07
-updated:
+date:
+  created: 2024-10-07
+  updated: 2025-03-17
 categories:
   - Testing
 tags:

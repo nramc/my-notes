@@ -1,7 +1,10 @@
 <templateSet group="Ram-custom-templates">
-  <template name="mkdocs-meta-data" value="---&#10;author: $USER$&#10;createdAt: $DATE$&#10;updatedAt: &#10;categories:&#10;  - $END$&#10;tags:&#10;  - todo&#10;---" description="insert mkdocs meta data into page" toReformat="false" toShortenFQNames="true">
+  <template name="mkdocs-meta-data" value="---&#10;title: $TITLE$&#10;description: $DESCRIPTION$&#10;author: $USER$&#10;date:&#10;    created: $DATE$&#10;    updated: &#10;categories:&#10;  - $END$&#10;tags:&#10;  - todo&#10;links:&#10;  - &quot;[Author] Ram&quot;: $AUTHOR_PROFILE_URL$&#10;---" description="insert mkdocs meta data into page" toReformat="false" toShortenFQNames="true">
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="USER" expression="" defaultValue="&quot;Ramachandran Nellaiyappan&quot;" alwaysStopAt="true" />
-    <variable name="DATE" expression="date(&quot;d.MM.YYYY&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="DATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="AUTHOR_PROFILE_URL" expression="" defaultValue="&quot;https://nramc.github.io/my-profile/&quot;" alwaysStopAt="true" />
     <context>
       <option name="ANY_OPENAPI_JSON_FILE" value="false" />
       <option name="ANY_OPENAPI_YAML_FILE" value="false" />
@@ -36,7 +39,7 @@
     </context>
   </template>
   <template name="today" value="$DATE$" description="dd.mm.yyyy" toReformat="false" toShortenFQNames="true">
-    <variable name="DATE" expression="date(&quot;d.MM.YYYY&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="DATE" expression="date(&quot;YYYY-MM-dd&quot;)" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="ANY_OPENAPI_JSON_FILE" value="false" />
       <option name="ANY_OPENAPI_YAML_FILE" value="false" />
@@ -107,6 +110,12 @@
     <variable name="VAR_TYPE" expression="&quot;String&quot; / &quot;int&quot; / &quot;boolean&quot; / &quot;List&lt;String&gt;&quot;" defaultValue="" alwaysStopAt="true" />
     <variable name="VAR_NAME" expression="variableName()" defaultValue="" alwaysStopAt="true" />
     <variable name="VALUE" expression="guessValue($VAR_TYPE$)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="applicationRunner" value="@org.springframework.context.annotation.Bean&#10;org.springframework.boot.ApplicationRunner $BEAN_NAME$() {&#10;    return args -&gt; {$END$};&#10;}" description="Create springboot ApplicationnRunner bean definition" toReformat="false" toShortenFQNames="true">
+    <variable name="BEAN_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
