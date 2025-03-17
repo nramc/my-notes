@@ -54,6 +54,20 @@ BEAN_NAME -> suggestVariableName()
 
 ```
 
+**Application Runner**
+```shell
+
+# Template Name: applicationRunner
+@org.springframework.context.annotation.Bean
+org.springframework.boot.ApplicationRunner $BEAN_NAME$() {
+    return args -> {$END$};
+}
+
+# Parameters binding: 
+BEAN_NAME -> suggestVariableName()
+
+```
+
 **Spring Mock MVC Test**
 ```shell
 # Template Name: mvcTest
