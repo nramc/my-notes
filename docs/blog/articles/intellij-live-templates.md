@@ -2,7 +2,9 @@
 title: "IntelliJ IDEA Live Templates"
 description: "Boost coding efficiency with IntelliJ IDEA Live Templates—save time with reusable code snippets."
 author: Ramachandran Nellaiyappan
-date: 2025-03-11
+date:
+  created: 2025-03-11
+  updated: 2025-03-17
 updated:
 categories:
   - Workstation Setup
