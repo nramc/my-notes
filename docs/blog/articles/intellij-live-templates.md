@@ -20,7 +20,7 @@ links:
 
 !!! tip "You can download all below live templates as a file"
 
-    [Download File](../../assets/data/intellij-idea-live-templates/custom-intellij-idea-live-templates.xml){ .md-button .md-button--primary }
+    [Download File](../../assets/data/intellij-idea-live-templates/custom-intellij-idea-live-templates.xml){ .md-button .md-button--primary target="_blank" }
 
     You can place them inside your IntelliJ IDEA in `~/Library/Application Support/JetBrains/<IntelliJIdea version>/templates/`
 
