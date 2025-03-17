@@ -106,12 +106,15 @@ VALUE -> guessValue($VAR_TYPE$)
 title: $TITLE$
 description: $DESCRIPTION$
 author: $USER$
-date: $DATE$
-updated: 
+date:
+    created: $DATE$
+    updated: 
 categories:
   - $END$
 tags:
   - todo
+links:
+  - "[Author] Ram": $AUTHOR_PROFILE_URL$
 ---
 
 # Parameter bindings:
