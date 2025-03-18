@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Playbook for developers with coding snippets, references, procedures and HowTo guides crafted with real time experience.">
+        <meta name="description" content="Keeping Java dependencies up to date is crucial, and tools like Dependabot, RenovateBot, Maven Versions Plugin, and OpenRewrite can automate the process.">
+      
+      
+        <meta name="author" content="Ramachandran Nellaiyappan">
+      
+      
+        <link rel="canonical" href="https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html">
+      
+      
+        <link rel="prev" href="jacoco-exclude-code-with-annotation.html">
       
       
       
-        <link rel="canonical" href="https://nramc.github.io/my-notes/blog/category/workstation-setup.html">
-      
-      
-        <link rel="prev" href="testing.html">
-      
-      
-        <link rel="next" href="../../career/feedback-template.html">
-      
-      
-      <link rel="icon" href="../../assets/logo/favicon.svg">
+      <link rel="icon" href="../assets/logo/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Workstation Setup - My Notes</title>
+        <title>Automating Maven Dependency Updates - My Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,13 +52,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/mkdocs_pagetree_plugin.css">
+      <link rel="stylesheet" href="../assets/mkdocs_pagetree_plugin.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+      <link rel="stylesheet" href="../assets/stylesheets/custom.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/card-layout.css">
+      <link rel="stylesheet" href="../assets/stylesheets/card-layout.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,11 +67,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Workstation Setup - My Notes" >
+        <meta  property="og:title"  content="Automating Maven Dependency Updates - My Notes" >
       
-        <meta  property="og:description"  content="Playbook for developers with coding snippets, references, procedures and HowTo guides crafted with real time experience." >
+        <meta  property="og:description"  content="Keeping Java dependencies up to date is crucial, and tools like Dependabot, RenovateBot, Maven Versions Plugin, and OpenRewrite can automate the process." >
       
-        <meta  property="og:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/category/workstation-setup.png" >
+        <meta  property="og:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/articles/maven/maven-auto-update-dependencies.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -79,15 +79,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://nramc.github.io/my-notes/blog/category/workstation-setup.html" >
+        <meta  property="og:url"  content="https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Workstation Setup - My Notes" >
+        <meta  name="twitter:title"  content="Automating Maven Dependency Updates - My Notes" >
       
-        <meta  name="twitter:description"  content="Playbook for developers with coding snippets, references, procedures and HowTo guides crafted with real time experience." >
+        <meta  name="twitter:description"  content="Keeping Java dependencies up to date is crucial, and tools like Dependabot, RenovateBot, Maven Versions Plugin, and OpenRewrite can automate the process." >
       
-        <meta  name="twitter:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/category/workstation-setup.png" >
+        <meta  name="twitter:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/articles/maven/maven-auto-update-dependencies.png" >
       
     
     
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#workstation-setup" class="md-skip">
+        <a href="#automating-maven-dependency-updates" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="My Notes" class="md-header__button md-logo" aria-label="My Notes" data-md-component="logo">
+    <a href=".." title="My Notes" class="md-header__button md-logo" aria-label="My Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.47 4.97a.75.75 0 0 0 0 1.06L9.94 7.5 8.47 8.97a.75.75 0 1 0 1.06 1.06l2-2a.75.75 0 0 0 0-1.06l-2-2a.75.75 0 0 0-1.06 0M6.53 6.03a.75.75 0 0 0-1.06-1.06l-2 2a.75.75 0 0 0 0 1.06l2 2a.75.75 0 1 0 1.06-1.06L5.06 7.5z"/><path d="M12.246 13.307a7.501 7.501 0 1 1 1.06-1.06l2.474 2.473a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215ZM1.5 7.5a6 6 0 0 0 3.608 5.504 6 6 0 0 0 6.486-1.117.75.75 0 0 1 .292-.293A6 6 0 1 0 1.5 7.5"/></svg>
@@ -144,7 +144,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Workstation Setup
+              Automating Maven Dependency Updates
             
           </span>
         </div>
@@ -270,7 +270,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../index.html" class="md-tabs__link">
+        <a href="../index.html" class="md-tabs__link">
           
   
     
@@ -290,7 +290,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../java/validations.html" class="md-tabs__link">
+        <a href="../java/validations.html" class="md-tabs__link">
           
   
     
@@ -310,7 +310,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../testings/intellij-testing-tools.html" class="md-tabs__link">
+        <a href="../testings/intellij-testing-tools.html" class="md-tabs__link">
           
   
     
@@ -330,7 +330,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../kubernetes/logs-verification.html" class="md-tabs__link">
+        <a href="../kubernetes/logs-verification.html" class="md-tabs__link">
           
   
     
@@ -350,7 +350,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../improvements/code-health-improvements.html" class="md-tabs__link">
+        <a href="../improvements/code-health-improvements.html" class="md-tabs__link">
           
   
     
@@ -370,7 +370,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/secure-coding.html" class="md-tabs__link">
+        <a href="../security/secure-coding.html" class="md-tabs__link">
           
   
     
@@ -392,7 +392,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../index.html" class="md-tabs__link">
+        <a href="index.html" class="md-tabs__link">
           
   
     
@@ -412,7 +412,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../career/feedback-template.html" class="md-tabs__link">
+        <a href="../career/feedback-template.html" class="md-tabs__link">
           
   
     
@@ -430,7 +430,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about.html" class="md-tabs__link">
+      <a href="../about.html" class="md-tabs__link">
         
   
     
@@ -453,7 +453,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -464,7 +466,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="My Notes" class="md-nav__button md-logo" aria-label="My Notes" data-md-component="logo">
+    <a href=".." title="My Notes" class="md-nav__button md-logo" aria-label="My Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.47 4.97a.75.75 0 0 0 0 1.06L9.94 7.5 8.47 8.97a.75.75 0 1 0 1.06 1.06l2-2a.75.75 0 0 0 0-1.06l-2-2a.75.75 0 0 0-1.06 0M6.53 6.03a.75.75 0 0 0-1.06-1.06l-2 2a.75.75 0 0 0 0 1.06l2 2a.75.75 0 1 0 1.06-1.06L5.06 7.5z"/><path d="M12.246 13.307a7.501 7.501 0 1 1 1.06-1.06l2.474 2.473a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215ZM1.5 7.5a6 6 0 0 0 3.608 5.504 6 6 0 0 0 6.486-1.117.75.75 0 0 1 .292-.293A6 6 0 1 0 1.5 7.5"/></svg>
@@ -519,7 +521,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../index.html" class="md-nav__link ">
+            <a href="../index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -553,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../table-of-index.html" class="md-nav__link">
+      <a href="../table-of-index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -575,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tags.html" class="md-nav__link">
+      <a href="../tags.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/validations.html" class="md-nav__link">
+      <a href="../java/validations.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/email-templates.html" class="md-nav__link">
+      <a href="../java/email-templates.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -742,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/development/workstation-tools.html" class="md-nav__link">
+      <a href="../java/development/workstation-tools.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -764,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/development/local-development.html" class="md-nav__link">
+      <a href="../java/development/local-development.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -794,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/java-notes.html" class="md-nav__link">
+      <a href="../java/java-notes.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -868,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testings/intellij-testing-tools.html" class="md-nav__link">
+      <a href="../testings/intellij-testing-tools.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -890,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testings/automation-tips.html" class="md-nav__link">
+      <a href="../testings/automation-tips.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/logs-verification.html" class="md-nav__link">
+      <a href="../kubernetes/logs-verification.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -986,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/useful-commands.html" class="md-nav__link">
+      <a href="../kubernetes/useful-commands.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1064,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../improvements/code-health-improvements.html" class="md-nav__link">
+      <a href="../improvements/code-health-improvements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1086,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../improvements/data-quality.html" class="md-nav__link">
+      <a href="../improvements/data-quality.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1108,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../improvements/documentation-improvements.html" class="md-nav__link">
+      <a href="../improvements/documentation-improvements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1130,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../improvements/web-application-improvements.html" class="md-nav__link">
+      <a href="../improvements/web-application-improvements.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1206,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/secure-coding.html" class="md-nav__link">
+      <a href="../security/secure-coding.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1228,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/password-security.html" class="md-nav__link">
+      <a href="../security/password-security.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1250,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/penetration-testing.html" class="md-nav__link">
+      <a href="../security/penetration-testing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1307,7 +1309,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../index.html" class="md-nav__link ">
+            <a href="index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1338,10 +1340,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1361,11 +1361,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
@@ -1380,7 +1380,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             Categories
@@ -1396,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="automation.html" class="md-nav__link">
+      <a href="category/automation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1420,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guideline.html" class="md-nav__link">
+      <a href="category/guideline.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1444,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="java.html" class="md-nav__link">
+      <a href="category/java.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1468,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="testing.html" class="md-nav__link">
+      <a href="category/testing.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1487,23 +1487,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="workstation-setup.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="category/workstation-setup.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1513,7 +1502,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1584,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../career/feedback-template.html" class="md-nav__link">
+      <a href="../career/feedback-template.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about.html" class="md-nav__link">
+      <a href="../about.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1635,6 +1623,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1647,6 +1637,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependabot-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependabot (GitHub)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renovate-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renovate Bot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maven-versions-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maven Versions Plugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openrewrite-maven-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenRewrite Maven Plugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1654,102 +1697,316 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="workstation-setup">Workstation Setup</h1>
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="index.html" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-03-18 00:00:00+00:00" class="md-ellipsis">18 Mar 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="category/java.html">Java</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              3 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+              <ul class="md-post__meta md-nav__list">
+                <li class="md-nav__item md-nav__item--section">
+                  <div class="md-post__title">
+                    <span class="md-ellipsis">
+                      Related links
+                    </span>
+                  </div>
+                  <nav class="md-nav">
+                    <ul class="md-nav__list">
+                      
+                        
+                        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nramc.github.io/my-profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    [Author] Ram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                      
+                    </ul>
+                  </nav>
+                </li>
+              </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">Automation</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">Dependency Management</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">Java</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">Maven</span>
+      
+    
+      
+      
+      
+        <a href="../index.html#tag:latest" class="md-tag">latest</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="automating-maven-dependency-updates">Automating Maven Dependency Updates</h1>
+<p>In Java projects, keeping dependencies up to date is crucial for ensuring security, enhancing performance, and
+maintaining compatibility. However, managing and updating dependencies manually can be tedious and error-prone.
+Fortunately, there are various tools available to automate this process, such as GitHub Dependabot, RenovateBot, the
+Maven Versions Plugin, and the OpenRewrite Maven Plugin.</p>
+<p>This article explores these tools and how they can help you automate Maven dependency updates efficiently.</p>
+<p><strong>Why Automate Dependency Updates?</strong></p>
+<p>Automating dependency updates brings several advantages:</p>
+<ol>
+<li>Security Enhancements<ul>
+<li>Fix vulnerabilities automatically by upgrading dependencies.</li>
+<li>Ensure compliance with security best practices.</li>
+</ul>
+</li>
+<li>Stability and Performance<ul>
+<li>Upgrade to stable versions for bug fixes and performance improvements.</li>
+<li>Avoid breaking changes by controlling updates.</li>
+</ul>
+</li>
+<li>CI/CD Integration<ul>
+<li>Automatically update dependencies in a controlled, repeatable manner.</li>
+<li>Reduce manual maintenance in large-scale projects.</li>
+</ul>
+</li>
+</ol>
+<h2 id="dependabot-github">Dependabot (GitHub)</h2>
+<ul>
+<li><a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates">Dependabot</a>
+  is an automated tool from GitHub that helps you keep your dependencies up to date by automatically creating pull
+  requests.</li>
+<li>Fully integrated with GitHub.</li>
+<li>It supports multiple package managers, including Maven.</li>
+<li>Configure it via <code>.github/dependabot.yml</code>:
+  ```yaml
+    version: 2
+    updates:<ul>
+<li>package-ecosystem: "maven"
+  directory: "/"
+  schedule:
+  interval: "weekly"
+   ```</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates">Learn more about Dependabot.</a></p>
+<h2 id="renovate-bot">Renovate Bot</h2>
+<ul>
+<li><a href="https://docs.renovatebot.com/">Renovate Bot</a> is a powerful dependency update tool.</li>
+<li>Automatically creates pull requests to keep your dependencies up to date.</li>
+<li>It supports multiple package managers, including Maven.</li>
+<li>Can be integrated into existing workflows seamlessly.</li>
+<li>It can be configured via <code>renovate.json</code>:
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="s">&quot;$schema&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;https://docs.renovatebot.com/renovate-schema.json&quot;</span><span class="p p-Indicator">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="s">&quot;extends&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;config:recommended&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p p-Indicator">}</span>
+</span></code></pre></div></li>
+</ul>
+<p><a href="https://docs.renovatebot.com/">Learn more about Renovate Bot.</a></p>
+<h2 id="maven-versions-plugin">Maven Versions Plugin</h2>
+<ul>
+<li><a href="https://www.mojohaus.org/versions/versions-maven-plugin/index.html">Maven Versions Plugin</a> helps you check for and
+  update Maven dependencies.</li>
+<li>It can be run manually or automated through CI/CD pipelines.</li>
+<li>Works directly within your Maven build lifecycle.</li>
+<li>It can be executed as part of CI workflows.</li>
+<li>It can be configured in the <code>pom.xml</code>:
+  <div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;build&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;plugins&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;plugin&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&lt;artifactId&gt;</span>versions-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&lt;version&gt;</span>${versions-maven-plugin.version}<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&lt;/plugin&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&lt;/plugins&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">&lt;/build&gt;</span>
+</span></code></pre></div></li>
+<li>It can be run via the command line or integrated into CI/CD pipelines:
+  <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># To update dependencies to the latest stable release:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mvn<span class="w"> </span>versions:use-latest-releases
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># To update dependencies declared using properties:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>mvn<span class="w"> </span>versions:update-properties
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># To update parent POM version:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>mvn<span class="w"> </span>versions:update-parent
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Check for Available Updates Without Applying</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># To display dependency updates:</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>mvn<span class="w"> </span>versions:display-dependency-updates
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># To display plugin updates:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>mvn<span class="w"> </span>versions:display-plugin-updates
+</span></code></pre></div></li>
+</ul>
+<p><a href="https://www.mojohaus.org/versions/versions-maven-plugin/index.html">Learn more about Maven Versions Plugin.</a></p>
+<h2 id="openrewrite-maven-plugin">OpenRewrite Maven Plugin</h2>
+<ul>
+<li><a href="https://docs.openrewrite.org/">OpenRewrite</a> is an open-source automated refactoring ecosystem for source code,
+  enabling developers to effectively eliminate technical debt within their repositories.</li>
+<li><a href="https://docs.openrewrite.org/maven-plugin/latest/html/index.html">OpenRewrite Maven Plugin</a> is the fastest way to
+  apply OpenRewrite recipes to your code as part of your Maven build.</li>
+<li><a href="https://docs.openrewrite.org/recipes/java/dependencies/upgradedependencyversion">UpgradeDependencyVersion Recipe</a> is
+  a recipe that upgrades dependencies to the latest version.</li>
+<li>Easily integrated into your Maven build process.</li>
+<li>It can be configured in the <code>pom.xml</code>:
+  <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">  </span><span class="nt">&lt;plugin&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">      </span><span class="nt">&lt;groupId&gt;</span>org.openrewrite.maven<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">&lt;artifactId&gt;</span>rewrite-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&lt;version&gt;</span>${rewrite-maven-plugin.version}<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&lt;configuration&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">          </span><span class="nt">&lt;activeRecipes&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">              </span><span class="nt">&lt;recipe&gt;</span>com.github.nramc.recipes.UpgradeAllDependencies<span class="nt">&lt;/recipe&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">          </span><span class="nt">&lt;/activeRecipes&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&lt;/configuration&gt;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">&lt;/plugin&gt;</span>
+</span></code></pre></div>
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specs.openrewrite.org/v1beta/recipe</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">com.github.nramc.recipes.UpgradeAllDependencies</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">recipeList</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">org.openrewrite.java.dependencies.UpgradeDependencyVersion</span><span class="p">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">groupId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="w">          </span><span class="c1"># Upgrade all dependencies</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">artifactId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="w">       </span><span class="c1"># Upgrade all dependencies</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">newVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;latest.release&quot;</span>
+</span></code></pre></div></li>
+<li>It can be run via the command line or integrated into CI/CD pipelines:
+  <div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># To apply the recipe:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mvn<span class="w"> </span>rewrite:run
+</span></code></pre></div></li>
+</ul>
+<p><a href="https://docs.openrewrite.org/running-recipes/getting-started">Learn more about OpenRewrite Maven Plugin.</a></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Automating dependency updates is essential for maintaining a secure, stable, and performant Java project. Whether you're
+using Dependabot, Renovate Bot, the Maven Versions Plugin, or OpenRewrite, each tool offers distinct advantages
+depending on your needs. By integrating one or more of these tools into your CI/CD pipeline, you can ensure your
+dependencies are always up to date with minimal manual intervention.</p>
 <hr />
 <p><span style="font-size: 0.7em;">Did this post help you? Share on:</span>
-<a class="link-sm" href="https://x.com/intent/tweet?text=Workstation%20Setup%0A&amp;url=https://nramc.github.io/my-notes/blog/category/workstation-setup.html" target="_blank" title="Share on X"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6 379.4 396h-95.6L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5 78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></span> X (Twitter)</a>
-<a class="link-sm" href="https://www.facebook.com/sharer/sharer.php?u=https://nramc.github.io/my-notes/blog/category/workstation-setup.html" target="_blank" title="Share on Facebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg></span> Facebook</a>
-<a class="link-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://nramc.github.io/my-notes/blog/category/workstation-setup.html" target="_blank" title="Share on LinkedIn"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg></span> LinkedIn</a>
-<a class="link-sm" href="https://www.reddit.com/submit?url=https://nramc.github.io/my-notes/blog/category/workstation-setup.html&amp;title=Workstation%20Setup%0A" target="_blank" title="Share on Reddit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 256C0 114.6 114.6 0 256 0s256 114.6 256 256-114.6 256-256 256H37.1c-13.7 0-20.5-16.5-10.9-26.2L75 437C28.7 390.7 0 326.7 0 256m349.6-102.4c23.6 0 42.7-19.1 42.7-42.7s-19.1-42.7-42.7-42.7c-20.6 0-37.8 14.6-41.8 34-34.5 3.7-61.4 33-61.4 68.4v.2c-37.5 1.6-71.8 12.3-99 29.1-10.1-7.8-22.8-12.5-36.5-12.5-33 0-59.8 26.8-59.8 59.8 0 24 14.1 44.6 34.4 54.1 2 69.4 77.6 125.2 170.6 125.2s168.7-55.9 170.6-125.3c20.2-9.6 34.1-30.2 34.1-54 0-33-26.8-59.8-59.8-59.8-13.7 0-26.3 4.6-36.4 12.4-27.4-17-62.1-27.7-100-29.1v-.2c0-25.4 18.9-46.5 43.4-49.9 4.4 18.8 21.3 32.8 41.5 32.8zm-172.5 93.3c16.7 0 29.5 17.6 28.5 39.3s-13.5 29.6-30.3 29.6-31.4-8.8-30.4-30.5S160.3 247 177 247zm190.1 38.3c1 21.7-13.7 30.5-30.4 30.5s-29.3-7.9-30.3-29.6 11.8-39.3 28.5-39.3 31.2 16.6 32.1 38.3zm-48.1 56.7c-10.3 24.6-34.6 41.9-63 41.9s-52.7-17.3-63-41.9c-1.2-2.9.8-6.2 3.9-6.5 18.4-1.9 38.3-2.9 59.1-2.9s40.7 1 59.1 2.9c3.1.3 5.1 3.6 3.9 6.5"/></svg></span> reddit</a>
-<a class="link-sm" href="https://api.whatsapp.com/send?text=Workstation%20Setup%0A%20https://nramc.github.io/my-notes/blog/category/workstation-setup.html" target="_blank" title="Share on WhatsApp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157m-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6m101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6"/></svg></span> WhatsApp</a>
-<a class="link-sm" href="https://news.ycombinator.com/submitlink?u=https://nramc.github.io/my-notes/blog/category/workstation-setup.html&amp;t=Workstation%20Setup%0A" target="_blank" title="Share on Hacker News"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32v448h448V32zm21.2 197.2H21c.1-.1.2-.3.3-.4 0 .1 0 .3-.1.4m218 53.9V384h-31.4V281.3L128 128h37.3c52.5 98.3 49.2 101.2 59.3 125.6 12.3-27 5.8-24.4 60.6-125.6H320z"/></svg></span> Hacker News</a></p>
-      </header>
-      
-        <article class="md-post md-post--excerpt card">
-    <header class="md-post__header">
-        
-
-        <div class="md-post__meta md-meta">
-            <ul class="md-meta__list">
-                <li class="md-meta__item">
-                    <i class="fas fa-calendar-alt"></i>  <!-- Calendar Icon -->
-                    <time datetime="2025-03-11 00:00:00+00:00">
-                        11 Mar 2025
-                    </time>
-                </li>
-
-                
-                <li class="md-meta__item">
-                    <i class="fas fa-folder"></i>  <!-- Folder Icon -->
-                    Categories:
-                    
-                    <a href="workstation-setup.html" class="md-meta__link">
-                        Workstation Setup
-                    </a>
-                    
-                    
-                </li>
-                
-
-                
-                <li class="md-meta__item">
-                    <i class="fas fa-tags"></i>  <!-- Tag Icon -->
-                    Tags:
-                    
-                    Workstation Setup
-                    , 
-                    
-                    Productivity
-                    
-                    
-                </li>
-                
-
-                
-                
-                <li class="md-meta__item">
-                    <i class="fas fa-clock"></i>  <!-- Clock Icon -->
-                    
-                    1 min read
-                    
-                </li>
-                
-            </ul>
-
-            
-        </div>
-    </header>
-
-    <!-- Clickable Post-Title -->
-    <h2 class="md-post__title md-typeset">
-        <a href="../intellij-live-templates.html" class="md-post__link">
-            IntelliJ IDEA Live Templates
-        </a>
-    </h2>
-
-    <div class="md-post__content md-typeset">
-        <p class="md-typeset">IntelliJ IDEA Live Templates You can download all below live templates as a file Download File You can place them inside your IntelliJ IDEA in ~/Li...</p>
-        <a href="../intellij-live-templates.html" class="read-more">
-            Read More <i class="icon-normal fa-solid fa-circle-arrow-right"></i>  <!-- Right Arrow Icon -->
-        </a>
-    </div>
-</article>
-      
-      
-        
-          
+<a class="link-sm" href="https://x.com/intent/tweet?text=Automating%20Maven%20Dependency%20Updates%0A&amp;url=https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html" target="_blank" title="Share on X"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6 379.4 396h-95.6L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5 78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></span> X (Twitter)</a>
+<a class="link-sm" href="https://www.facebook.com/sharer/sharer.php?u=https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html" target="_blank" title="Share on Facebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg></span> Facebook</a>
+<a class="link-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html" target="_blank" title="Share on LinkedIn"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg></span> LinkedIn</a>
+<a class="link-sm" href="https://www.reddit.com/submit?url=https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html&amp;title=Automating%20Maven%20Dependency%20Updates%0A" target="_blank" title="Share on Reddit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 256C0 114.6 114.6 0 256 0s256 114.6 256 256-114.6 256-256 256H37.1c-13.7 0-20.5-16.5-10.9-26.2L75 437C28.7 390.7 0 326.7 0 256m349.6-102.4c23.6 0 42.7-19.1 42.7-42.7s-19.1-42.7-42.7-42.7c-20.6 0-37.8 14.6-41.8 34-34.5 3.7-61.4 33-61.4 68.4v.2c-37.5 1.6-71.8 12.3-99 29.1-10.1-7.8-22.8-12.5-36.5-12.5-33 0-59.8 26.8-59.8 59.8 0 24 14.1 44.6 34.4 54.1 2 69.4 77.6 125.2 170.6 125.2s168.7-55.9 170.6-125.3c20.2-9.6 34.1-30.2 34.1-54 0-33-26.8-59.8-59.8-59.8-13.7 0-26.3 4.6-36.4 12.4-27.4-17-62.1-27.7-100-29.1v-.2c0-25.4 18.9-46.5 43.4-49.9 4.4 18.8 21.3 32.8 41.5 32.8zm-172.5 93.3c16.7 0 29.5 17.6 28.5 39.3s-13.5 29.6-30.3 29.6-31.4-8.8-30.4-30.5S160.3 247 177 247zm190.1 38.3c1 21.7-13.7 30.5-30.4 30.5s-29.3-7.9-30.3-29.6 11.8-39.3 28.5-39.3 31.2 16.6 32.1 38.3zm-48.1 56.7c-10.3 24.6-34.6 41.9-63 41.9s-52.7-17.3-63-41.9c-1.2-2.9.8-6.2 3.9-6.5 18.4-1.9 38.3-2.9 59.1-2.9s40.7 1 59.1 2.9c3.1.3 5.1 3.6 3.9 6.5"/></svg></span> reddit</a>
+<a class="link-sm" href="https://api.whatsapp.com/send?text=Automating%20Maven%20Dependency%20Updates%0A%20https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html" target="_blank" title="Share on WhatsApp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157m-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6m101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6"/></svg></span> WhatsApp</a>
+<a class="link-sm" href="https://news.ycombinator.com/submitlink?u=https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html&amp;t=Automating%20Maven%20Dependency%20Updates%0A" target="_blank" title="Share on Hacker News"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32v448h448V32zm21.2 197.2H21c.1-.1.2-.3.3-.4 0 .1 0 .3-.1.4m218 53.9V384h-31.4V281.3L128 128h37.3c52.5 98.3 49.2 101.2 59.3 125.6 12.3-27 5.8-24.4 60.6-125.6H320z"/></svg></span> Hacker News</a></p>
 
 
 
-<nav class="md-pagination">
+
+
+
+
   
-</nav>
-        
+  
+
+
+
+
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -1850,16 +2107,16 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.indexes", "navigation.instant.progress", "navigation.path", "header", "search.suggest", "search.share", "content.code.copy", "content.code.select", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.path", "navigation.top", "navigation.indexes", "navigation.instant.progress", "navigation.path", "header", "search.suggest", "search.share", "content.code.copy", "content.code.select", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../../assets/mkdocs_pagetree_plugin.js"></script>
+        <script src="../assets/mkdocs_pagetree_plugin.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
       
-        <script src="../../assets/javascripts/navigation-expand.js"></script>
+        <script src="../assets/javascripts/navigation-expand.js"></script>
       
     
   </body>
