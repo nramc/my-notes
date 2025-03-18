@@ -23,7 +23,10 @@ def on_page_markdown(markdown, **kwargs):
     page_title = urllib.parse.quote(page.title + '\n')
 
     return markdown + dedent(f"""
-    Share on: 
+    
+    ---
+    
+    <span style="font-size: 0.7em;">Did this post help you? Share on:</span>
     [:fontawesome-brands-square-x-twitter: X (Twitter)]({x_intent}?text={page_title}&url={page_url}){{ .link-sm target="_blank" title="Share on X" }}
     [:fontawesome-brands-facebook: Facebook]({fb_sharer}?u={page_url}){{ .link-sm target="_blank" title="Share on Facebook" }}
     [:fontawesome-brands-linkedin: LinkedIn]({linkedin_sharer}?url={page_url}){{ .link-sm target="_blank" title="Share on LinkedIn" }}
