@@ -17,11 +17,13 @@ links:
 # Conditionally Registering JUnit 5 Extensions
 
 **TL;DR**: JUnit 5 extensions can be registered statically with **@ExtendWith** or dynamically with **@RegisterExtension
-**, but both have drawbacks. **@ExtendWith** applies extensions unconditionally, while **@RegisterExtension** requires
-manual instantiation and lacks centralized control. A custom conditional extension resolver enables dynamic registration
-based on Spring profiles, environment variables, feature flags and so on, keeping test setups clean and efficient. Using
-a custom annotation (e.g. **@ExtendWithProfileCondition**), extensions load only when needed, improving test flexibility
-and maintainability.
+**, but both have drawbacks.
+**@ExtendWith** applies extensions unconditionally, while **@RegisterExtension** requires
+manual instantiation and lacks centralized control.
+A custom conditional extension resolver enables dynamic registration
+based on Spring profiles, environment variables, feature flags and so on, keeping test setups clean and efficient.
+By Using a custom annotation (e.g. **@ExtendWithProfileCondition**),
+extensions load only when needed and improve test flexibility and maintainability.
 
 ## Introduction
 
