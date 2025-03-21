@@ -16,7 +16,12 @@ links:
 
 # Conditionally Registering JUnit 5 Extensions
 
-**TL;DR**: JUnit 5 extensions can be registered statically with @ExtendWith or dynamically with @RegisterExtension, but both have drawbacks. @ExtendWith applies extensions unconditionally, while @RegisterExtension requires manual instantiation and lacks centralized control. A conditional extension resolver enables dynamic registration based on Spring profiles, environment variables, or feature flags, keeping test setups clean and efficient. Using a custom annotation (@ExtendWithProfileCondition), extensions load only when needed, improving test flexibility and maintainability.
+**TL;DR**: JUnit 5 extensions can be registered statically with **@ExtendWith** or dynamically with **@RegisterExtension
+**, but both have drawbacks. **@ExtendWith** applies extensions unconditionally, while **@RegisterExtension** requires
+manual instantiation and lacks centralized control. A custom conditional extension resolver enables dynamic registration
+based on Spring profiles, environment variables, feature flags and so on, keeping test setups clean and efficient. Using
+a custom annotation (e.g. **@ExtendWithProfileCondition**), extensions load only when needed, improving test flexibility
+and maintainability.
 
 ## Introduction
 
@@ -155,7 +160,6 @@ public abstract class AbstractConditionalExtensionResolver implements BeforeAllC
     }
 
 }
-
 ```
 
 - The `handler()` method must be implemented by custom resolvers to evaluate conditions and register extensions
@@ -164,6 +168,8 @@ public abstract class AbstractConditionalExtensionResolver implements BeforeAllC
 ## Resolver for Spring Profiles
 
 **Define the conditional extension annotation**
+The Custom annotation `@ExtendWithProfileCondition` is used
+to specify the profiles and extensions to be registered based on the active Spring profiles:
 
 ```java
 
@@ -180,7 +186,8 @@ public @interface ExtendWithProfileCondition {
 
 **Implement the Conditional Extension Resolver**
 
-The resolver checks the specified conditions and applies the extensions if they match:
+The resolver checks the specified spring profiles and activates the extensions only if the active profiles match with
+any of the specified profiles:
 
 ```java
 
@@ -216,7 +223,8 @@ public class ExtendWithProfileConditionResolver extends AbstractConditionalExten
 
 **Use the Conditional Extension Registration in Tests**
 
-Now, we can use our conditional extension mechanism in tests:
+Now, we can use the `@ExtendWithProfileCondition` annotation to conditionally register extensions based on the active
+Spring profiles:
 
 ```java
 
@@ -226,19 +234,19 @@ Now, we can use our conditional extension mechanism in tests:
 class MyConditionalTest {
 
     @Test
-    void myTestCase() {
+    void myTestCase1() {
         System.out.println("MyBeforeEachExtension & MyBeforeAllExtension executed only when spring profile 'dev' activated!");
     }
 
     @Test
     @ExtendWithProfileCondition(profiles = {"prod", "dev"}, extensions = {MyBeforeEachMethodExtension.class})
-    void myTestCase() {
+    void myTestCase2() {
         System.out.println("MyBeforeEachMethodExtension executed only when spring profile either 'dev' or 'prod' activated!");
     }
 
     @Test
     @ExtendWithProfileCondition(profiles = "dev", extensions = {MyBeforeTestMethodExtension.class})
-    void myHelloWorld_2() {
+    void myTestCase3() {
         System.out.println("MyBeforeTestMethodExtension executed only when spring profile 'dev' activated!");
     }
 }
@@ -248,40 +256,185 @@ class MyConditionalTest {
 
 **Define the conditional extension annotation**
 
+The Custom annotation `@ExtendWithEnvCondition` is used to specify the environment variables and extensions to be
+registered based on the active environment variables:
+
 ```java
 
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.TYPE})
+@ExtendWith(ExtendWithEnvConditionResolver.class)
+public @interface ExtendWithEnvCondition {
+
+    String[] variables() default {};
+
+    Class<? extends Extension>[] extensions() default {};
+}
 ```
 
 **Implement the Conditional Extension Resolver**
 
+The resolver checks the specified environment variables and activates the extensions only if the active environment
+variables match with any of the specified environment variables:
+
 ```java
 
+@Slf4j
+public class ExtendWithEnvConditionResolver extends AbstractConditionalExtensionResolver {
+
+    @Override
+    public void handler(ExtensionContext context, Class<? extends Extension> callbackClass) {
+        Stream.of(context.getTestClass(), context.getTestMethod())
+                .flatMap(Optional::stream)
+                .map(element -> element.getAnnotation(ExtendWithEnvironmentVariableCondition.class))
+                .filter(Objects::nonNull)
+                .forEach(annotation -> evaluateConditionAndInvokeExtensions(context, annotation, callbackClass));
+    }
+
+    private void evaluateConditionAndInvokeExtensions(ExtensionContext context, ExtendWithEnvironmentVariableCondition extendWith, Class<? extends Extension> targetExtensionType) {
+        if (evaluateCondition(extendWith)) {
+            log.debug("Condition met for env variables:[{}] Registering extensions:[{}]", Arrays.toString(extendWith.variables()), extendWith.extensions());
+            invokeExtensionsIfApplicable(context, extendWith.extensions(), targetExtensionType);
+        } else {
+            log.debug("Condition not met for env variables:[{}]. Skipping extensions.", Arrays.toString(extendWith.variables()));
+        }
+    }
+
+    private boolean evaluateCondition(ExtendWithEnvironmentVariableCondition extendWith) {
+        if (ArrayUtils.isEmpty(extendWith.variables())) {
+            return true;
+        }
+
+        return Arrays.stream(extendWith.variables())
+                .map(variable -> variable.split("="))
+                .anyMatch(keyValueEntry -> System.getenv(keyValueEntry[0]).equals(keyValueEntry[1]));
+    }
+
+}
 ```
 
 **Use the Conditional Extension Registration in Tests**
 
+Now, we can use the `@ExtendWithEnvCondition` annotation to conditionally register extensions based on the active
+environment variables:
+
 ```java
 
+@ExtendWithEnvCondition(variables = {"ENV_TEST_TYPE=SMOOTH", "ENV_TEST_TYPE=ROUGH"}, extensions = {MyBeforeEachExtension.class, MyBeforeAllExtension.class})
+class MyConditionalTest {
+
+    @Test
+    void myTestCase1() {
+        System.out.println("MyBeforeEachExtension & MyBeforeAllExtension executed only when environment variable ENV_TEST_TYPE either 'SMOOTH' or 'ROUGH'");
+    }
+
+    @Test
+    @ExtendWithEnvCondition(variables = {"ENV_TEST_TYPE=SMOOTH"}, extensions = {MyBeforeEachMethodExtension.class})
+    void myTestCase2() {
+        System.out.println("MyBeforeEachMethodExtension executed only when env variable ENV_TEST_TYPE is 'SMOOTH'");
+    }
+
+    @Test
+    @ExtendWithEnvCondition(variables = {"ENV_TEST_TYPE=ROUGH"}, extensions = {MyBeforeEachMethodExtension.class})
+    void myTestCase3() {
+        System.out.println("MyBeforeEachMethodExtension executed only when env variable ENV_TEST_TYPE is 'ROUGH'");
+    }
+}
 ```
 
 ## Resolver for Feature Flags
 
 **Define the conditional extension annotation**
 
+The Custom annotation `@ExtendWithFeatureFlagCondition` is used
+to specify the feature flags and extensions to be registered based on the active feature flags:
+
 ```java
 
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.TYPE})
+@ExtendWith(ExtendWithFeatureFlagConditionResolver.class)
+public @interface ExtendWithFeatureFlagCondition {
+
+    String[] property() default {};
+
+    Class<? extends Extension>[] extensions() default {};
+}
 ```
 
 **Implement the Conditional Extension Resolver**
 
+The resolver checks the specified feature flags and activates the extensions only if the feature flags are enabled,
+i.e., the property value is true:
+
+**Note**: Below implementation uses Spring application context.
+If you are not using Spring, you can replace it with your own implementation to get the environment properties.
+
 ```java
 
+@Slf4j
+public class ExtendWithFeatureFlagConditionResolver extends AbstractConditionalExtensionResolver {
+
+    @Override
+    public void handler(ExtensionContext context, Class<? extends Extension> callbackClass) {
+        Stream.of(context.getTestClass(), context.getTestMethod())
+                .flatMap(Optional::stream)
+                .map(element -> element.getAnnotation(ExtendWithFeatureFlagCondition.class))
+                .filter(Objects::nonNull)
+                .forEach(annotation -> evaluateConditionAndInvokeExtensions(context, annotation, callbackClass));
+    }
+
+    private void evaluateConditionAndInvokeExtensions(ExtensionContext context, ExtendWithFeatureFlagCondition extendWith, Class<? extends Extension> targetExtensionType) {
+        if (evaluateCondition(context, extendWith)) {
+            log.debug("Condition met for feature:[{}] Registering extensions:[{}]", Arrays.toString(extendWith.property()), extendWith.extensions());
+            invokeExtensionsIfApplicable(context, extendWith.extensions(), targetExtensionType);
+        } else {
+            log.debug("Condition not met for feature:[{}]. Skipping extensions.", Arrays.toString(extendWith.property()));
+        }
+    }
+
+    private boolean evaluateCondition(ExtensionContext context, ExtendWithFeatureFlagCondition extendWith) {
+        if (ArrayUtils.isEmpty(extendWith.property())) {
+            return true;
+        }
+
+        Environment environment = SpringExtension.getApplicationContext(context).getEnvironment();
+        return Arrays.stream(extendWith.property())
+                .anyMatch(property -> environment.getProperty(property, Boolean.class, false));
+    }
+
+}
 ```
 
 **Use the Conditional Extension Registration in Tests**
 
+Now, we can use the `@ExtendWithFeatureFlagCondition` annotation to conditionally register extensions based on the
+active feature:
+
 ```java
 
+@ExtendWith(SpringExtension.class)
+@TestPropertySource(properties = {"feature.one.enabled=true", "feature.two.enabled=true"})
+@ExtendWithFeatureFlagCondition(property = {"feature.one.enabled", "feature.two.enabled"}, extensions = {MyBeforeEachExtension.class, MyBeforeAllExtension.class})
+class MyConditionalTest {
+
+    @Test
+    void myTestCase1() {
+        System.out.println("MyBeforeEachExtension & MyBeforeAllExtension executed only when either feature.one or feature.two is enabled!");
+    }
+
+    @Test
+    @ExtendWithFeatureFlagCondition(property = {"feature.one.enabled"}, extensions = {MyBeforeEachMethodExtension.class})
+    void myTestCase2() {
+        System.out.println("MyBeforeEachMethodExtension executed only when feature.one is enabled!");
+    }
+
+    @Test
+    @ExtendWithFeatureFlagCondition(property = {"feature.two.enabled"}, extensions = {MyBeforeEachMethodExtension.class})
+    void myTestCase3() {
+        System.out.println("MyBeforeEachMethodExtension executed only when feature.two is enabled!");
+    }
+}
 ```
 
 ## **Conclusion**
