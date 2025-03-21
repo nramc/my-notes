@@ -2,134 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://nramc.github.io/my-notes/index.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/about.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/table-of-index.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/tags.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/index.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/http-client-intellij-plugin.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/intellij-live-templates.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/new-java-application-checklist.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/open-rewrite.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/jacoco-exclude-code-with-annotation.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://nramc.github.io/my-notes/blog/junit-extension-conditional-execution.html</loc>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/career/feedback-template.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/code-health-improvements.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/data-quality.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/documentation-improvements.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/improvements/web-application-improvements.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/email-templates.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/java-notes.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/validations.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/development/local-development.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/java/development/workstation-tools.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/kubernetes/logs-verification.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/kubernetes/useful-commands.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/security/password-security.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/security/penetration-testing.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/security/secure-coding.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/testings/automation-tips.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/testings/intellij-testing-tools.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/category/java.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/category/workstation-setup.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/category/guideline.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/category/testing.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
     <url>
          <loc>https://nramc.github.io/my-notes/blog/category/automation.html</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-21</lastmod>
     </url>
 </urlset>
