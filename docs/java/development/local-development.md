@@ -6,8 +6,7 @@ categories:
   - Workstation Setup
 tags:
   - Productivity
-  - Workstation Setup 
-  - latest
+  - Workstation Setup
 ---
 
 # Local Development Essentials

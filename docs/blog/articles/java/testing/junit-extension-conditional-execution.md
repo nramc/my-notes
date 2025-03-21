@@ -10,6 +10,7 @@ tags:
   - Java
   - Testing
   - Junit
+  - latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
