@@ -20,7 +20,6 @@
     list-style: none;
     padding: 0;
     font-size: 0.65rem;
-    color: #555;
 }
 
 .md-meta__item {
@@ -40,7 +39,7 @@
 /* Post content styling */
 .md-post__content {
     line-height: 1.8;
-    color: #333;
+    color: var(--md-typeset-color);
 }
 
 /* Excerpt styling */
@@ -52,9 +51,12 @@
     display: block;
 }
 
+.md-post--excerpt .md-post-description {
+    font-size: 0.75rem !important;
+}
+
 .md-post__content .read-more {
-    font-size: 16px;
-    font-weight: normal;
+    font-weight: bold;
 }
 .icon-normal {
     height: 16px !important;
