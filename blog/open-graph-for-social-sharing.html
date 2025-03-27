@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Enhance user experience and navigation with deep links in your web applications">
+        <meta name="description" content="A Developer's Guide to Open Graph: Enhancing Content for Social Media">
       
       
         <meta name="author" content="Ramachandran Nellaiyappan">
       
       
-        <link rel="canonical" href="https://nramc.github.io/my-notes/blog/deep-links.html">
+        <link rel="canonical" href="https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html">
       
       
-        <link rel="prev" href="junit-extension-conditional-execution.html">
+        <link rel="prev" href="deep-links.html">
       
-      
-        <link rel="next" href="open-graph-for-social-sharing.html">
       
       
       <link rel="icon" href="../assets/logo/favicon.svg">
@@ -26,7 +24,7 @@
     
     
       
-        <title>Maximizing Web Application Usability with Deep Links - My Notes</title>
+        <title>Optimizing Social Media Sharing with Open Graph Meta Tags - My Notes</title>
       
     
     
@@ -69,11 +67,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Maximizing Web Application Usability with Deep Links - My Notes" >
+        <meta  property="og:title"  content="Optimizing Social Media Sharing with Open Graph Meta Tags - My Notes" >
       
-        <meta  property="og:description"  content="Enhance user experience and navigation with deep links in your web applications" >
+        <meta  property="og:description"  content="A Developer's Guide to Open Graph: Enhancing Content for Social Media" >
       
-        <meta  property="og:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/articles/web-application/deep-links.png" >
+        <meta  property="og:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/articles/web-application/open-graph-for-social-sharing.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +79,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://nramc.github.io/my-notes/blog/deep-links.html" >
+        <meta  property="og:url"  content="https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Maximizing Web Application Usability with Deep Links - My Notes" >
+        <meta  name="twitter:title"  content="Optimizing Social Media Sharing with Open Graph Meta Tags - My Notes" >
       
-        <meta  name="twitter:description"  content="Enhance user experience and navigation with deep links in your web applications" >
+        <meta  name="twitter:description"  content="A Developer's Guide to Open Graph: Enhancing Content for Social Media" >
       
-        <meta  name="twitter:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/articles/web-application/deep-links.png" >
+        <meta  name="twitter:image"  content="https://nramc.github.io/my-notes/assets/images/social/blog/articles/web-application/open-graph-for-social-sharing.png" >
       
     
     
@@ -112,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maximizing-web-application-usability-with-deep-links" class="md-skip">
+        <a href="#optimizing-social-media-sharing-with-open-graph-meta-tags" class="md-skip">
           Skip to content
         </a>
       
@@ -146,7 +144,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Maximizing Web Application Usability with Deep Links
+              Optimizing Social Media Sharing with Open Graph Meta Tags
             
           </span>
         </div>
@@ -1672,45 +1670,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-deep-links" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      What Are Deep Links?
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-do-we-need-deep-links" class="md-nav__link">
+  <a href="#what-is-open-graph" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Do We Need Deep Links?
+      What is Open Graph?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-components-of-a-deep-link" class="md-nav__link">
+  <a href="#why-should-you-implement-open-graph" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Components of a Deep Link
+      Why Should You Implement Open Graph?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-strategies" class="md-nav__link">
+  <a href="#implementing-open-graph-meta-tags" class="md-nav__link">
     <span class="md-ellipsis">
-      Implementation Strategies
+      Implementing Open Graph Meta-Tags
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#thinks-to-consider-for-deep-links" class="md-nav__link">
+  <a href="#testing-open-graph-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Thinks to consider for Deep Links
+      Testing Open Graph Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-open-graph-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Open Graph Tags
     </span>
   </a>
   
@@ -1762,7 +1769,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-03-27 00:00:00+00:00" class="md-ellipsis">27 Mar 2025</time>
+                        <time datetime="2025-03-28 00:00:00+00:00" class="md-ellipsis">28 Mar 2025</time>
                       </div>
                     </li>
                     
@@ -1847,19 +1854,19 @@
       
       
       
-        <a href="../tags.html#tag:improvement" class="md-tag">Improvement</a>
+        <span class="md-tag">Improvement</span>
       
     
       
       
       
-        <a href="../tags.html#tag:uiux" class="md-tag">UI/UX</a>
+        <span class="md-tag">Web Application</span>
       
     
       
       
       
-        <a href="../tags.html#tag:web-application" class="md-tag">Web Application</a>
+        <a href="../index.html#tag:latest" class="md-tag">latest</a>
       
     
   </nav>
@@ -1869,135 +1876,97 @@
   
 
 
-<h1 id="maximizing-web-application-usability-with-deep-links">Maximizing Web Application Usability with Deep Links</h1>
-<p><strong>TL;DR:</strong> Deep links enable users to navigate directly to specific content within a web application, improving
-accessibility, engagement, and efficiency.</p>
-<hr />
-<h2 id="what-are-deep-links">What Are Deep Links?</h2>
-<p>Deep linking is a technique that allows users to navigate directly to specific content or sections within a web
-application. Unlike traditional links that simply open a homepage or landing page, deep links take users precisely where
-they need to go—whether accessed through search engines, shared links, or marketing campaigns—enhancing accessibility
-and user experience.</p>
-<h2 id="why-do-we-need-deep-links">Why Do We Need Deep Links?</h2>
-<ol>
-<li><strong>Enhanced User Experience</strong> – Deep links eliminate unnecessary navigation by directing users to relevant content
-   instantly.</li>
-<li><strong>Improved Engagement &amp; Retention</strong> – Users are more likely to engage with your application when they can quickly
-   find what they need.</li>
-<li><strong>Marketing &amp; SEO Benefits</strong> – Deep linking improves discoverability in search engines and supports targeted
-   campaigns.</li>
-<li><strong>Cross-Platform Consistency</strong> – Deep links can be used to create seamless transitions between web and mobile
-   applications.</li>
-</ol>
-<h2 id="key-components-of-a-deep-link">Key Components of a Deep Link</h2>
-<p>A well-structured deep link should contain the following:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Type</strong></td>
-<td>Defines the purpose (e.g., navigation, authentication, content access).</td>
-</tr>
-<tr>
-<td><strong>Expiry Date</strong></td>
-<td>Controls the validity of the deep link, ensuring security.</td>
-</tr>
-<tr>
-<td><strong>Create Date</strong></td>
-<td>Tracks when the deep link was generated.</td>
-</tr>
-<tr>
-<td><strong>Created By</strong></td>
-<td>Identifies the creator (user/system).</td>
-</tr>
-<tr>
-<td><strong>Short URL</strong></td>
-<td>A user-friendly, compact version of the original URL.</td>
-</tr>
-<tr>
-<td><strong>Original URL</strong></td>
-<td>The full-length target URL.</td>
-</tr>
-<tr>
-<td><strong>Visibility</strong></td>
-<td>Determines who can access the deep link (public, private, etc.).</td>
-</tr>
-<tr>
-<td><strong>Metadata</strong></td>
-<td>Additional information about the deep link (e.g., user, purpose).</td>
-</tr>
-</tbody>
-</table>
-<p>Example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Short URL: https://app.com/go/xyz123
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Original URL: https://app.com/dashboard?section=reports&amp;id=45
+<h1 id="optimizing-social-media-sharing-with-open-graph-meta-tags">Optimizing Social Media Sharing with Open Graph Meta Tags</h1>
+<p><a href="https://ogp.me/">Open Graph</a> meta-tags control how your content appears when shared on social media. Adding tags like
+og:title, og:description, and og:image in your HTML <head> improves link previews, boosts engagement, and enhances
+branding. Use high-quality images, concise titles, and validation tools like Facebook’s Debugger to ensure optimal
+display.</p>
+<h2 id="introduction">Introduction</h2>
+<p>In the age of social media, sharing content effectively is crucial for engagement and
+visibility. <a href="https://ogp.me/">Open Graph(OG)</a>, a protocol introduced by Facebook, allows developers to control how
+content appears when shared on platforms like Facebook, LinkedIn, and Twitter. By implementing Open Graph meta-tags,
+developers can ensure their content is visually appealing, accurately represented, and optimized for click-through
+rates.</p>
+<p>This article provides a comprehensive guide to Open Graph, covering its benefits, implementation, best practices, and
+debugging techniques.</p>
+<h2 id="what-is-open-graph">What is Open Graph?</h2>
+<p><a href="https://ogp.me/">Open Graph(OG)</a> is a set of meta-tags added to the <head> section of a webpage to define how the
+page's content appears when shared on social media platforms. These tags specify elements such as title, description,
+image, and type to create rich previews that attract user engagement.</p>
+<h2 id="why-should-you-implement-open-graph">Why Should You Implement Open Graph?</h2>
+<ul>
+<li><strong>Better Visual Presentation</strong>: Ensures that links shared on social media include rich, informative previews with
+  images and descriptions.</li>
+<li><strong>Increased Click-Through Rate (CTR)</strong>: A well-optimized OG setup makes links more appealing, encouraging users to
+  click.</li>
+<li><strong>Consistent Branding</strong>: Allows content creators/organization to define how their brand appears across social
+  networks.</li>
+<li><strong>SEO Benefits</strong>: While not a direct SEO factor, OG tags improve social traffic, which can contribute to overall
+  visibility and user engagement.</li>
+<li><strong>Cross-Platform Compatibility</strong>: Supported by major social media platforms like Facebook, Twitter, LinkedIn, and
+  Pinterest.</li>
+<li><strong>Control Over Content</strong>: Developers can specify the title, description, and image that appear when the content is
+  shared.</li>
+<li><strong>Accessibility</strong>: Rich previews make content more accessible to users with visual impairments.</li>
+</ul>
+<h2 id="implementing-open-graph-meta-tags">Implementing Open Graph Meta-Tags</h2>
+<p>To implement Open Graph meta-tags, add the following tags to the <head> section of your HTML document:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Optimizing Social Media Sharing with Open Graph Meta Tags&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;A Developer&#39;s Guide to Open Graph: Enhancing Content for Social Media&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://nramc.github.io/my-notes/assets/images/social/blog/articles/web-application/open-graph-for-social-sharing.png&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html&quot;</span><span class="p">/&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;website&quot;</span><span class="p">/&gt;</span>
 </span></code></pre></div>
-<h2 id="implementation-strategies">Implementation Strategies</h2>
-<pre class="mermaid"><code>flowchart TD
-    A[User/System Requests a Deep Link] --&gt; B[Generate Short URL]
-    B --&gt; C[Store in Database]
-
-    C --&gt;|Link shared with User| D[User Clicks Short URL]
-    D --&gt; E[Server Receives Request]
-    E --&gt; F[Lookup Short URL in Database]
-
-    F --&gt; G{Check Existence, Expiry &amp; Validity}
-    G --&gt;|Not Found| H[Redirect to Error Page]
-    G --&gt;|Expired| H
-    G --&gt;|Invalid| H
-
-    G --&gt;|Valid| J{Check Visibility &amp; Permissions}
-    J --&gt;|Not Authenticated| M[Redirect to Login Page]
-    M --&gt; N[User Logs In]
-    N --&gt; O[Revalidate Permissions]
-
-    J --&gt;|Authenticated| P{Check User Permissions}
-    O --&gt;|Authenticated| P
-
-    P --&gt;|Access Denied| Q[Show Access Denied Page]
-    P --&gt;|Access Granted| R[Redirect to Original URL]
-
-    R--&gt; S[Display Target Content]
-    R --&gt; T{Check type of Deep Link}
-    T --&gt;|One-Time Use| U[Mark as Used in Database]</code></pre>
-<h2 id="thinks-to-consider-for-deep-links">Thinks to consider for Deep Links</h2>
-<p><strong>Security Measures</strong></p>
+<h2 id="testing-open-graph-implementation">Testing Open Graph Implementation</h2>
+<p>To verify that your Open Graph tags are working correctly, use the following tools:</p>
 <ul>
-<li>Validate and sanitize input to prevent injection attacks.</li>
-<li>Avoid exposing sensitive data in URLs.</li>
-<li>Encrypt sensitive data in deep links.</li>
-<li>Use HTTPS to secure data transmission.</li>
-<li>Use secure shortening services to generate short URLs.</li>
-<li>Implement signed links (JWT-based or hash-based security).</li>
-<li>Implement access controls to restrict unauthorized access.</li>
-<li>Implement rate limiting to prevent abuse.</li>
-<li>Monitor and log deep link usage for auditing.</li>
-<li>Regularly review and update deep links to maintain security.</li>
+<li><a href="https://developers.facebook.com/tools/debug/">Facebook Sharing Debugger</a>: Checks and refreshes your OG data on
+  Facebook.</li>
+<li><a href="https://cards-dev.x.com/validator">Twitter Card Validator</a>: Previews how your content appears on Twitter.</li>
+<li><a href="https://www.linkedin.com/post-inspector/">LinkedIn Post Inspector</a>: Validates OG tags for LinkedIn sharing.</li>
 </ul>
-<p><strong>Performance Optimization</strong></p>
-<ul>
-<li>Optimize URL resolution for faster navigation.</li>
-<li>Cache frequently accessed deep links.</li>
-<li>Optimize URL resolution for faster redirection.</li>
-</ul>
+<p>Browser Developer Tools: Inspect meta-tags directly in the page source (View Page Source or Elements tab in DevTools).</p>
+<h2 id="best-practices-for-open-graph-tags">Best Practices for Open Graph Tags</h2>
+<ol>
+<li><strong>Use High-Quality Images</strong>: Ensure the <code>og:image</code> tag links to a properly sized and optimized image (recommended
+   minimum 1200x630 pixels).</li>
+<li><strong>Provide Accurate Titles &amp; Descriptions</strong>: Keep titles under 60 characters and descriptions under 200 characters for
+   optimal display.</li>
+<li><strong>Test Your Implementation</strong>: Use tools like Facebook’s Sharing Debugger to preview how your page will appear when
+   shared.</li>
+<li><strong>Include OG Tags in Every Page</strong>: Ensure that every page on your site includes Open Graph meta-tags for consistent
+   branding.</li>
+<li><strong>Update Tags Regularly</strong>: Keep your OG tags up-to-date to reflect changes in content, images, or descriptions.</li>
+<li><strong>Follow Platform-Specific Guidelines</strong>: Different platforms may have specific requirements or additional tags for
+   optimal sharing.</li>
+<li><strong>Monitor Performance</strong>: Track the performance of your shared links to identify trends and optimize your OG setup.</li>
+<li><strong>Consider Localization</strong>: Provide translations or localized content for international audiences to improve
+   engagement.</li>
+<li><strong>Comply with Platform Policies</strong>: Ensure your content meets the guidelines of each social media platform to avoid
+   penalties or restrictions.</li>
+<li><strong>Leverage OG Tags for Marketing</strong>: Use OG tags strategically to highlight key features, promotions, or
+    calls-to-action in your shared content.</li>
+</ol>
 <h2 id="conclusion">Conclusion</h2>
-<p>Deep links are a powerful tool for improving accessibility, engagement, and retention in web applications. Whether for
-marketing, seamless navigation, or enhancing user experience, implementing deep links ensures users reach the right
-content effortlessly. By integrating deep linking strategically, businesses can maximize their web application’s
-usability and effectiveness.</p>
+<p>Open Graph is an essential tool for developers looking to optimize content for social media. By implementing OG tags
+effectively, you can enhance visibility, drive engagement, and maintain control over how your content appears when
+shared. Stay updated with best practices and leverage debugging tools to ensure a seamless social sharing experience.</p>
+<p><strong>Further Reading</strong>:</p>
+<ul>
+<li><a href="https://ogp.me/">Open Graph Protocol</a></li>
+<li><a href="https://developers.facebook.com/docs/sharing/webmasters">Facebook Open Graph Documentation</a></li>
+<li><a href="https://cards-dev.twitter.com/validator">Twitter Card Validator</a></li>
+<li><a href="https://www.linkedin.com/post-inspector/">LinkedIn Post Inspector</a></li>
+</ul>
 <hr />
 <p><span style="font-size: 0.7em;">Did this post help you? Share on:</span>
-<a class="link-sm" href="https://x.com/intent/tweet?text=Maximizing%20Web%20Application%20Usability%20with%20Deep%20Links%0A&amp;url=https://nramc.github.io/my-notes/blog/deep-links.html" target="_blank" title="Share on X"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6 379.4 396h-95.6L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5 78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></span> X (Twitter)</a>
-<a class="link-sm" href="https://www.facebook.com/sharer/sharer.php?u=https://nramc.github.io/my-notes/blog/deep-links.html" target="_blank" title="Share on Facebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg></span> Facebook</a>
-<a class="link-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://nramc.github.io/my-notes/blog/deep-links.html" target="_blank" title="Share on LinkedIn"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg></span> LinkedIn</a>
-<a class="link-sm" href="https://www.reddit.com/submit?url=https://nramc.github.io/my-notes/blog/deep-links.html&amp;title=Maximizing%20Web%20Application%20Usability%20with%20Deep%20Links%0A" target="_blank" title="Share on Reddit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 256C0 114.6 114.6 0 256 0s256 114.6 256 256-114.6 256-256 256H37.1c-13.7 0-20.5-16.5-10.9-26.2L75 437C28.7 390.7 0 326.7 0 256m349.6-102.4c23.6 0 42.7-19.1 42.7-42.7s-19.1-42.7-42.7-42.7c-20.6 0-37.8 14.6-41.8 34-34.5 3.7-61.4 33-61.4 68.4v.2c-37.5 1.6-71.8 12.3-99 29.1-10.1-7.8-22.8-12.5-36.5-12.5-33 0-59.8 26.8-59.8 59.8 0 24 14.1 44.6 34.4 54.1 2 69.4 77.6 125.2 170.6 125.2s168.7-55.9 170.6-125.3c20.2-9.6 34.1-30.2 34.1-54 0-33-26.8-59.8-59.8-59.8-13.7 0-26.3 4.6-36.4 12.4-27.4-17-62.1-27.7-100-29.1v-.2c0-25.4 18.9-46.5 43.4-49.9 4.4 18.8 21.3 32.8 41.5 32.8zm-172.5 93.3c16.7 0 29.5 17.6 28.5 39.3s-13.5 29.6-30.3 29.6-31.4-8.8-30.4-30.5S160.3 247 177 247zm190.1 38.3c1 21.7-13.7 30.5-30.4 30.5s-29.3-7.9-30.3-29.6 11.8-39.3 28.5-39.3 31.2 16.6 32.1 38.3zm-48.1 56.7c-10.3 24.6-34.6 41.9-63 41.9s-52.7-17.3-63-41.9c-1.2-2.9.8-6.2 3.9-6.5 18.4-1.9 38.3-2.9 59.1-2.9s40.7 1 59.1 2.9c3.1.3 5.1 3.6 3.9 6.5"/></svg></span> reddit</a>
-<a class="link-sm" href="https://api.whatsapp.com/send?text=Maximizing%20Web%20Application%20Usability%20with%20Deep%20Links%0A%20https://nramc.github.io/my-notes/blog/deep-links.html" target="_blank" title="Share on WhatsApp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157m-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6m101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6"/></svg></span> WhatsApp</a>
-<a class="link-sm" href="https://news.ycombinator.com/submitlink?u=https://nramc.github.io/my-notes/blog/deep-links.html&amp;t=Maximizing%20Web%20Application%20Usability%20with%20Deep%20Links%0A" target="_blank" title="Share on Hacker News"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32v448h448V32zm21.2 197.2H21c.1-.1.2-.3.3-.4 0 .1 0 .3-.1.4m218 53.9V384h-31.4V281.3L128 128h37.3c52.5 98.3 49.2 101.2 59.3 125.6 12.3-27 5.8-24.4 60.6-125.6H320z"/></svg></span> Hacker News</a></p>
+<a class="link-sm" href="https://x.com/intent/tweet?text=Optimizing%20Social%20Media%20Sharing%20with%20Open%20Graph%20Meta%20Tags%0A&amp;url=https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html" target="_blank" title="Share on X"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6 379.4 396h-95.6L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5 78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg></span> X (Twitter)</a>
+<a class="link-sm" href="https://www.facebook.com/sharer/sharer.php?u=https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html" target="_blank" title="Share on Facebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg></span> Facebook</a>
+<a class="link-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html" target="_blank" title="Share on LinkedIn"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg></span> LinkedIn</a>
+<a class="link-sm" href="https://www.reddit.com/submit?url=https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html&amp;title=Optimizing%20Social%20Media%20Sharing%20with%20Open%20Graph%20Meta%20Tags%0A" target="_blank" title="Share on Reddit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 256C0 114.6 114.6 0 256 0s256 114.6 256 256-114.6 256-256 256H37.1c-13.7 0-20.5-16.5-10.9-26.2L75 437C28.7 390.7 0 326.7 0 256m349.6-102.4c23.6 0 42.7-19.1 42.7-42.7s-19.1-42.7-42.7-42.7c-20.6 0-37.8 14.6-41.8 34-34.5 3.7-61.4 33-61.4 68.4v.2c-37.5 1.6-71.8 12.3-99 29.1-10.1-7.8-22.8-12.5-36.5-12.5-33 0-59.8 26.8-59.8 59.8 0 24 14.1 44.6 34.4 54.1 2 69.4 77.6 125.2 170.6 125.2s168.7-55.9 170.6-125.3c20.2-9.6 34.1-30.2 34.1-54 0-33-26.8-59.8-59.8-59.8-13.7 0-26.3 4.6-36.4 12.4-27.4-17-62.1-27.7-100-29.1v-.2c0-25.4 18.9-46.5 43.4-49.9 4.4 18.8 21.3 32.8 41.5 32.8zm-172.5 93.3c16.7 0 29.5 17.6 28.5 39.3s-13.5 29.6-30.3 29.6-31.4-8.8-30.4-30.5S160.3 247 177 247zm190.1 38.3c1 21.7-13.7 30.5-30.4 30.5s-29.3-7.9-30.3-29.6 11.8-39.3 28.5-39.3 31.2 16.6 32.1 38.3zm-48.1 56.7c-10.3 24.6-34.6 41.9-63 41.9s-52.7-17.3-63-41.9c-1.2-2.9.8-6.2 3.9-6.5 18.4-1.9 38.3-2.9 59.1-2.9s40.7 1 59.1 2.9c3.1.3 5.1 3.6 3.9 6.5"/></svg></span> reddit</a>
+<a class="link-sm" href="https://api.whatsapp.com/send?text=Optimizing%20Social%20Media%20Sharing%20with%20Open%20Graph%20Meta%20Tags%0A%20https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html" target="_blank" title="Share on WhatsApp"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157m-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6m101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6"/></svg></span> WhatsApp</a>
+<a class="link-sm" href="https://news.ycombinator.com/submitlink?u=https://nramc.github.io/my-notes/blog/open-graph-for-social-sharing.html&amp;t=Optimizing%20Social%20Media%20Sharing%20with%20Open%20Graph%20Meta%20Tags%0A" target="_blank" title="Share on Hacker News"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32v448h448V32zm21.2 197.2H21c.1-.1.2-.3.3-.4 0 .1 0 .3-.1.4m218 53.9V384h-31.4V281.3L128 128h37.3c52.5 98.3 49.2 101.2 59.3 125.6 12.3-27 5.8-24.4 60.6-125.6H320z"/></svg></span> Hacker News</a></p>
 
 
 
