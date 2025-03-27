@@ -113,16 +113,16 @@ markdown_extensions:
 extra:
   generator: true
   social:
+    - icon: fontawesome/solid/user
+      link: https://nramc.github.io/my-profile/
     - icon: fontawesome/brands/github
       link: https://github.com/nramc
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/u/codewithram
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/ram_n_74
+    - icon: fontawesome/brands/square-x-twitter
+      link: https://x.com/ImRamachandranN
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ramachandran-nellaiyappan/
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:ramachandrannellai@gmail.com
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/codewithram
 
 nav:
   - Home:
