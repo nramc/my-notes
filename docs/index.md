@@ -11,4 +11,4 @@ The Ultimate Playbook for coding snippets, references, procedures and How-To art
 
 ## Recently Updated Pages
 
-<!-- material/tags { include: [latest] } -->
+<!-- material/tags { include: [Latest] } -->
