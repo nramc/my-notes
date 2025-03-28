@@ -7,9 +7,9 @@ date:
 categories:
   - Web Application
 tags:
-  - latest
   - Web Application
   - Improvement
+  - atest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 hide:

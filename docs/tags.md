@@ -10,4 +10,4 @@ This page lists all content organized by tags, helping us easily find related to
 together, allowing for quick navigation and discovery.
 
 
-<!-- material/tags { exclude: [latest] } -->
+<!-- material/tags -->
