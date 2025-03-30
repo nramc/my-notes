@@ -17,6 +17,12 @@ links:
 
 # Shift-Left Testing with Spring Boot and Testcontainers: A Conceptual Guide
 
+**TL;DR**: Shift-Left Testing is a software testing approach that emphasizes testing early in the development lifecycle.
+With Spring Boot and Testcontainers, developers can detect integration issues early by running tests in isolated
+environments during local development and CI/CD—instead of waiting for QA deployments. This approach ensures seamless
+service interactions, faster feedback, and more reliable releases, reducing late-stage surprises and improving software
+quality.
+
 ## Introduction
 
 In modern software development, testing early and often is crucial for delivering high-quality applications. [Shift-Left
@@ -160,10 +166,203 @@ graph LR;
 - **QA teams can focus on higher-level testing** (e.g., user acceptance testing) with confidence in the application’s
   stability.
 
+## Challenges & Solutions
+
+Implementing Shift-Left Testing strategy has some real time challenges;
+Spring Boot with Testcontainers can help us to overcome them:
+
+- **Maintaining Test Suite Consistency**: Ensuring test consistency across environments can be challenging.
+  Spring Boot profiles and Configurations ensure the same test used across local, CI/CD, and QA, maintaining
+  consistency.
+- **Managing Test Data Parity**: Inconsistent test data can lead to unreliable results.
+  Testcontainers ensures that tests run against real services, maintaining data parity across environments.
+- **Handling External Dependencies**: Testing real integrations instead of mocks can be challenging.
+  Testcontainers eliminates the need for mocks by providing actual services like databases, message brokers, ensuring
+  more realistic tests.
+- **Test Execution Time**: As the test suite grows, waiting for feedback can delay development.
+  Testcontainers enables quick feedback by spinning up real services in containers, reducing the time it takes to run
+  tests.
+- **Managing Infrastructure for Testing**: Setting up environments manually is time-consuming.
+  Testcontainers automates environment setup and teardown, ensuring a clean environment for each test and reducing
+  manual overhead.
+- **Flaky and Unstable Tests**: External dependencies and dynamic environments can cause flaky tests.
+  Testcontainers provides stable, isolated environments, minimizing the risk of flaky tests.
+- **Parallel Test Execution**: Running tests concurrently can cause resource conflicts if not properly isolated.
+  Testcontainers provides an isolated application environment (via a container) for the entire suite, ensuring tests
+  interact with a consistent setup without conflicting resources, even when tests run in parallel.
+- **Ensuring Environment Parity**: Differences between environments can cause surprises. Testcontainers ensures
+  consistency between local, CI/CD, and QA environments by using the same containerized services.
+- **Database State Management**: Ensuring databases are properly seeded,
+  cleaned up between test runs to avoid inconsistent results.
+  Testcontainers helps by spinning up fresh, isolated databases for each test session, ensuring a
+  clean state before each test and preventing data leakage between tests.
+
 ---
 
-## Setting Up Spring Boot with Testcontainers
-todo
+## Implementation
+
+!!! note "Tip"
+
+    It is highly recommended to create a separate Maven module for integration and end-to-end tests.
+    This approach helps differentiate these tests from unit tests and improves maintainability by keeping the testing code organized.
+    It also allows you to configure and manage dependencies specific to integration testing without interfering with the unit test setup.
+
+Implementing Shift-Left Testing with Spring Boot and Testcontainers involves the following steps:
+
+1. Setting Up Isolated Test Environment
+2. Writing Test
+3. Running Test Locally
+4. Running Test in CI/CD Pipeline
+5. Running Test in QA Environment
+
+**1. Setting Up Isolated Test Environment**
+
+Test environment setup is crucial for Shift-Left Testing.
+For a consistent test environment, Testcontainers is used to spin up real external dependencies like databases and
+message brokers in isolated Docker containers.
+For external HTTP services, WireMock simulates API interactions, enabling tests to run against realistic service
+behaviors without relying on third-party systems.
+Together, these tools ensure accurate, reproducible tests in a controlled environment.
+
+The following diagram illustrates the setup of an isolated test environment using Spring Boot, Testcontainers, and
+WireMock:
+
+```mermaid
+graph LR;
+    subgraph "Isolated Test Environment"
+        A[Spring Boot Application] --> B[Testcontainers]
+        B --> C[External Dependencies such as DB, Redis, Kafka, etc.]
+        A --> D[WireMock]
+        D --> E[External Services HTTP APIs]
+    end
+    F[Tests] --> |Verify| A
+
+    style A fill:#90ee90,stroke:#333,stroke-width:2px  
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#ffeb3b,stroke:#333,stroke-width:2px
+```
+
+To set up an isolated test environment using SpringBoot and Testcontainers,
+first you need to add below dependencies to your project:
+
+```xml
+
+<dependencies>
+    ...
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.wiremock</groupId>
+        <artifactId>wiremock-standalone</artifactId>
+        <scope>test</scope>
+    </dependency>
+    ...
+</dependencies>
+```
+
+Next, you need to create a main class which serves as the entry point for running the Spring Boot application
+with Testcontainers during integration testing. It overrides the default application context by using
+`SpringApplication.from()` to load the main application and combines it with a custom `TestContainerConfig` class, which
+configures the necessary containers for the test environment. This setup allows integration tests to run with real
+external dependencies managed by Testcontainers.
+
+```java
+
+public class IntegrationTestApplication {
+    public static void main(String[] args) {
+        SpringApplication.from(Application::main)
+                .with(TestContainerConfig.class)
+                .run(args);
+    }
+}
+
+```
+
+The `TestContainerConfig` class configures the Testcontainers to spin up real external dependencies like databases,
+message brokers, and other services required for integration testing.
+The `@ServiceConnection` Spring Boot annotation initializes the Testcontainers for the specified service, ensuring that
+the container is started before the application context is loaded and inject .
+
+```java
+
+@TestConfiguration(proxyBeanMethods = false)
+public class TestContainerConfig {
+
+    @Bean
+    @ServiceConnection
+    public ConfluentKafkaContainer kafkaContainer() {
+        return new ConfluentKafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.4.0")).withReuse(true);
+    }
+
+    @Bean
+    @ServiceConnection
+    public MongoDBContainer mongoDBContainer() {
+        return new MongoDBContainer(DockerImageName.parse("mongo:latest"))
+                .withExposedPorts(27017)
+                .withReuse(true);
+    }
+
+}
+```
+
+Next, you need to add Spring Boot mave plugin with configuration to start and stop isolated test application.
+Pre-integration-test phase is used to start the test application and post-integration-test phase is used to stop the
+test application.
+
+```xml
+
+<plugins>
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>pre-integration-test</id>
+                <goals>
+                    <goal>start</goal>
+                </goals>
+                <phase>pre-integration-test</phase>
+                <configuration>
+                    <mainClass>
+                        com.github.nramc.dev.journey.api.testing.integration.application.IntegrationTestApplication
+                    </mainClass>
+                    <profiles>${integration.application.spring.profiles}</profiles>
+                </configuration>
+            </execution>
+            <execution>
+                <id>post-integration-test</id>
+                <goals>
+                    <goal>stop</goal>
+                </goals>
+                <phase>post-integration-test</phase>
+            </execution>
+        </executions>
+        <configuration>
+            <!-- Additional classpath added to look for customized main class for integration application -->
+            <useTestClasspath>true</useTestClasspath>
+        </configuration>
+    </plugin>
+</plugins>
+```
+
+### Writing Test
+
+!!! tip "Tip: Use JUnit 5 and Spring TestContext Framework"
+
+    If you're interested in writing reusable logic for your tests, especially when actions need to be **conditionally** executed, you can leverage JUnit Extensions, as described in [**this article on JUnit Extension Conditional Execution**](https://nramc.github.io/my-notes/blog/junit-extension-conditional-execution.html). It explains how to conditionally perform actions based on factors like **Spring profiles**, **environment variables**, or **feature flags**. 
+
+### Running Test Locally
+
+### Running Test in CI/CD Pipeline
+
+### Running Test in QA Environment
+
 ---
 
 ## Best Practices for Shift-Left Testing
