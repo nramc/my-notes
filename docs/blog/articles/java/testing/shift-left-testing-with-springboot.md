@@ -242,7 +242,7 @@ graph LR;
     style C fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
     style D fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
     style E fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
-    style F fill:#7B68EE,stroke:#333,stroke-width:2px,font-weight:bold
+    style F stroke:#333,stroke-width:2px,font-weight:bold
 ```
 
 To set up an isolated test environment using SpringBoot and Testcontainers,
