@@ -237,12 +237,12 @@ graph LR;
     end
     F[Tests] --> |Verify| A
 
-    style A fill:#90ee90,stroke:#333,stroke-width:2px  
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#ffeb3b,stroke:#333,stroke-width:2px
+    style A fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
+    style B fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
+    style C fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
+    style D fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
+    style E fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
+    style F fill:#7B68EE,stroke:#333,stroke-width:2px,font-weight:bold
 ```
 
 To set up an isolated test environment using SpringBoot and Testcontainers,
