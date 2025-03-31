@@ -251,6 +251,12 @@ first you need to add below dependencies to your project:
 ```xml
 
 <dependencies>
+    <!-- remember to add your source module dependency if it is a multi-module project.  -->
+    <dependency>
+        <groupId>com.github.nramc.dev.journey</groupId>
+        <artifactId>journey-api-web</artifactId>
+        <version>${project.version}</version>
+    </dependency>
     ...
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -262,6 +268,19 @@ first you need to add below dependencies to your project:
         <artifactId>wiremock-standalone</artifactId>
         <scope>test</scope>
     </dependency>
+
+    <!-- preferred api client for testing -->
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+    </dependency>
+
+    <!-- preferred reporting tool   -->
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-rest-assured</artifactId>
+    </dependency>
+
     ...
 </dependencies>
 ```
@@ -284,10 +303,16 @@ public class IntegrationTestApplication {
 
 ```
 
+**Managing Testcontainers Configuration**
+
+Testcontainers can be configured in two ways, depending on project needs:
+
+1. Using TestContainerConfig.java (Programmatic Approach)
+
 The `TestContainerConfig` class configures the Testcontainers to spin up real external dependencies like databases,
 message brokers, and other services required for integration testing.
 The `@ServiceConnection` Spring Boot annotation initializes the Testcontainers for the specified service, ensuring that
-the container is started before the application context is loaded and inject .
+the container is started before the application context is loaded and inject.
 
 ```java
 
@@ -311,7 +336,78 @@ public class TestContainerConfig {
 }
 ```
 
-Next, you need to add Spring Boot mave plugin with configuration to start and stop isolated test application.
+2. Using docker-compose.yml (Declarative Approach)
+
+Define services in a YAML file for consistency across environments.
+
+```yaml
+version: '3.8'
+services:
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+  mongodb:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodb_user
+      - MONGO_INITDB_ROOT_PASSWORD=mongodb_pwd
+
+```
+
+if you choose to use the declarative approach, then remember to add springboot docker compose dependency which takes
+care of staring and stopping container before application start-up.
+
+```xml
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-docker-compose</artifactId>
+</dependency>
+```
+
+Next, you need to define a spring profile for integration testing example `integration` and specify all relevant
+configurations in either `application.yml` file or dedicated `application-integration.yml`.
+
+```yml
+spring:
+  mail:
+    username: noreply@journey.com
+    password: test-password
+    host: localhost
+    port: 1025
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
+      mail.smtp.starttls.required: false
+
+service:
+  cloudinary:
+    api-key: dummy-integration-test-api-key
+    api-secret: dummy-integration-test-api-secret
+    cloud-name: integration-test-cloud-name
+    additional-properties:
+      upload_preset: journey_integration_test
+      # Wiremock URL for Cloudinary API stub
+      upload_prefix: http://localhost:8090/cloudinary/api/
+
+```
+
+**Note**: If you check carefully, the above configuration does not include Database and Kafka configurations.
+This is because `spring-boot-docker-compose` automatically fetch container details and inject them into spring context.
+
+You can start the application by running the `IntegrationTestApplication` class with spring profile `integration`.
+This will start the Spring Boot application with specified Testcontainers.
+
+Next, to start and stop application automatically as part of maven lifecycle, you need to add Spring Boot mave plugin
+with configuration.
 Pre-integration-test phase is used to start the test application and post-integration-test phase is used to stop the
 test application.
 
@@ -332,7 +428,7 @@ test application.
                     <mainClass>
                         com.github.nramc.dev.journey.api.testing.integration.application.IntegrationTestApplication
                     </mainClass>
-                    <profiles>${integration.application.spring.profiles}</profiles>
+                    <profiles>integration</profiles>
                 </configuration>
             </execution>
             <execution>
