@@ -1,9 +1,9 @@
 ---
-title: "Shift-Left Testing with Spring Boot and Testcontainers"
+title: "Shift-Left Testing with Spring Boot and Testcontainers - A Comprehensive Guide"
 description: "Reduce late-stage bugs! Use Spring Boot and Testcontainers to shift-left testing and validate integrations early."
 author: Ramachandran Nellaiyappan
 date:
-  created: 2025-03-30
+  created: 2025-04-04
 categories:
   - Testing
 tags:
@@ -11,17 +11,20 @@ tags:
   - Spring Boot
   - Testcontainers
   - Testing
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
 
-# Shift-Left Testing with Spring Boot and Testcontainers: A Conceptual Guide
+# Shift-Left Testing with Spring Boot and Testcontainers: A Comprehensive Guide
 
 **TL;DR**: Shift-Left Testing is a software testing approach that emphasizes testing early in the development lifecycle.
 With Spring Boot and Testcontainers, developers can detect integration issues early by running tests in isolated
 environments during local development and CI/CD—instead of waiting for QA deployments. This approach ensures seamless
 service interactions, faster feedback, and more reliable releases, reducing late-stage surprises and improving software
 quality.
+
+Inspiration & Credits: [Shift Lift Testing](https://www.ibm.com/think/topics/shift-left-testing)
 
 ## Introduction
 
@@ -91,7 +94,7 @@ pipelines, and QA environments, you maintain consistency and reduce surprises.
 ✅ **Enhancing End-to-End Testing** – Testcontainers can be used to test end-to-end scenarios involving multiple
 services, databases, and external dependencies in isolated environment.
 
-### With Spring Boot support
+### With Spring Boot
 
 [Spring Boot](https://spring.io/projects/spring-boot) is a popular Java framework that simplifies the development of
 standalone, production-ready applications.
@@ -237,11 +240,11 @@ graph LR;
     end
     F[Tests] --> |Verify| A
 
-    style A fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
-    style B fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
-    style C fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
-    style D fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
-    style E fill:#1E90FF,stroke:#333,stroke-width:2px,font-weight:bold
+    style A stroke:#333,stroke-width:2px,font-weight:bold
+    style B stroke:#333,stroke-width:2px,font-weight:bold
+    style C stroke:#333,stroke-width:2px,font-weight:bold
+    style D stroke:#333,stroke-width:2px,font-weight:bold
+    style E stroke:#333,stroke-width:2px,font-weight:bold
     style F stroke:#333,stroke-width:2px,font-weight:bold
 ```
 
@@ -293,7 +296,7 @@ external dependencies managed by Testcontainers.
 
 ```java
 
-public class IntegrationTestApplication {
+public class IntegrationApplication {
     public static void main(String[] args) {
         SpringApplication.from(Application::main)
                 .with(TestContainerConfig.class)
@@ -307,7 +310,7 @@ public class IntegrationTestApplication {
 
 Testcontainers can be configured in two ways, depending on project needs:
 
-1. Using TestContainerConfig.java (Programmatic Approach)
+**Using TestContainerConfig.java (Programmatic Approach)**
 
 The `TestContainerConfig` class configures the Testcontainers to spin up real external dependencies like databases,
 message brokers, and other services required for integration testing.
@@ -336,7 +339,7 @@ public class TestContainerConfig {
 }
 ```
 
-2. Using docker-compose.yml (Declarative Approach)
+**Using docker-compose.yml (Declarative Approach)**
 
 Define services in a YAML file for consistency across environments.
 
@@ -403,7 +406,7 @@ service:
 **Note**: If you check carefully, the above configuration does not include Database and Kafka configurations.
 This is because `spring-boot-docker-compose` automatically fetch container details and inject them into spring context.
 
-You can start the application by running the `IntegrationTestApplication` class with spring profile `integration`.
+You can start the application by running the `IntegrationApplication` class with spring profile `integration`.
 This will start the Spring Boot application with specified Testcontainers.
 
 Next, to start and stop application automatically as part of maven lifecycle, you need to add Spring Boot mave plugin
@@ -426,7 +429,7 @@ test application.
                 <phase>pre-integration-test</phase>
                 <configuration>
                     <mainClass>
-                        com.github.nramc.dev.journey.api.testing.integration.application.IntegrationTestApplication
+                        com.github.nramc.dev.journey.api.testing.integration.application.IntegrationApplication
                     </mainClass>
                     <profiles>integration</profiles>
                 </configuration>
@@ -447,17 +450,196 @@ test application.
 </plugins>
 ```
 
+!!! note "Add test classpath to maven plugin configuration"
+
+    - The `useTestClasspath` configuration ensures that the test classpath is included in the Maven plugin configuration.
+      This allows the plugin to locate the customized main class for the integration application.
+    - The `additionalClasspathElement` configuration can be used to specify additional classpath elements, ensuring that the plugin finds the   main class.
+
 ### Writing Test
 
 !!! tip "Tip: Use JUnit 5 and Spring TestContext Framework"
 
     If you're interested in writing reusable logic for your tests, especially when actions need to be **conditionally** executed, you can leverage JUnit Extensions, as described in [**this article on JUnit Extension Conditional Execution**](https://nramc.github.io/my-notes/blog/junit-extension-conditional-execution.html). It explains how to conditionally perform actions based on factors like **Spring profiles**, **environment variables**, or **feature flags**. 
 
+Next, Let's write a simple integration test using JUnit 5 and RestAssured to validate the health check endpoint of the
+Spring Boot application.
+This test will ensure that the application is up and running and that the health check endpoint returns a status of UP.
+
+```java
+class HelloWorldTest {
+
+    @BeforeAll
+    static void setup() {
+        RestAssured.baseURI = "http://localhost:8080";
+    }
+
+    @Test
+    void healthCheck_shouldBeAvailable_andShouldBeOK() {
+        given()
+                .get("/actuator/health")
+                .then()
+                .statusCode(HttpStatus.OK.value())
+                .body("status", equalTo("UP"));
+    }
+}
+```
+
 ### Running Test Locally
 
-### Running Test in CI/CD Pipeline
+Since we start and stop the application as part of maven lifecycle `pre-integration-test` and `post-integration-test`
+respectively, we need to run test in integration phase.
+Enable and customize `maven-failsafe-plugin` as follows and optionally you can disable `maven-surefire-plugin`.
 
-### Running Test in QA Environment
+```xml
+
+<plugins>
+    ...
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+            <skip>true</skip>
+        </configuration>
+    </plugin>
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+            <includes>
+                <include>**/*Test.java</include> <!-- Matches classes ending with 'Test' -->
+            </includes>
+            <environmentVariables>
+                <SPRING_PROFILES_ACTIVE>${testcase.spring.profiles}</SPRING_PROFILES_ACTIVE>
+            </environmentVariables>
+        </configuration>
+    </plugin>
+
+    ...
+</plugins>
+```
+
+Now you can run the test using maven command as follows:
+
+```bash
+mvn clean verify 
+```
+
+!!! note "Note"
+
+    - You can also run the test using IDE by running the `IntegrationApplication` class with the `integration` profile.
+    - Wait until the Spring Boot application started successfully with Testcontainers.
+    - And then execute the `HelloWorldTest` class.
+
+### Adopting test for both Integration and QA suite
+
+To run the same test in both integration and QA environments, you can use Spring profiles to manage different
+configurations.
+
+You can use conditional extensions to run the test based on the active profile.
+Please refer to
+the [JUnit Extension Conditional Execution](https://nramc.github.io/my-notes/blog/junit-extension-conditional-execution.html)
+article for more details.
+
+Let's create a test-suite-specific configuration with desired spring profiles.
+
+```java
+
+@TestConfiguration(proxyBeanMethods = false)
+@EnableConfigurationProperties({EnvironmentProperties.class})
+@PropertySource("classpath:integration-test.properties")
+@Profile("integration-test")
+public class IntegrationTestSuiteConfig {
+    // Add any additional beans or configurations specific to the integration test suite
+}
+
+@TestConfiguration(proxyBeanMethods = false)
+@EnableConfigurationProperties({EnvironmentProperties.class})
+@PropertySource("classpath:qa-test.properties")
+@Profile("qa-test")
+public class QaTestSuiteConfig {
+    // Add any additional beans or configurations specific to the QA test suite
+}
+
+```
+
+Let's adopt the test to use the configurations and execute them for both integration and QA test suite.
+
+```java
+
+@SpringJUnitConfig(classes = {IntegrationTestSuiteConfig.class, QaTestSuiteConfig.class})
+class HelloWorldTest {
+    @Autowired
+    EnvironmentProperties environmentProperties;
+
+    @Test
+    void healthCheck_shouldBeAvailable_andShouldBeOK() {
+        given()
+                .baseUri(environmentProperties.baseUrl())
+                .get("/actuator/health")
+                .then()
+                .statusCode(HttpStatus.OK.value())
+                .body("status", equalTo("UP"));
+    }
+}
+```
+
+During the development phase, you can run the test with the `integration-test` profile to validate the integration test
+suite and `qa` profile to validate the QA test suite.
+
+!!! note "Note"
+
+    - `@SpringJUnitConfig` annotation from Spring Test Support is used to specify the configuration classes for the test suite.
+    - Spring Core implementations does not support yml files, so you need to use `@PropertySource` to load the properties file.
+    - You can also use `@SpringBootTest` annotation to load the application context with yml file and run the test if you prefer.
+
+### Running Integration Test suite against isolated test environment
+
+We have defined two properties `testcase.spring.profiles` to activate spring profile for test suite
+and `integration.test.skip` to perform start/stop isolated application for integration testing.
+
+```bash
+mvn clean verify -Dtestcase.spring.profiles=integeration-test -Dintegration.test.skip=false
+```
+
+### Running QA Test suite against QA Environment
+
+```bash
+mvn clean verify -Dtestcase.spring.profiles=qa-test -Dintegration.test.skip=true
+```
+
+!!! tip "Make use of Maven Profile"
+
+    You can also create a maven profile to run the test suite with the desired spring profile and skip the integration test.
+    This way you can run the test suite with a single command without specifying the properties each time.
+
+```xml"
+<profiles>
+  <profile>
+    <id>integration-test</id>
+    <properties>
+      <integration.test.skip>false</integration.test.skip>
+      <testcase.spring.profiles>integration-test</testcase.spring.profiles>
+      </properties>
+  </profile>
+  <profile>
+    <id>qa-test</id>
+    <properties>
+      <integration.test.skip>true</integration.test.skip>
+      <testcase.spring.profiles>qa-test</testcase.spring.profiles>
+    </properties>
+  </profile>
+</profiles>
+```
+
+Now you can run the test suite with the desired profile using the following command:
+
+```bash
+
+mvn clean verify -P integration-test
+mvn clean verify -P qa-test
+```
 
 ---
 
@@ -497,6 +679,6 @@ smoother releases. Start using Testcontainers with Spring Boot today and enhance
 
 - [Testcontainers Documentation](https://www.testcontainers.org/)
 - [Spring TestContext Framework](https://docs.spring.io/spring-framework/reference/testing/testcontext-framework.html)
-- [Shift-Left Testing: A Comprehensive Guide](https://www.ibm.com/think/topics/shift-left-testing)
+- [What is Shift-Left Testing?](https://www.ibm.com/think/topics/shift-left-testing)
 - [Shift-Left Testing with Testcontainers: Catching Bugs Early with Local Integration Tests](https://www.docker.com/blog/shift-left-testing-with-testcontainers/)
 
