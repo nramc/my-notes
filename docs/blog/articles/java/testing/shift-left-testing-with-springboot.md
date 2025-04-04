@@ -24,7 +24,7 @@ environments during local development and CI/CD—instead of waiting for QA depl
 service interactions, faster feedback, and more reliable releases, reducing late-stage surprises and improving software
 quality.
 
-Inspiration & Credits: [Shift Lift Testing](https://www.ibm.com/think/topics/shift-left-testing)
+Inspiration & Credits: [Shift-Left Testing with Testcontainers: Catching Bugs Early with Local Integration Tests](https://www.docker.com/blog/shift-left-testing-with-testcontainers/)
 
 ## Introduction
 
