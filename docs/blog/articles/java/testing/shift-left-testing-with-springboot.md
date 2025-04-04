@@ -218,7 +218,7 @@ Implementing Shift-Left Testing with Spring Boot and Testcontainers involves the
 4. Running Test in CI/CD Pipeline
 5. Running Test in QA Environment
 
-**1. Setting Up Isolated Test Environment**
+### 1. Setting Up Isolated Test Environment
 
 Test environment setup is crucial for Shift-Left Testing.
 For a consistent test environment, Testcontainers is used to spin up real external dependencies like databases and
@@ -306,11 +306,11 @@ public class IntegrationApplication {
 
 ```
 
-**Managing Testcontainers Configuration**
+#### Testcontainers Configuration
 
 Testcontainers can be configured in two ways, depending on project needs:
 
-**Using TestContainerConfig.java (Programmatic Approach)**
+##### Programmatic Approach
 
 The `TestContainerConfig` class configures the Testcontainers to spin up real external dependencies like databases,
 message brokers, and other services required for integration testing.
@@ -339,9 +339,9 @@ public class TestContainerConfig {
 }
 ```
 
-**Using docker-compose.yml (Declarative Approach)**
+##### Declarative Approach
 
-Define services in a YAML file for consistency across environments.
+Define services in a `docker-compose.yml` file for consistency across environments.
 
 ```yaml
 version: '3.8'
@@ -456,7 +456,7 @@ test application.
       This allows the plugin to locate the customized main class for the integration application.
     - The `additionalClasspathElement` configuration can be used to specify additional classpath elements, ensuring that the plugin finds the   main class.
 
-### Writing Test
+### 2. Writing Test
 
 !!! tip "Tip: Use JUnit 5 and Spring TestContext Framework"
 
@@ -485,7 +485,7 @@ class HelloWorldTest {
 }
 ```
 
-### Running Test Locally
+### 3. Running Test
 
 Since we start and stop the application as part of maven lifecycle `pre-integration-test` and `post-integration-test`
 respectively, we need to run test in integration phase.
@@ -532,7 +532,7 @@ mvn clean verify
     - Wait until the Spring Boot application started successfully with Testcontainers.
     - And then execute the `HelloWorldTest` class.
 
-### Adopting test for both Integration and QA suite
+**Adopting test for both Integration and QA test suite**
 
 To run the same test in both integration and QA environments, you can use Spring profiles to manage different
 configurations.
@@ -594,8 +594,9 @@ suite and `qa` profile to validate the QA test suite.
     - Spring Core implementations does not support yml files, so you need to use `@PropertySource` to load the properties file.
     - You can also use `@SpringBootTest` annotation to load the application context with yml file and run the test if you prefer.
 
-### Running Integration Test suite against isolated test environment
+### 4. Running Test in CI/CD Pipeline
 
+To run the test in CI/CD pipeline, we need to ensure that the Testcontainers are started and stopped automatically as part of the maven lifecycle.
 We have defined two properties `testcase.spring.profiles` to activate spring profile for test suite
 and `integration.test.skip` to perform start/stop isolated application for integration testing.
 
@@ -603,7 +604,10 @@ and `integration.test.skip` to perform start/stop isolated application for integ
 mvn clean verify -Dtestcase.spring.profiles=integeration-test -Dintegration.test.skip=false
 ```
 
-### Running QA Test suite against QA Environment
+### 5. Running Test in QA Environment
+
+To run the test in QA environment, we need to set the `testcase.spring.profiles` property to `qa-test` and skip the
+integration test by setting the `integration.test.skip` property to `true`.
 
 ```bash
 mvn clean verify -Dtestcase.spring.profiles=qa-test -Dintegration.test.skip=true
