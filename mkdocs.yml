@@ -124,9 +124,8 @@ extra:
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/codewithram
   analytics:
-    google:
-      property: G-0YZ5E4L400
-      provider: google
+    provider: google
+    property: G-0YZ5E4L400
 nav:
   - Home:
       - 'Welcome': 'index.md'
