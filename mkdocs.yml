@@ -123,7 +123,10 @@ extra:
       link: https://www.linkedin.com/in/ramachandran-nellaiyappan/
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/codewithram
-
+  analytics:
+    google:
+      property: G-0YZ5E4L400
+      provider: google
 nav:
   - Home:
       - 'Welcome': 'index.md'
