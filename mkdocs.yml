@@ -41,14 +41,14 @@ theme:
         name: Switch to light mode
   features:
     - navigation.tabs
-#    - navigation.sections
+    #    - navigation.sections
     #- navigation.tabs.sticky
     - navigation.path
     - navigation.top
     - navigation.indexes
     - navigation.instant.progress
     - navigation.path
-#    - navigation.expand
+    #    - navigation.expand
     - header
     - search.suggest
     - search.share
@@ -125,7 +125,21 @@ extra:
       link: https://hub.docker.com/u/codewithram
   analytics:
     provider: google
-    property: G-0YZ5E4L400
+    property: !GOOGLE_ANALYTICS_KEY
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            providing <a href="https://github.com/nramc/my-notes/issues/new?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">your feedback</a>.
   consent:
     title: Cookie consent
     description: >-
@@ -133,6 +147,7 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
+
 nav:
   - Home:
       - 'Welcome': 'index.md'

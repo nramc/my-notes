@@ -2,6 +2,7 @@
 hide:
   - tags
   - toc
+  - feedback
 ---
 
 # Tags

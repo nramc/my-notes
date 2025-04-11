@@ -6,6 +6,7 @@ categories:
   - Sitemap
 hide:
   - toc
+  - feedback
 ---
 
 # Sitemap
