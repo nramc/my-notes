@@ -7,8 +7,9 @@ repo_name: nramc/my-notes
 repo_url: https://github.com/nramc/my-notes
 
 # Copyright
-copyright: Made with ❤️ by Ramachandran Nellaiyappan
-
+copyright: >
+  Made with ❤️ by Ramachandran Nellaiyappan
+  <a href="#__consent">Change cookie settings</a>
 
 theme:
   language: en
