@@ -10,7 +10,6 @@ tags:
   - Java
   - JaCoCo
   - Code Coverage
-  - Latest
 hide:
   - toc
 links:
