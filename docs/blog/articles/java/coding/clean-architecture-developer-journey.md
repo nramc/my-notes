@@ -9,6 +9,7 @@ categories:
 tags:
   - Java
   - Clean Code
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
