@@ -1782,7 +1782,7 @@
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2025-03-17 00:00:00+00:00" class="md-ellipsis">17 Mar 2025</time>
+                          <time datetime="2025-04-18 00:00:00+00:00" class="md-ellipsis">18 Apr 2025</time>
                         </div>
                       </li>
                     
@@ -1804,7 +1804,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -1905,9 +1905,27 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.openrewrite.org/">OpenRewrite</a> integration really powerful tool to maintain good code quality and
   automated refactoring to reduce technical debt. Feel free to have
   look <a href="https://github.com/nramc/journey-api/blob/main/rewrite.yml">Journey API | rewrite.yml</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://swagger.io/docs/">Open API with Swagger</a> Document the code and create developer-friendly API
-  documentation. Personally I would recommend Open API Specification with Swagger UI. Feel free to have
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://swagger.io/docs/">Open API with Swagger</a>/<a href="https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/">Spring REST API Doc with Asciidoc</a>
+  Document the code and create developer-friendly API documentation. There are many other ways and frameworks to
+  document API, but Personally I would recommend any on these two. Feel free to have
   look <a href="https://github.com/nramc/journey-api/blob/main/src/main/resources/application.yml">Journey API Configuration</a> &amp; <a href="https://github.com/nramc/journey-api/tree/main?tab=readme-ov-file">REST API Documentation</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.spring.io/spring-boot/reference/actuator/index.html">Spring Boot Actuator</a> is a great
+  tool to monitor and manage Spring Boot applications. It provides production-ready features such as metrics,
+  health checks, and application environment information.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Integrate Micrometer with monitoring tools like Prometheus or Grafana to visualize general &amp; application metrics.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use <a href="https://flywaydb.org">Flyway</a> or <a href="https://www.liquibase.com/">Liquibase</a> for database migrations.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 
+  Use <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-profile-registries">Spring Profiles</a>
+  to manage different configurations for different environments (e.g., development, testing, production).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Follow <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>
+  principles to organize code. Use <a href="https://www.archunit.org/">ArchUnit</a> to enforce architectural rules. Please refer
+  article to know more about pragmatic
+  implementation: <a href="https://nramc.github.io/my-notes/blog/clean-architecture-developer-journey.html">Pragmatic Clean Architecture: A Developer's Journey Beyond Theory</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 
+  Use [Spring Boot DevTools] (https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools)
+  for
+  development. It provides features like automatic restarts, live reload, and configurations for improved developer
+  experience.</li>
 </ul>
 <hr />
 <p><span style="font-size: 0.7em;">Did this post help you? Share on:</span>
