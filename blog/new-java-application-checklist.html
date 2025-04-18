@@ -1860,7 +1860,8 @@
 <h1 id="java-application-development-must-have-checklist">Java Application Development: Must-Have Checklist</h1>
 <p>This article outlines the essential steps and considerations for Creating a new Java Application or Service</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://start.spring.io/">Spring Initializr</a> is a great tool for creating initial projects with predefined initial
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://start.spring.io/">Spring Initializr</a> is a great tool for creating initial projects with predefined
+  initial
   setup. I find it really helpful.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set up a Sonar project for the repository.
   If it is an open source project,
@@ -1869,14 +1870,16 @@
   Feel free to have a look:
   <a href="https://github.com/nramc/journey-api/blob/main/.github/workflows/ci-build-workflow.yml">Journey API | ci-build-workflow.yml</a>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Setup Continues Deployment (CD) workflow for automated deployment to QA &amp; LIVE environments.</li>
-<li>Feel free to have a look:<a href="https://github.com/nramc/journey-api/blob/main/.github/workflows/release-workflow.yml">Journey API | release-workflow.yml</a></li>
+<li>Feel free to have a
+  look:<a href="https://github.com/nramc/journey-api/blob/main/.github/workflows/release-workflow.yml">Journey API | release-workflow.yml</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.spring.io/spring-boot/how-to/docker-compose.html">Docker Compose</a> really helps and boosts developer
   productivity and reduces the complexity of environment setup.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Containerization: Use Docker or other container solutions to package the application consistently. Feel free to
   have look <a href="https://github.com/nramc/journey-api/blob/main/Dockerfile">Journey API | Dockerfile</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.renovatebot.com/">Renovate Bot</a> integration really helps to automatically update dependencies. Feel
   free to have look <a href="https://github.com/nramc/journey-api/blob/main/renovate.json">Journey API | renovate.json</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.openrewrite.org/">OpenRewrite</a> integration is a really powerful tool to maintain good code quality and
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.openrewrite.org/">OpenRewrite</a> integration is a really powerful tool to maintain good code quality
+  and
   automated refactoring to reduce technical debt. Feel free to have
   look <a href="https://github.com/nramc/journey-api/blob/main/rewrite.yml">Journey API | rewrite.yml</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://swagger.io/docs/">Open API with Swagger</a>/<a href="https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/">Spring REST API Doc with AsciiDoc</a>
@@ -1886,20 +1889,16 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://docs.spring.io/spring-boot/reference/actuator/index.html">Spring Boot Actuator</a> is a great
   tool to monitor and manage Spring Boot applications. It provides production-ready features such as metrics,
   health checks, and application environment information.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Integrate Micrometer with monitoring tools like Prometheus or Grafana to visualize general and application metrics.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Integrate Micrometer with monitoring tools like Prometheus or Grafana to visualize general and application
+  metrics.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use <a href="https://flywaydb.org">Flyway</a> or <a href="https://www.liquibase.com/">Liquibase</a> for database migrations.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 
-  Use <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-profile-registries">Spring Profiles</a>
-  to manage different configurations for different environments (e.g., development, testing, production).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Follow <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>
   principles to organize code. Use <a href="https://www.archunit.org/">ArchUnit</a> to enforce architectural rules. Please refer
   the article to know more about pragmatic
   implementation: <a href="https://nramc.github.io/my-notes/blog/clean-architecture-developer-journey.html">Pragmatic Clean Architecture: A Developer's Journey Beyond Theory</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 
-  Use [Spring Boot DevTools] (https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools)
-  for
-  development. It provides features like automatic restarts, live reload, and configurations for improved developer
-  experience.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use <a href="https://docs.spring.io/spring-boot/reference/using/devtools.html">Spring Boot DevTools</a> to enhance the
+  development experience.
+  It provides features like automatic restarts, live reload, and configurations.</li>
 </ul>
 <hr />
 <p><span style="font-size: 0.7em;">Did this post help you? Share on:</span>
