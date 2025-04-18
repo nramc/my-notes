@@ -1,14 +1,14 @@
 ---
-title: "Checklist for creating Java Application/Service"
-description: "Ensure a smooth Java app launch with this checklist—setup, coding, testing, and deployment essentials!"
+title: "Java Application Development: Must-Have Checklist"
+description: "A comprehensive checklist to streamline Java application development, covering setup, coding, testing, and deployment essentials."
 author: Ramachandran Nellaiyappan
 date:
   created: 2024-10-28
   updated: 2025-04-18
 categories:
-  - Guideline
+  - Java
 tags:
-  - Application Checklist
+  - Guideline
   - Java
 hide:
   - toc
@@ -16,7 +16,7 @@ links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
 
-# Checklist for creating Java Application/Service
+# Java Application Development: Must-Have Checklist
 
 This article outlines the essential steps and considerations for Creating a new Java Application or Service
 
