@@ -3,7 +3,7 @@ title: "Pragmatic Clean Architecture: A Developer's Journey Beyond Theory"
 description: "Discover how we applied pragmatic Clean Architecture in real-world projects — balancing theory with practical solutions for scalable, maintainable systems."
 author: Ramachandran Nellaiyappan
 date:
-  created: 2025-04-10
+  created: 2025-04-18
 categories:
   - Java
 tags:
@@ -15,7 +15,7 @@ links:
 
 # Pragmatic Clean Architecture: A Developer's Journey Beyond Theory
 
-**TL;DR**:Clean Architecture offers powerful principles for building modular, testable systems — but applying it in
+**TL;DR**: Clean Architecture offers powerful principles for building modular, testable systems — but applying it in
 real-world projects requires balance.
 
 This article highlights common pitfalls like over-abstraction, complex layering, and over engineering — and shows how to
@@ -51,7 +51,7 @@ Martin.
 
 ### The Ideal World: Clean Architecture
 
-Clean Architecture gives us a great mental model for building systems that are easy to maintain, adapt, and test —
+Clean Architecture gives us a great mental model for building systems that are straightforward to maintain, adapt, and test —
 especially as complexity grows.
 
 The idea sounds awesome on paper:
