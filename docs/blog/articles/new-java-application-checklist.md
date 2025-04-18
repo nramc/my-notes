@@ -2,9 +2,9 @@
 title: "Checklist for creating Java Application/Service"
 description: "Ensure a smooth Java app launch with this checklist—setup, coding, testing, and deployment essentials!"
 author: Ramachandran Nellaiyappan
-date: 
+date:
   created: 2024-10-28
-  updated: 2025-03-17 
+  updated: 2025-04-18
 categories:
   - Guideline
 tags:
@@ -38,6 +38,24 @@ This article outlines the essential steps and considerations for Creating a new 
 - [x] [OpenRewrite](https://docs.openrewrite.org/) integration really powerful tool to maintain good code quality and
   automated refactoring to reduce technical debt. Feel free to have
   look [Journey API | rewrite.yml](https://github.com/nramc/journey-api/blob/main/rewrite.yml)
-- [x] [Open API with Swagger](https://swagger.io/docs/) Document the code and create developer-friendly API
-  documentation. Personally I would recommend Open API Specification with Swagger UI. Feel free to have
+- [x] [Open API with Swagger](https://swagger.io/docs/)/[Spring REST API Doc with Asciidoc](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/)
+  Document the code and create developer-friendly API documentation. There are many other ways and frameworks to
+  document API, but Personally I would recommend any on these two. Feel free to have
   look [Journey API Configuration](https://github.com/nramc/journey-api/blob/main/src/main/resources/application.yml) & [REST API Documentation](https://github.com/nramc/journey-api/tree/main?tab=readme-ov-file)
+- [x] [Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) is a great
+  tool to monitor and manage Spring Boot applications. It provides production-ready features such as metrics,
+  health checks, and application environment information.
+- [x] Integrate Micrometer with monitoring tools like Prometheus or Grafana to visualize general & application metrics.
+- [x] Use [Flyway](https://flywaydb.org) or [Liquibase](https://www.liquibase.com/) for database migrations.
+- [x] 
+  Use [Spring Profiles](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-profile-registries)
+  to manage different configurations for different environments (e.g., development, testing, production).
+- [x] Follow [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+  principles to organize code. Use [ArchUnit](https://www.archunit.org/) to enforce architectural rules. Please refer
+  article to know more about pragmatic
+  implementation: [Pragmatic Clean Architecture: A Developer's Journey Beyond Theory](https://nramc.github.io/my-notes/blog/clean-architecture-developer-journey.html)
+- [x] 
+  Use [Spring Boot DevTools] (https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools)
+  for
+  development. It provides features like automatic restarts, live reload, and configurations for improved developer
+  experience.
