@@ -3,9 +3,10 @@ author: Ramachandran Nellaiyappan
 createdAt: 28.08.2024
 updatedAt: 
 categories:
-  - Automation Testing
+  - Automation
 tags:
-  - Test Automation
+  - Automation
+  - Testing
   - Tips
 hide:
   - toc
