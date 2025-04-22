@@ -121,7 +121,7 @@ extra:
       link: https://hub.docker.com/u/codewithram
   analytics:
     provider: google
-    property: G-0YZ5E4L400
+    property: !ENV GOOGLE_ANALYTICS_KEY
     feedback:
       title: Was this page helpful?
       ratings:
