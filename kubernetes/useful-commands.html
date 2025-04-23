@@ -1093,6 +1093,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#executing-commands-in-kubernetes-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executing Commands in Kubernetes Pod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debugging-pod" class="md-nav__link">
     <span class="md-ellipsis">
       Debugging Pod
@@ -1102,9 +1111,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-secret-file-from-kubernetes" class="md-nav__link">
+  <a href="#download-a-secret-file-from-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      Download secret file from Kubernetes
+      Download a secret file from Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Port Forwarding
     </span>
   </a>
   
@@ -1803,6 +1821,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#executing-commands-in-kubernetes-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executing Commands in Kubernetes Pod
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debugging-pod" class="md-nav__link">
     <span class="md-ellipsis">
       Debugging Pod
@@ -1812,9 +1839,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-secret-file-from-kubernetes" class="md-nav__link">
+  <a href="#download-a-secret-file-from-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      Download secret file from Kubernetes
+      Download a secret file from Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Port Forwarding
     </span>
   </a>
   
@@ -1856,35 +1892,55 @@
 
 
 <h1 id="useful-kubernetes-commands">Useful Kubernetes Commands</h1>
+<h2 id="executing-commands-in-kubernetes-pod">Executing Commands in Kubernetes Pod</h2>
+<ul>
+<li>Sometimes we may need to connect to an existing Kubernetes pod to perform simple tasks like executing simple commands,
+  checking
+  connectivity from pod to other networks; for such activities the below command really helps Developers</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Authenticate and switch to the targeted Kubernetes context</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>dexctl<span class="w"> </span>--user<span class="w"> </span>&lt;username&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>&lt;targeted<span class="w"> </span>context&gt;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># List all namespaces in the current context</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>namespaces
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># List all pods in a specific namespace</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--namespace<span class="w"> </span>&lt;namespace&gt;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Connect to a pod and open an interactive bash terminal for debugging</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--stdin<span class="w"> </span>--tty<span class="w"> </span>--namespace<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--<span class="w"> </span>/bin/bash
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Execute a single command (e.g., check the current date) inside a pod</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>--namespace<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--<span class="w"> </span>date
+</span></code></pre></div>
 <h2 id="debugging-pod">Debugging Pod</h2>
 <ul>
-<li>Sometimes we may need to connect to a Kubernetes pod to perform simple tasks like executing simple commands, checking
-  connectivity from pod to other networks, for such activities the below debug command really helps Developer who does
-  not have much knowledge about Kubernetes</li>
+<li>Sometimes we may need to connect to a Kubernetes pod and perform simple tasks without modifying its existing
+  container like executing simple commands, checking connectivity from pod to other networks; for such activities, the
+  below debug command really helps Developers</li>
 <li>Check <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/">kubectl debug</a> to know more</li>
 </ul>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>debug<span class="w"> </span>&lt;targeted<span class="w"> </span>pod&gt;<span class="w"> </span>--image<span class="o">=</span>internal/koopa/toolbox-image:latest<span class="w"> </span>-it
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>debug<span class="w"> </span>&lt;targeted<span class="w"> </span>pod&gt;<span class="w"> </span>--image<span class="o">=</span>internal/koopa/toolbox-image:latest<span class="w"> </span>-it
 </span></code></pre></div>
-<h2 id="download-secret-file-from-kubernetes">Download secret file from Kubernetes</h2>
+<h2 id="download-a-secret-file-from-kubernetes">Download a secret file from Kubernetes</h2>
 <ul>
 <li>Sometimes we might save file in Kubernetes secrets e.g. client certificate, ssh keys, any encrypted files</li>
-<li>We might need such files sometimes in our local machine for debugging or local development</li>
-<li>These files might not be copied directly or downloadable directly from Kubernetes UI. In this case, the below command
-  really helps to download as it is.</li>
+<li>We might sometimes need such files on our local machine for debugging or local development</li>
+<li>These files might not be copied directly or downloadable directly from the Kubernetes UI.
+  In this case, the below command really helps to download as it is.</li>
 </ul>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">  </span>kubectl<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span><span class="s2">&quot;&lt;name of the entry&gt;&quot;</span><span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.data.&quot;&lt;key&gt;&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>&lt;desired<span class="w"> </span>target<span class="w"> </span>file<span class="w"> </span>name<span class="w"> </span>e.g.<span class="w"> </span>localhost.p12&gt;
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="sb">```</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">## Port Forwarding</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>-<span class="w"> </span>Sometimes<span class="w"> </span>we<span class="w"> </span>might<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>debug<span class="w"> </span>a<span class="w"> </span>pod<span class="w"> </span>on<span class="w"> </span>Kubernetes<span class="w"> </span><span class="k">for</span><span class="w"> </span>example<span class="w"> </span>testing<span class="w"> </span>configurations.
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>-<span class="w"> </span>Sometimes<span class="w"> </span>our<span class="w"> </span><span class="nb">local</span><span class="w"> </span>application<span class="w"> </span>might<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>particular<span class="w"> </span>Kubernetes<span class="w"> </span>pod,<span class="w"> </span><span class="k">in</span><span class="w"> </span>these
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>cases<span class="w"> </span><span class="o">[</span>Port<span class="w"> </span>Forwarding<span class="o">](</span>https://kubernetes.io/docs/reference/kubectl/generated/kubectl_port-forward/<span class="o">)</span><span class="w"> </span>really<span class="w"> </span>helpful.
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sb">```</span>shell
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>kubectl<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>port-forward<span class="w"> </span>&lt;intended<span class="w"> </span>pod&gt;<span class="w"> </span>&lt;<span class="nb">local</span><span class="w"> </span>port<span class="w"> </span><span class="m">1</span>&gt;:&lt;remote<span class="w"> </span>port<span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>...<span class="w"> </span>&lt;<span class="nb">local</span><span class="w"> </span>port<span class="w"> </span>n&gt;:&lt;remote<span class="w"> </span>port<span class="w"> </span>n&gt;<span class="w"> </span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span>kubectl<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span><span class="s2">&quot;&lt;name of the entry&gt;&quot;</span><span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.data.&quot;&lt;key&gt;&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>&lt;desired<span class="w"> </span>target<span class="w"> </span>file<span class="w"> </span>name<span class="w"> </span>e.g.<span class="w"> </span>localhost.p12&gt;
+</span></code></pre></div>
+<h2 id="port-forwarding">Port Forwarding</h2>
+<ul>
+<li>Sometimes we might need to debug a pod on Kubernetes, for example, testing configurations.</li>
+<li>Sometimes our local application might want to connect to a particular Kubernetes pod, in these
+  cases <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_port-forward/">Port Forwarding</a> really helpful.</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>kubectl<span class="w"> </span>--cluster<span class="o">=</span>&lt;cluster<span class="w"> </span>name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>port-forward<span class="w"> </span>&lt;intended<span class="w"> </span>pod&gt;<span class="w"> </span>&lt;<span class="nb">local</span><span class="w"> </span>port<span class="w"> </span><span class="m">1</span>&gt;:&lt;remote<span class="w"> </span>port<span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>...<span class="w"> </span>&lt;<span class="nb">local</span><span class="w"> </span>port<span class="w"> </span>n&gt;:&lt;remote<span class="w"> </span>port<span class="w"> </span>n&gt;<span class="w"> </span>
 </span></code></pre></div>
 
 
