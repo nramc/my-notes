@@ -1,20 +1,20 @@
 ---
-title: "Monitoring SpringBoot Application with Custom Metrics using Micrometer and Prometheus"
-description: "todo"
+title: "Mastering Observability: Custom Metrics in Spring Boot with Micrometer and Prometheus"
+description: "Learn how to create and monitor custom metrics in Spring Boot using Micrometer and Prometheus for enhanced observability."
 author: Ramachandran Nellaiyappan
 date:
-  created: 2025-04-24
+  created: 2025-04-25
 categories:
   - Java
 tags:
   - Java
   - Spring Boot
-
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
 
-# Monitoring SpringBoot Application with Custom Metrics using Micrometer and Prometheus
+# Mastering Observability: Custom Metrics in Spring Boot with Micrometer and Prometheus
 
 ## Introduction
 
@@ -22,7 +22,7 @@ Ever found yourself debugging a production issue thinking, *"I wish I knew what 
 doing..."?* You’re not alone. Logs and stack traces are helpful—but they don't always tell the full story.
 
 **Observability** is key to maintaining reliable applications, and while built-in metrics cover the basics, they often
-fall short when you need insights into your business logic or background processing.
+fall short when you need insights into your **business logic** or **background processing**.
 
 That’s where **custom metrics** come in.
 
@@ -41,6 +41,9 @@ Spring Boot Actuator provides a rich set of built-in metrics out of the box, inc
 - **HTTP**: request counts, response times
 - **Kafka & Redis**: consumer lag, cache hit/miss, and more
 - so on...
+
+To know more about the built-in metrics, refer to
+the [Spring Boot Actuator's Metrics](https://docs.spring.io/spring-boot/reference/actuator/metrics.html).
 
 These are great for infrastructure-level visibility—but they won’t tell you what your **business logic** is doing.
 
@@ -62,24 +65,26 @@ tuning, troubleshooting, and tracking your Service Level Objectives (SLOs).
 
 ### Micrometer
 
-Micrometer is the metrics facade used by Spring Boot. It offers a vendor-neutral API to create and publish metrics to
-backends like Prometheus, Datadog, New Relic, and more.
+[Micrometer](https://micrometer.io/) is the metrics facade used by Spring Boot. It offers a vendor-neutral API to create
+and publish metrics to backends like Prometheus, Datadog, New Relic, and more.
 
 ### Prometheus
 
-Prometheus scrapes metrics from your application at regular intervals and stores them as time series data. With its
-powerful query language (PromQL), you can slice, dice, and alert on metrics easily.
+[Prometheus](https://prometheus.io/) scrapes metrics from your application at regular intervals and stores them as time
+series data.
+With its powerful query language (PromQL), you can slice, dice, and alert on metrics easily.
 
-## Spring Boot Actuator
+### Spring Boot Actuator
 
-Spring Boot Actuator bridges the gap, exposing your metrics (including custom ones) via HTTP endpoints like
-/actuator/metrics.
+[Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) bridges the gap, exposing your
+metrics (including custom ones) via HTTP endpoints like `/actuator/metrics`.
 
 ## Setting Up Micrometer and Prometheus in Spring Boot
 
 ### Add Dependencies
 
 To get started, you need to add the necessary dependencies to your Spring Boot project.
+In this example, we will use prometheus as the metrics backend.
 
 For Maven Dependency,
 
@@ -117,7 +122,7 @@ management:
 
 ```
 
-Prometheus will now scrape metrics from /actuator/prometheus.
+Prometheus will now scrape metrics from `/actuator/prometheus`.
 
 ## Choosing the Right Metric Type
 
@@ -243,7 +248,7 @@ public void processPayment() {
 }
 ```
 
-!!! warning "Warning"
+!!! tip "Tip"
 
     You can also use the `@Timed` annotation to automatically create timers for your methods.
     This is useful for tracking method execution time without manually creating timers.
@@ -256,7 +261,7 @@ public void processPayment() {
     }
     ```
 
-## Timer with Buckets and Percentiles
+### Timer with Buckets and Percentiles
 
 Timers can be configured with custom buckets and percentiles to provide more granular insights into the performance of
 your application. This is particularly useful for identifying outliers and understanding the distribution of response
@@ -296,7 +301,7 @@ ranges (e.g., < 100 ms, < 500 ms). Together, they help monitor performance and h
 
     Be cautious with the number of buckets and percentiles you use. Too many can lead to high memory usage and performance degradation.
 
-¡¡¡ tip "Tip"
+!!! tip "Tip"
 
     You can also use the `@Timed` annotation with custom buckets and percentiles.
     ```java
@@ -307,9 +312,9 @@ ranges (e.g., < 100 ms, < 500 ms). Together, they help monitor performance and h
     }
     ```
 
-## LongTaskTimer
+### LongTaskTimer
 
-**LongTaskTimer** is a special type of Micrometer timer designed for **measuring tasks that take a long time to complete
+**LongTaskTimer** is a special type of Micrometer timer designed for measuring tasks that take a **long time to complete
 **—think seconds, minutes, or even hours.
 
 Unlike the standard Timer, which wraps and measures quick operations (like method calls or HTTP requests), LongTaskTimer
@@ -343,8 +348,8 @@ public void executeLongRunningTask() {
 
 It Produces
 
-- *_active_tasks: Number of currently running tasks.
-- *_duration_seconds: Total time all active tasks have been running (in seconds).
+- `*_active_tasks`: Number of currently running tasks.
+- `*_duration_seconds`: Total time all active tasks have been running (in seconds).
 
 !!! warning "Warning"
 
@@ -352,7 +357,7 @@ It Produces
 
 !!! tip "Tip"
 
-    You can also use the @Timed annotation for long running tasks.
+    You can also use the `@Timed` annotation for long running tasks.
 
     ```java
     @Timed(value = "journey.notification.email.timed", description = "Time taken to send email notification", extraTags = {"type", "email"}, longTask = true)
