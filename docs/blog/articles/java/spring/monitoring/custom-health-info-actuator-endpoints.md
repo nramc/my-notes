@@ -1,6 +1,6 @@
 ---
 title: "Mastering Spring Boot Actuator: Deep Dive into Health Indicators & Info Contributors"
-description: "todo"
+description: "Custom health and info endpoints in Spring Boot Actuator turn basic checks into meaningful, production-ready insights."
 author: Ramachandran Nellaiyappan
 date:
   created: 2025-04-25
