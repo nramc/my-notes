@@ -9,7 +9,6 @@ categories:
 tags:
   - Web Application
   - Improvement
-  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 hide:
