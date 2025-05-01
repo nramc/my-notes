@@ -391,8 +391,6 @@ reducing the risk of security breaches and improving the overall security postur
 ## References
 
 - [OWASP ZAP Automation Framework](https://www.zaproxy.org/docs/automate/automation-framework/)
-- [OWASP ZAP Docker Image](https://www.zaproxy.org/docs/docker/about/)
-- [OWASP ZAP Command Line](https://www.zaproxy.org/docs/desktop/cmdline/)
 - [Automation Guide - Options](https://www.zaproxy.org/docs/getting-further/automation/automation-options/)
 - [ADDO Workshop](https://www.zaproxy.org/addo-auth-workshop/)
 - [GitHub Action:ZAP Automation Framework Scan](https://github.com/marketplace/actions/zap-automation-framework-scan)

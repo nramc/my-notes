@@ -5,8 +5,9 @@ author: Ramachandran Nellaiyappan
 date:
   created: 2025-04-18
 categories:
-  - Java
+  - Architecture
 tags:
+  - Architecture  
   - Java
   - Clean Code
   - Latest
