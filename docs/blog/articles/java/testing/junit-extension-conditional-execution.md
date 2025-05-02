@@ -9,7 +9,7 @@ categories:
 tags:
   - Java
   - Testing
-  - Junit
+  - JUnit
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
