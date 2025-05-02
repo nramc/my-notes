@@ -5,7 +5,7 @@ author: Ramachandran Nellaiyappan
 date:
   created: 2025-03-18
 categories:
-  - Java
+  - Automation
 tags:
   - Java
   - Maven
