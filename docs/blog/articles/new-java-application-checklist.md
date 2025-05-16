@@ -4,7 +4,7 @@ description: "A comprehensive checklist to streamline Java application developme
 author: Ramachandran Nellaiyappan
 date:
   created: 2024-10-28
-  updated: 2025-04-18
+  updated: 2025-05-16
 categories:
   - Java
 tags:
