@@ -604,6 +604,31 @@ The `config/checkstyle/suppressions.xml` file contains the suppression rules in 
     - It allows you to define suppression rules in a separate XML file, making it easier to manage and update them.
     - Refer to the [Checkstyle Document: SuppressionFilter](https://checkstyle.sourceforge.io/filters/suppressionfilter.html)
 
+## Best Practices & Lessons Learned
+
+- **Start with a Baseline**: Use a well-defined style guide (like Google or Sun) as a starting point. This helps
+  establish a common ground for your team.
+- **Iterate Gradually**: Don’t try to enforce all rules at once. Start with a few key rules and gradually add more as
+  your team becomes comfortable.
+- **Choose the right maven phase for OpenRewrite execution**: The most common phase is `process-sources`.
+  This phase is typically used for source code transformations. It runs before the compilation phase, allowing you to
+  modify the source code before it is compiled.
+- **OpenRewrite recipes are evolving**: New recipes are added regularly, so keep an eye on the OpenRewrite
+  documentation for updates and new features.
+- **Use IDE Integration**: Leverage IDE plugins for Checkstyle and OpenRewrite to format code base ease & quick and to
+  provide real-time feedback to developers. This helps catch issues early in the development process.
+- **Automate Everything**: Integrate Checkstyle and OpenRewrite into your CI/CD pipeline to ensure that code is checked
+  and fixed automatically.
+- **Educate Your Team**: Make sure your team understands the rules and why they matter. This helps reduce resistance to
+  adopting new rules.
+- **Use Suppressions Wisely**: Use suppressions to manage exceptions, but avoid overusing them.
+- **Review and Refine**: Regularly review your Checkstyle configuration and OpenRewrite recipes to ensure they are still
+  relevant and effective. OpenRewrite recipes are evolving, and new ones are added regularly.
+- **Encourage Collaboration**: Foster a culture of collaboration and open communication within your team. Encourage
+  developers to share their experiences and insights on using Checkstyle and OpenRewrite.
+- **Celebrate Success**: Celebrate milestones and achievements in improving code quality. This helps motivate your team
+  and reinforces the importance of clean, consistent, and secure code.
+
 ## Conclusion
 
 Combining **Checkstyle and OpenRewrite** creates a powerful workflow for maintaining clean, consistent, and secure code.
