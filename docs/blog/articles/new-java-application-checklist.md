@@ -4,7 +4,7 @@ description: "A comprehensive checklist to streamline Java application developme
 author: Ramachandran Nellaiyappan
 date:
   created: 2024-10-28
-  updated: 2025-04-18
+  updated: 2025-05-16
 categories:
   - Java
 tags:
@@ -18,44 +18,158 @@ links:
 
 # Java Application Development: Must-Have Checklist
 
-This article outlines the essential steps and considerations for Creating a new Java Application or Service
+This article provides a comprehensive checklist to streamline Java application development, covering setup, coding,
+testing, and deployment essentials. It serves as a guide for developers to ensure they have all the necessary components
+in place for a successful project.
 
-- [x] [Spring Initializr](https://start.spring.io/) is a great tool for creating initial projects with predefined
-  initial
-  setup. I find it really helpful.
-- [x] Set up a Sonar project for the repository.
-  If it is an open source project,
-  [Sonar Cloud](https://www.sonarsource.com/products/sonarcloud/) is really helpful for maintaining good quality code.
-- [x] Setup Continues Integration (CI) workflow for each commit and merge request.
-  Feel free to have a look:
-  [Journey API | ci-build-workflow.yml](https://github.com/nramc/journey-api/blob/main/.github/workflows/ci-build-workflow.yml).
-- [x] Setup Continues Deployment (CD) workflow for automated deployment to QA & LIVE environments.
-- Feel free to have a
-  look:[Journey API | release-workflow.yml](https://github.com/nramc/journey-api/blob/main/.github/workflows/release-workflow.yml)
-- [x] [Docker Compose](https://docs.spring.io/spring-boot/how-to/docker-compose.html) really helps and boosts developer
-  productivity and reduces the complexity of environment setup.
-- [x] Containerization: Use Docker or other container solutions to package the application consistently. Feel free to
-  have look [Journey API | Dockerfile](https://github.com/nramc/journey-api/blob/main/Dockerfile)
-- [x] [Renovate Bot](https://docs.renovatebot.com/) integration really helps to automatically update dependencies. Feel
-  free to have look [Journey API | renovate.json](https://github.com/nramc/journey-api/blob/main/renovate.json)
-- [x] [OpenRewrite](https://docs.openrewrite.org/) integration is a really powerful tool to maintain good code quality
-  and
-  automated refactoring to reduce technical debt. Feel free to have
-  look [Journey API | rewrite.yml](https://github.com/nramc/journey-api/blob/main/rewrite.yml)
-- [x] [Open API with Swagger](https://swagger.io/docs/)/[Spring REST API Doc with AsciiDoc](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/)
-  Document the code and create developer-friendly API documentation. There are many other ways and frameworks to
-  document API, but Personally I would recommend any of these two. Feel free to have
-  look [Journey API Configuration](https://github.com/nramc/journey-api/blob/main/src/main/resources/application.yml) & [REST API Documentation](https://github.com/nramc/journey-api/tree/main?tab=readme-ov-file)
-- [x] [Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) is a great
-  tool to monitor and manage Spring Boot applications. It provides production-ready features such as metrics,
-  health checks, and application environment information.
-- [x] Integrate Micrometer with monitoring tools like Prometheus or Grafana to visualize general and application
-  metrics.
-- [x] Use [Flyway](https://flywaydb.org) or [Liquibase](https://www.liquibase.com/) for database migrations.
-- [x] Follow [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-  principles to organize code. Use [ArchUnit](https://www.archunit.org/) to enforce architectural rules. Please refer
-  the article to know more about pragmatic
-  implementation: [Pragmatic Clean Architecture: A Developer's Journey Beyond Theory](https://nramc.github.io/my-notes/blog/clean-architecture-developer-journey.html)
-- [x] Use [Spring Boot DevTools](https://docs.spring.io/spring-boot/reference/using/devtools.html) to enhance the
-  development experience.
-  It provides features like automatic restarts, live reload, and configurations.
+<div class="grid cards" markdown>
+
+!!! note "Disclaimer"
+
+    This checklist is based on my experience and the best practices I have learned over the years. It is not exhaustive, but
+    it covers the most important aspects of Java application development. The checklist is divided into several sections,
+    each focusing on a specific area of development.
+
+!!! info "Information"
+
+    This checklist is a living document that evolves with new tools, techniques, and lessons learned. Start small, adapt
+    what fits your context, and automate as much as possible. The goal isn’t perfection, but consistency and continuous
+    improvement.
+
+</div>
+
+## Project Initialization & Tooling
+
+<div class="grid cards" markdown>
+
+- :material-layers-outline: **Clean Architecture**  
+  [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) separates
+  application concerns into clear layers, improving testability and maintainability.
+    - [ArchUnit](https://www.archunit.org/) to enforce architectural rules
+    - [Pragmatic Clean Architecture](https://nramc.github.io/my-notes/blog/clean-architecture-developer-journey.html)
+
+- :material-source-branch-check: **Continuous Integration (CI)**  
+  Automate testing and validation for every commit and PR by setting up a CI workflow.
+    - [Example CI Workflow (ci-build-workflow.yml)](https://github.com/nramc/journey-api/blob/main/.github/workflows/ci-build-workflow.yml)
+
+- :material-rocket-launch: **Continuous Deployment (CD)**  
+  Set up CD pipelines to automate QA and production deployments after successful builds.
+    - [Example CD Workflow (release-workflow.yml)](https://github.com/nramc/journey-api/blob/main/.github/workflows/release-workflow.yml)
+
+</div>
+
+## Code Quality and Standards
+
+<div class="grid cards" markdown>
+
+- :material-spellcheck: **Sonar Linting**    
+  Integrate static analysis into your workflow using [SonarLint](https://www.sonarlint.org/) for real-time IDE feedback
+  and [SonarCloud](https://www.sonarsource.com/products/sonarcloud/) for CI/CD pipeline insights.
+
+- :material-format-align-left:  **Style Guide & Code Formatting**  
+  Define and enforce consistent code style across teams using Checkstyle, OpenRewrite, and community standards.
+    - [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+
+- :material-code-tags-check: **Enforce & Auto-Fix Java Code Style**  
+  Automate Java code style enforcement using Checkstyle and OpenRewrite for a clean, consistent, and secure codebase.
+    - [Checkstyle + OpenRewrite Automation Guide](https://nramc.github.io/my-notes/blog/checkstyle-with-open-rewrite.html)
+
+</div>
+
+## Build & Dependency Management
+
+<div class="grid cards" markdown>
+
+- :material-auto-fix: **Renovate Bot**  
+  Automate dependency updates and keep your project secure with [Renovate Bot](https://docs.renovatebot.com/).
+    - [Example renovate.json Configuration](https://github.com/nramc/journey-api/blob/main/renovate.json5)
+    - [Automating Maven Dependency Updates](https://nramc.github.io/my-notes/blog/maven-auto-update-dependencies.html)
+
+- :material-source-branch-refresh: **OpenRewrite**  
+  Enforce code quality and automate Java refactoring with [OpenRewrite](https://docs.openrewrite.org/).
+    - [OpenRewrite Integration](https://nramc.github.io/my-notes/blog/open-rewrite.html)
+    - [Journey API Example rewrite.yml](https://github.com/nramc/journey-api/blob/main/rewrite.yml)
+
+- :material-rocket-launch: **Spring Boot DevTools**  
+  Improve developer productivity
+  with [Spring Boot DevTools](https://docs.spring.io/spring-boot/reference/using/devtools.html): automatic restarts,
+  live reload, and dev-only config.
+
+- :material-docker: **Spring Boot & Docker Compose**  
+  Manage services like databases or brokers
+  with [Spring Boot + Docker Compose](https://docs.spring.io/spring-boot/how-to/docker-compose.html) for streamlined
+  local dev.
+    - [Example docker-compose.yml](https://github.com/nramc/journey-api/blob/main/docker-compose.yml)
+
+- :material-cube-outline: **Docker Containerization**  
+  Package your app and its dependencies into containers with [Docker](https://docs.docker.com/reference/dockerfile/) for
+  consistent, reproducible environments.
+    - [Example Dockerfile](https://github.com/nramc/journey-api/blob/main/Dockerfile)
+
+</div>
+
+## Testing
+
+<div class="grid cards" markdown>
+
+- :material-test-tube: **Shift Left Testing**  
+  Embrace [Shift Left Testing](https://www.ibm.com/think/topics/shift-left-testing)
+  using [Testcontainers](https://testcontainers.com/) to run integration and QA tests early in the pipeline.
+    - [Spring Boot + Testcontainers Guide](https://nramc.github.io/my-notes/blog/shift-left-testing-with-springboot.html)
+    - [Conditional JUnit 5 Extensions](https://nramc.github.io/my-notes/blog/junit-extension-conditional-execution.html)
+
+- :material-file-document-check: **Contract Testing with Spring Cloud Contract**  
+  Use [Spring Cloud Contract Verifier](https://spring.io/projects/spring-cloud-contract) to validate service contracts
+  and avoid integration failures.
+    - [Automating Contract Testing](https://nramc.github.io/my-notes/blog/contract-testing.html)
+
+</div>
+
+## Security
+
+<div class="grid cards" markdown>
+
+- :material-shield-check: **OWASP Automation Framework**  
+  Automate security testing
+  with [OWASP ZAP Automation Framework](https://www.zaproxy.org/docs/automate/automation-framework/) to identify and fix
+  vulnerabilities.
+    - [Security Testing in CI/CD with OWASP ZAP](https://nramc.github.io/my-notes/blog/owasp-zap-proxy-api-scan-dast.html)
+
+</div>
+
+## Deployment & Monitoring
+
+<div class="grid cards" markdown>
+
+- :material-database: **Database Migrations**  
+  Manage schema changes safely using [Flyway](https://flywaydb.org) or [Liquibase](https://www.liquibase.com/).
+
+- :material-heart-pulse: **Spring Boot Actuator**  
+  Monitor and manage your Spring Boot applications effortlessly.
+    - [Deep Dive into Health Indicators & Info Contributors](https://nramc.github.io/my-notes/blog/custom-health-info-actuator-endpoints.html)
+    - [Custom Metrics with Micrometer & Prometheus](https://nramc.github.io/my-notes/blog/custom-metrics.html)
+
+</div>
+
+## Documentation
+
+<div class="grid cards" markdown>
+
+- :material-book-open-page-variant: **Developer-Friendly API Documentation**  
+  Create clear and maintainable API docs for your services.
+    - [Open API with Swagger](https://swagger.io/docs/)
+    - [Spring REST API Doc with AsciiDoc](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/)
+
+</div>
+
+## System Architecture & Design
+
+<div class="grid cards" markdown>
+
+- :material-domain: **Self-Contained Systems Architecture**  
+  [Self-Contained Systems Architecture](https://scs-architecture.org/) promotes building modular, independently
+  deployable components — ideal for scaling large enterprise systems.
+    - [SCS in Practice: Wins and Challenges](https://nramc.github.io/my-notes/blog/self-contained-system-architecture.html)
+
+</div>
+
