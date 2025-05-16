@@ -8,8 +8,9 @@ date:
 categories:
   - Java
 tags:
-  - Guideline
   - Java
+  - Best Practices
+  - Tooling
 hide:
   - toc
 links:
