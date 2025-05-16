@@ -22,19 +22,25 @@ This article provides a comprehensive checklist to streamline Java application d
 testing, and deployment essentials. It serves as a guide for developers to ensure they have all the necessary components
 in place for a successful project.
 
-!!! info "Information"
+<div class="grid cards" markdown>
+
+!!! note "Disclaimer"
 
     This checklist is based on my experience and the best practices I have learned over the years. It is not exhaustive, but
     it covers the most important aspects of Java application development. The checklist is divided into several sections,
     each focusing on a specific area of development.
 
+!!! info "Information"
+
+    This checklist is a living document that evolves with new tools, techniques, and lessons learned. Start small, adapt
+    what fits your context, and automate as much as possible. The goal isn’t perfection, but consistency and continuous
+    improvement.
+
+</div>
+
 ## Project Initialization & Tooling
 
 <div class="grid cards" markdown>
-
-- :material-rocket-launch-outline: **Spring Initializr**  
-  [Spring Initializr](https://start.spring.io/) helps you quickly bootstrap a new Spring Boot project with the right
-  dependencies and structure.
 
 - :material-layers-outline: **Clean Architecture**  
   [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) separates
@@ -166,10 +172,4 @@ in place for a successful project.
     - [SCS in Practice: Wins and Challenges](https://nramc.github.io/my-notes/blog/self-contained-system-architecture.html)
 
 </div>
-
-**Note**:
-This checklist is a living document that evolves with new tools, techniques, and lessons learned. Start small, adapt
-what fits your context, and automate as much as possible. The goal isn’t perfection, but consistency and continuous
-improvement.
-
 
