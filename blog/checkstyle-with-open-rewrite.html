@@ -1976,6 +1976,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#best-practices-lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices &amp; Lessons Learned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -2052,7 +2061,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              11 min read
+                              12 min read
                             
                           </span>
                         </div>
@@ -2645,6 +2654,31 @@ and update them.</p>
 <li>Refer to the <a href="https://checkstyle.sourceforge.io/filters/suppressionfilter.html">Checkstyle Document: SuppressionFilter</a></li>
 </ul>
 </div>
+<h2 id="best-practices-lessons-learned">Best Practices &amp; Lessons Learned</h2>
+<ul>
+<li><strong>Start with a Baseline</strong>: Use a well-defined style guide (like Google or Sun) as a starting point. This helps
+  establish a common ground for your team.</li>
+<li><strong>Iterate Gradually</strong>: Don’t try to enforce all rules at once. Start with a few key rules and gradually add more as
+  your team becomes comfortable.</li>
+<li><strong>Choose the right maven phase for OpenRewrite execution</strong>: The most common phase is <code>process-sources</code>.
+  This phase is typically used for source code transformations. It runs before the compilation phase, allowing you to
+  modify the source code before it is compiled.</li>
+<li><strong>OpenRewrite recipes are evolving</strong>: New recipes are added regularly, so keep an eye on the OpenRewrite
+  documentation for updates and new features.</li>
+<li><strong>Use IDE Integration</strong>: Leverage IDE plugins for Checkstyle and OpenRewrite to format code base ease &amp; quick and to
+  provide real-time feedback to developers. This helps catch issues early in the development process.</li>
+<li><strong>Automate Everything</strong>: Integrate Checkstyle and OpenRewrite into your CI/CD pipeline to ensure that code is checked
+  and fixed automatically.</li>
+<li><strong>Educate Your Team</strong>: Make sure your team understands the rules and why they matter. This helps reduce resistance to
+  adopting new rules.</li>
+<li><strong>Use Suppressions Wisely</strong>: Use suppressions to manage exceptions, but avoid overusing them.</li>
+<li><strong>Review and Refine</strong>: Regularly review your Checkstyle configuration and OpenRewrite recipes to ensure they are still
+  relevant and effective. OpenRewrite recipes are evolving, and new ones are added regularly.</li>
+<li><strong>Encourage Collaboration</strong>: Foster a culture of collaboration and open communication within your team. Encourage
+  developers to share their experiences and insights on using Checkstyle and OpenRewrite.</li>
+<li><strong>Celebrate Success</strong>: Celebrate milestones and achievements in improving code quality. This helps motivate your team
+  and reinforces the importance of clean, consistent, and secure code.</li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>Combining <strong>Checkstyle and OpenRewrite</strong> creates a powerful workflow for maintaining clean, consistent, and secure code.</p>
 <p>By defining coding standards with Checkstyle and automating code fixes with OpenRewrite, you can reduce manual effort,
