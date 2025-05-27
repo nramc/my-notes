@@ -25,6 +25,7 @@ setup.
       python3 -m venv dev 
       source dev/bin/activate
       pip install -r requirements.txt
+      export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
    ```
 3. Run Application
     ```bash
