@@ -3,7 +3,7 @@ title: "Passkey (WebAuthn) Login in Spring Boot: Stateless Auth with JWT & Yubic
 description: "Learn how to implement stateless passkey authentication in Spring Boot applications using Yubico's Java WebAuthn server and JWT."
 author: Ramachandran Nellaiyappan
 date:
-  created: 2025-06-18
+  created: 2025-06-19
 categories:
   - Java
 tags:
