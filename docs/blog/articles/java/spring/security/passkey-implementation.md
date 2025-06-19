@@ -12,6 +12,8 @@ tags:
   - Passkey
   - WebAuthn
   - Spring Boot
+  - Developer's Guide
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
