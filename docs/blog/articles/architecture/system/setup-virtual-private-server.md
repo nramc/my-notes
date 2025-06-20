@@ -507,7 +507,7 @@ This will show you the status of your containers, including whether they are run
 from Docker Hub, restarts the
 containers, and cleans up old versions.
 
-🔄 Pull latest Image → 🚀 Deploy to VPS → 🔁 Auto-Restart container → 🗑️ Clean up old images
+🔄 Pull latest Image → 🚀 Deploy to VPS → ♻️ Auto-Restart container → 🗑️ Clean up old images
 
 To set up Watchtower, run the following command:
 
@@ -527,12 +527,137 @@ This command runs Watchtower in detached mode, allowing it to monitor your conta
 
 ## Monitoring & Observability
 
-## Scheduled Backups
+In my setup, I've kept things simple and focused on what truly matters: **metrics**, **dashboards**, and **alerts** —
+using tools I can run in Docker with minimal overhead.
+
+Below are the tools I use for monitoring and observability:
+
+| Tool                                                                                         | Purpose                                                                                     |
+|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **[Prometheus](https://prometheus.io/)**                                                     | Collects and stores metrics from applications and services, including Docker containers     |
+| **[Node Exporter](https://prometheus.io/docs/guides/node-exporter/)**                        | Collects system metrics (CPU, memory, disk) from the host machine                           |
+| **[Grafana](https://grafana.com/)**                                                          | Visualizes metrics in real-time dashboards                                                  |
+| **[Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html)** | Exposes health & metrics endpoints for domain-specific counters and timers (via Micrometer) |
+| **[Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/)**                 | Manages alerts based on Prometheus metrics, sends notifications via email/Telegram          |
+
+My spring boot application exposes metrics and health endpoints at `http://localhost:8080/actuator/prometheus` using
+[Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) and
+[Micrometer](https://micrometer.io/).
+
+Prometheus scrapes that endpoint every 15 seconds and stores the metrics. Grafana queries Prometheus to display charts,
+usage graphs, and alerts.
+
+You can run everything using Docker, below is a sample `docker-compose.yml` file:
+
+```yaml
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    mem_limit: 128m
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    networks:
+      - monitoring-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    mem_limit: 128m
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER= your_admin_username
+      - GF_SECURITY_ADMIN_PASSWORD=your_admin_password
+    networks:
+      - monitoring-network
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    network_mode: host
+    pid: host
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - '/:/host:ro,rslave'
+    restart: unless-stopped
+    cap_add:
+      - SYS_TIME
+      - SYS_ADMIN
+
+volumes:
+  grafana-storage:
+
+networks:
+  monitoring-network:
+    external: true
+```
+
+This `docker-compose.yml` file sets up Prometheus, Grafana, and Node Exporter in a single network called
+`monitoring-network`. Make sure to create the `prometheus.yml` configuration file for Prometheus and the Grafana
+provisioning files for dashboards and data sources based on your application configuration.
+
+below is a sample `prometheus/prometheus.yml` file:
+
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: [ 'localhost:9090' ]
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: [ 'host.docker.internal:9100' ]
+
+  - job_name: 'your-app-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'your-app-container:8081' ]
+
+```
+
+blow is sample grafana provisioning file `grafana/provisioning/datasources/datasource.yml` for data sources:
+
+```yaml
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+```
+
+I've created a few Grafana dashboards to visualize the metrics from my applications:
+
+- [Grafana Dashboards: Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
+- [Grafana Dashboards: SpringBoot APM Dashboard](https://grafana.com/grafana/dashboards/12900-springboot-apm-dashboard/)
+
+!!! tip "Tip"
+
+    If you want to learn more about setting up observability in Spring Boot applications, check out these articles:
+
+    - [Mastering Observability: Custom Metrics in Spring Boot with Micrometer and Prometheus](https://blog.codewithram.dev/blog/custom-metrics.html)
+    - [Mastering Spring Boot Actuator: Deep Dive into Health Indicators & Info Contributors](https://blog.codewithram.dev/blog/custom-health-info-actuator-endpoints.html)
 
 ## Health Checks and Alerts
 
 - Weekly status summary via email/Telegram
 - Optional: Healthchecks.io or similar tools
+
+## Scheduled Backups
 
 ## Best Practices Summary
 
