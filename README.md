@@ -20,18 +20,22 @@ setup.
     ```bash
     git clone https://github.com/nramc/my-notes.git 
     ```
-2. Install required dependencies
+2. Setup Virtual Environment
    ```bash
-      python3 -m venv dev 
+   cd my-notes
+   python3 -m venv dev 
+   ```
+3. Install required dependencies
+   ```bash
       source dev/bin/activate
       pip install -r requirements.txt
       export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
    ```
-3. Run Application
+4. Run Application
     ```bash
       python -m mkdocs serve
     ```
-4. Open up http://127.0.0.1:8000/ in your browser, and you'll see the home page being displayed
+5. Open up http://127.0.0.1:8000/ in your browser, and you'll see the home page being displayed
 
 ### Contribution
 
