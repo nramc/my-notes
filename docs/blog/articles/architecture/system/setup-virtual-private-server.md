@@ -523,8 +523,6 @@ docker run -d \
 
 This command runs Watchtower in detached mode, allowing it to monitor your containers every 5 minutes (300 seconds).
 
----
-
 ## Monitoring & Observability
 
 In my setup, I've kept things simple and focused on what truly matters: **metrics**, **dashboards**, and **alerts** —
@@ -651,6 +649,8 @@ I've created a few Grafana dashboards to visualize the metrics from my applicati
 
     - [Mastering Observability: Custom Metrics in Spring Boot with Micrometer and Prometheus](https://blog.codewithram.dev/blog/custom-metrics.html)
     - [Mastering Spring Boot Actuator: Deep Dive into Health Indicators & Info Contributors](https://blog.codewithram.dev/blog/custom-health-info-actuator-endpoints.html)
+
+---
 
 ## Health Checks and Alerts
 
