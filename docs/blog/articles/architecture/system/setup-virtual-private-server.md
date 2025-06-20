@@ -226,7 +226,7 @@ sudo nano /etc/ssh/sshd_config
 Change the following settings:
 
 ```plaintext
-# Change the default SSH port to avoid automated attacks(optional)
+# Change the default SSH port for reducing automated attack noise(optional)
 Port 2222
 # Disable root login
 PermitRootLogin no
@@ -345,87 +345,6 @@ You want this workflow:
 
 ## Basic Security
 
-### Change the default SSH port (optional but good for reducing noise):
-
-```bash
-sudo nano /etc/ssh/sshd_config
-Port 2222
-PasswordAuthentication no
-PermitRootLogin no
-PubkeyAuthentication yes
-
-sudo systemctl restart sshd
-```
-
-### Create a new non-root user:
-
-```bash
-adduser youruser
-usermod -aG sudo youruser
-```
-
-### Disable root login via SSH:
-
-```bash
-sudo nano /etc/ssh/sshd_config
-# Change: PermitRootLogin yes → PermitRootLogin no
-sudo systemctl restart sshd
-```
-
-## Automated Updates & Firewall
-
-### Enable UFW (Uncomplicated Firewall):
-
-```bash
-sudo ufw allow 2222/tcp  # your custom SSH port
-sudo ufw allow http
-sudo ufw allow https
-sudo ufw enable
-
-```
-
-### Enable automatic security updates:
-
-```bash
-sudo apt install unattended-upgrades
-sudo dpkg-reconfigure --priority=low unattended-upgrades
-
-
-sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
-
-// Enable these lines:
-"${distro_id}:${distro_codename}-updates";
-
-Unattended-Upgrade::Automatic-Reboot "true";
-Unattended-Upgrade::Automatic-Reboot-Time "03:00";
-
-```
-
-### Configure UFW to log dropped packets:
-
-```bash
-sudo ufw logging on
-```
-
-### Install Fail2Ban to protect against brute-force attacks:
-
-```bash
-sudo apt install fail2ban
-sudo systemctl enable fail2ban
-sudo systemctl start fail2ban
-```
-
-### Configure Fail2Ban:
-
-```bash
-sudo nano /etc/fail2ban/jail.local
-# Add or modify the following lines:
-[sshd]
-enabled = true
-port = 2222  # your custom SSH port
-maxretry = 5
-bantime = 3600
-```
 
 ### Regular HouseKeeping
 
@@ -433,11 +352,6 @@ bantime = 3600
 -
 
 ## Install Essentials
-
-```bash
-sudo apt update && sudo apt install git curl docker.io docker-compose nginx -y
-sudo usermod -aG docker youruser
-```
 
 ## Setup Domain and SSL (Optional but Recommended)
 
@@ -455,7 +369,6 @@ automatically renews SSL certificates and configures Nginx.
 sudo crontab -e
 # Add:
 0 0 * * * certbot renew --quiet
-
 ```
 
 ## Setup Automated Deployment
