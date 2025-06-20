@@ -304,7 +304,14 @@ sudo lynis audit system
 
 Review the report and follow the recommendations.
 
+!!! warning "Warning"
+
+    Security is **never done**. It's a habit — not a checklist. These practices will protect you against most common attacks,
+    but it's always worth staying updated on best practices.
+    Regularly review your server's security posture, update packages, and monitor logs for suspicious activity.
+
 ---
+
 ## HTTPS Setup with NGINX & Let’s Encrypt
 
 ## Automating Deployment
