@@ -198,11 +198,24 @@ sudo pro enable esm-infra
 sudo pro enable livepatch
 ```
 
+### Install Docker & Docker Compose
+
+Docker is essential for running containerized applications. Install Docker and Docker Compose on your server:
+
+```bash
+sudo apt install docker.io docker-compose -y
+sudo usermod -aG docker $USER
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
 ## Security Hardening
 
 ### Harden SSH Access
 
-To improve security, we’ll change the default SSH port, disable root login, and enforce key-based authentication.
+Passwords can be brute-forced. SSH keys are much harder to crack.
+
+To improve security, we'll change the default SSH port, disable root login, and enforce key-based authentication.
 
 Edit the SSH configuration file:
 
@@ -279,6 +292,19 @@ sudo ufw allow https
 sudo ufw enable
 ```
 
+### Use a Security Scanner
+
+To further enhance security, consider using a security scanner like **[Lynis](https://cisofy.com/lynis/)** to audit your
+server:
+
+```bash
+sudo apt install lynis -y
+sudo lynis audit system
+```
+
+Review the report and follow the recommendations.
+
+---
 ## HTTPS Setup with NGINX & Let’s Encrypt
 
 ## Automating Deployment
