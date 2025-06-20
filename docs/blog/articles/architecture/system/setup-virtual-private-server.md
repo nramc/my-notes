@@ -292,7 +292,7 @@ sudo ufw allow https
 sudo ufw enable
 ```
 
-### Use a Security Scanner
+### Use Security Scanner
 
 To further enhance security, consider using a security scanner like **[Lynis](https://cisofy.com/lynis/)** to audit your
 server:
@@ -312,7 +312,127 @@ Review the report and follow the recommendations.
 
 ---
 
-## HTTPS Setup with NGINX & Let’s Encrypt
+## NGINX Setup
+
+NGINX is a powerful web server and reverse proxy that can handle incoming traffic, route requests to your Docker
+containers, and secure your applications with HTTPS.
+
+Install Nginx on your server:
+
+```bash
+sudo apt install nginx -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+
+### Setup Reverse Proxy
+
+Let's set up Nginx to act as a reverse proxy for your Dockerized applications. This allows you to access your apps
+through a domain name or IP address without exposing the Docker container ports directly.
+
+As an example, let's assume you have a Dockerized application running on port `8080` and want to access with domain name
+https://example.com.
+
+You can create a new Nginx configuration file for your application:
+
+```bash
+sudo nano /etc/nginx/sites-available/example.com
+```
+
+Add the following configuration to the file:
+
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+
+    location / {
+        proxy_pass http://localhost:8080/;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+Create a symbolic link to enable the configuration:
+
+```bash
+sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+```
+
+Test the Nginx configuration for syntax errors:
+
+```bash
+sudo nginx -t
+```
+
+Restart Nginx to apply the changes:
+
+```bash
+sudo systemctl restart nginx
+```
+
+Now, Nginx will listen on port 80 and forward requests to your Docker container running on port 8080.
+
+!!! info "Note"
+
+    If you want to access your application using a domain name, make sure to point your domain's DNS records to your VPS IP
+    address. You can do this by creating an `A` record for your domain that points to your server's IP address.
+    you can use https://dnschecker.org/ to check if your DNS records are propagated.
+
+### Set Up HTTPS
+
+To secure your application with HTTPS, use [Let's Encrypt](https://letsencrypt.org/) to obtain a free SSL certificate.
+
+```bash
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d example.com
+```
+
+This command will automatically configure Nginx to use the SSL certificate and set up automatic renewal.
+
+After setting up Nginx and obtaining the SSL certificate, verify that everything is working correctly by visiting
+your domain `https://example.com` in a web browser. You should see your application served over HTTPS.
+
+### Set Up Automatic SSL Renewal
+
+To ensure your SSL certificate is renewed automatically, add a cron job:
+
+```bash
+sudo crontab -e
+```
+
+Add the following line to run the renewal command daily:
+
+```plaintext
+0 0 * * * certbot renew --quiet
+```
+
+### Implement rate limiting
+
+To protect your applications from abuse, you can implement rate limiting in Nginx. This helps prevent DDoS attacks and
+ensures fair usage of resources.
+
+You can set up a rate limit in your Nginx configuration file,
+Create or edit your Nginx configuration file (e.g., `/etc/nginx/sites-available/example.com`):
+
+```nginx
+http {
+    limit_req_zone $binary_remote_addr zone=req_limit_per_ip:10m rate=5r/s;
+
+    server {
+        location / {
+            limit_req zone=req_limit_per_ip burst=10 nodelay;
+            proxy_pass http://localhost:8080/;
+        }
+    }
+}
+```
+
+This configuration limits each IP address to 5 requests per second, with a burst capacity of 10 requests. If the limit
+is exceeded, Nginx will return a `503 Service Unavailable` response.
 
 ## Automating Deployment
 
@@ -345,59 +465,12 @@ You want this workflow:
 
 ## Basic Security
 
-
 ### Regular HouseKeeping
 
 - Regularly `docker image prune` and `docker container prune` to clean up.
 -
 
-## Install Essentials
-
-## Setup Domain and SSL (Optional but Recommended)
-
-Point your domain to the VPS IP.
-Use Let's Encrypt for SSL:
-
-```bash
-sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx
-```
-
-automatically renews SSL certificates and configures Nginx.
-
-```bash
-sudo crontab -e
-# Add:
-0 0 * * * certbot renew --quiet
-```
-
 ## Setup Automated Deployment
-
-### GitHub Actions → SSH Deployment (simple)
-
-Generate SSH key pair for GitHub:
-
-```bash
-ssh-keygen -t ed25519 -C "github_deploy"
-```
-
-- Add public key to ~/.ssh/authorized_keys on the server.
-- Add private key as a secret in GitHub (DEPLOY_KEY).
-- GitHub Actions example:
-
-```yaml
-- name: Deploy via SSH
-  uses: appleboy/ssh-action@v1.0.0
-  with:
-    host: ${{ secrets.SERVER_IP }}
-    username: youruser
-    key: ${{ secrets.DEPLOY_KEY }}
-    port: 2222
-    script: |
-      cd /home/youruser/yourproject
-      git pull origin main
-      docker-compose down && docker-compose up -d
-```
 
 ### Watchtower – Auto Pull & Restart
 
@@ -442,53 +515,5 @@ When your GitHub Action pushes a new image to Docker Hub, Watchtower will:
 - No need to expose ports or open SSH
 - Super simple and lightweight
 - Secure and automated
-
-## Subdomain-Based Routing
-
-### Nginx Configuration
-
-Create a new Nginx configuration file for your subdomain:
-
-```
-server {
-    listen 80;
-    server_name a.yourdomain.com;
-
-    location / {
-        proxy_pass http://localhost:8081/;
-        # same proxy headers as above
-    }
-}
-
-server {
-    listen 80;
-    server_name b.yourdomain.com;
-
-    location / {
-        proxy_pass http://localhost:8082/;
-    }
-}
-```
-
-!!! note
-you can use https://dnschecker.org/ to check if your DNS records are propagated.
-
-## Implement rate limiting
-
-### Nginx Rate Limiting
-
-```nginx
-http {
-    limit_req_zone $binary_remote_addr zone=req_limit_per_ip:10m rate=5r/s;
-
-    server {
-
-        location / {
-            limit_req zone=req_limit_per_ip burst=10 nodelay;
-            proxy_pass http://localhost:8080/;
-        }
-    }
-}
-```
 
 ## Conclusion
