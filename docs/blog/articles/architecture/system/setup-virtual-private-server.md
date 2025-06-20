@@ -310,8 +310,6 @@ Review the report and follow the recommendations.
     but it's always worth staying updated on best practices.
     Regularly review your server's security posture, update packages, and monitor logs for suspicious activity.
 
----
-
 ## NGINX Setup
 
 NGINX is a powerful web server and reverse proxy that can handle incoming traffic, route requests to your Docker
@@ -434,7 +432,98 @@ http {
 This configuration limits each IP address to 5 requests per second, with a burst capacity of 10 requests. If the limit
 is exceeded, Nginx will return a `503 Service Unavailable` response.
 
-## Automating Deployment
+## Application Deployment
+
+Now that your server is set up and secured, it's time to deploy your Dockerized applications.
+
+### Deploying Dockerized Applications
+
+My typical development workflow is as follows:
+
+🧑‍💻Writing Code -> 🔀 Push to GitHub → ⚙️ GitHub Actions (CI/CD) → 📦 Build Docker Image → 🐳 Publish to Docker Hub
+
+This workflow is defined in
+a [journey-api/.github/workflows/release-workflow.yml](https://raw.githubusercontent.com/nramc/journey-api/refs/heads/main/.github/workflows/release-workflow.yml)
+file in my repository.
+
+Let's deploy the dockerized application using Docker Compose.
+
+Create `docker-compose.yml` file in your VPS server:
+
+```bash
+mkdir -p /opt/myapp && cd /opt/myapp
+nano docker-compose.yml
+```
+
+Configure the `docker-compose.yml` file to define your application services, networks, and volumes. Here’s a basic
+example for a Spring Boot application:
+
+```yaml
+
+version: '3.8'
+services:
+  app:
+    image: your-docker-image:latest
+    container_name: your-app-container
+    restart: always
+    ports:
+      - "8080:8080"  # Map host port to container port
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod  # Set active profile
+    env_file:
+      - ./default.env
+    volumes:
+      - ./data:/app/data  # Mount a volume for persistent data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+```
+
+This `docker-compose.yml` file defines a service named `app` that uses a Docker image, maps ports, sets environment
+variables, mounts a volume for persistent data, and connects to a custom network.
+
+To start your application using Docker Compose, run the following command in the directory where your
+`docker-compose.yml` file is located:
+
+```bash
+docker-compose up -d
+```
+
+This command will start your application in detached mode, allowing it to run in the background.
+You can check the status of your application by running:
+
+```bash
+docker-compose ps
+```
+
+This will show you the status of your containers, including whether they are running or stopped.
+
+### Automating Deployment
+
+**[Watchtower](https://containrrr.dev/watchtower/)** monitors your running containers and automatically pulls new images
+from Docker Hub, restarts the
+containers, and cleans up old versions.
+
+🔄 Pull latest Image → 🚀 Deploy to VPS → 🔁 Auto-Restart container → 🗑️ Clean up old images
+
+To set up Watchtower, run the following command:
+
+```bash
+docker run -d \
+  --name watchtower \
+  --restart always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower \
+  --interval 300 \
+  --cleanup
+```
+
+This command runs Watchtower in detached mode, allowing it to monitor your containers every 5 minutes (300 seconds).
+
+---
 
 ## Monitoring & Observability
 
@@ -459,61 +548,11 @@ Restrict container capabilities using Docker security flags
 
 Log and monitor everything
 
-You want this workflow:
-
-🧑‍💻 Code → 🐳 Docker Image → 📦 Docker Hub → 📥 VPS → 🔁 Container Auto-Restart
-
 ## Basic Security
 
 ### Regular HouseKeeping
 
 - Regularly `docker image prune` and `docker container prune` to clean up.
 -
-
-## Setup Automated Deployment
-
-### Watchtower – Auto Pull & Restart
-
-Watchtower monitors running containers and pulls new versions from Docker Hub.
-
-```bash
-docker run -d \
-  --name watchtower \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  containrrr/watchtower \
-  --cleanup \
-  --interval 300
-
-```
-
-```bash
-# 1. Place your docker-compose file
-mkdir -p /opt/myapp && cd /opt/myapp
-nano docker-compose.yml   # paste the file contents
-
-# 2. Start the app
-docker-compose up -d
-
-# 3. Start Watchtower (can be anywhere)
-docker run -d \
-  --name watchtower \
-  --restart always \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  containrrr/watchtower \
-  --interval 300 \
-  --cleanup
-
-```
-
-It checks every 5 minutes (--interval 300)
-
-When your GitHub Action pushes a new image to Docker Hub, Watchtower will:
-
-- Pull it
-- Restart the container
-- Clean up old versions
-- No need to expose ports or open SSH
-- Super simple and lightweight
-- Secure and automated
 
 ## Conclusion
