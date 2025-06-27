@@ -5,11 +5,12 @@ hide:
   - feedback
 ---
 
-# Welcome.!
+# _Welcome to_ **My-Notes**
 
-The Ultimate Playbook for coding snippets, references, procedures and How-To articles based on real time experience.
+> **My-Notes** — A Developer's Playbook for Real-World Software Development
 
+Hands-on guides, real-world tips, and lessons — for developers who build, ship, and scale software in the real world.
 
-## Recently Published Articles
+## 🚀 Recently Published Articles
 
 <!-- material/tags { include: [Latest] } -->
