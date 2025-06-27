@@ -12,6 +12,7 @@ tags:
   - VPS
   - Monitoring
   - Docker
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
@@ -243,7 +244,7 @@ PubkeyAuthentication yes
 Restart the SSH service to apply changes:
 
 ```bash
-sudo systemctl restart ssh
+sudo systemctl restart sshd
 ```
 
 ### Install Fail2ban
