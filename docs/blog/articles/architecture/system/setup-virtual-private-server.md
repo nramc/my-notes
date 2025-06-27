@@ -1,18 +1,22 @@
 ---
-title: todo
-description: todo
+title: "Self-Hosting for Developers: A Practical Guide to Virtual Private Server (VPS) Hosting with Docker & Monitoring"
+description: "From Code to Cloud: A Developer's Real-World Guide to VPS Hosting"
 author: Ramachandran Nellaiyappan
 date:
-  created: 2025-06-06
+  created: 2025-06-29
 categories:
-  - todo
+  - Architecture
 tags:
-  - todo
+  - Self-hosting
+  - Architecture
+  - VPS
+  - Monitoring
+  - Docker
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
 
-# Virtual Private Server (VPS) Setup
+# Self-Hosting for Developers: A Practical Guide to Virtual Private Server (VPS) Hosting with Docker & Monitoring
 
 ## Introduction
 
@@ -85,7 +89,7 @@ This architecture is designed to be:
 - **🔐 Secure from Day One**: Hardened with firewall rules, SSH best practices, automatic security updates, and HTTPS via
   Let’s Encrypt.
 - **📊 Observability-Ready**: Set up monitoring, logging, and health checks to understand app performance.
-- **⚙️ Automated Where It Matters**: Use CI/CD to deploy code changes seamlessly, with auto-restarts containers on updates.
+- **⚙️ Automated Where It Matters**: Use CI/CD to deploy code changes seamlessly, with auto-restarts of containers on updates.
 - **📦 Scalable by Nature**: Start small, but easily scale up as needed without major rework.
 </div>
 
@@ -514,7 +518,6 @@ To set up Watchtower, run the following command:
 ```bash
 docker run -d \
   --name watchtower \
-  --restart always \
   -v /var/run/docker.sock:/var/run/docker.sock \
   containrrr/watchtower \
   --interval 300 \
@@ -627,7 +630,7 @@ scrape_configs:
 
 ```
 
-blow is sample grafana provisioning file `grafana/provisioning/datasources/datasource.yml` for data sources:
+below is sample grafana provisioning file `grafana/provisioning/datasources/datasource.yml` for data sources:
 
 ```yaml
 datasources:
@@ -654,30 +657,109 @@ I've created a few Grafana dashboards to visualize the metrics from my applicati
 
 ## Health Checks and Alerts
 
-- Weekly status summary via email/Telegram
-- Optional: Healthchecks.io or similar tools
+To ensure your applications are running smoothly, set up health checks and alerts using Prometheus Alertmanager.
+
+Please refer to the [Prometheus Alertmanager documentation](https://prometheus.io/docs/alerting/latest/alertmanager/)
+for detailed instructions on configuring alerts based on your application metrics.
+
+I've set up alerts based
+on [this article](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/)
+
+!!! tip "Tip"
+
+    [Awesome Prometheus alerts](https://samber.github.io/awesome-prometheus-alerts/rules.html) is a great resource for
+    pre-built Prometheus alert rules that you can use as a starting point.
 
 ## Scheduled Backups
 
-## Best Practices Summary
+When you're running your own server, one unexpected mistake or system failure can wipe out everything — your code,
+configs, uploaded files, dashboards, and even SSL certificates.
 
-Always keep your VPS OS and packages updated
+That's why backups aren't optional — they're essential.
 
-Limit exposed ports
+I use a **simple Bash script** scheduled with `cron` to run every night. It backs up,
 
-Use Docker secrets and .env files for sensitive configs
+- Docker volumes and docker-compose files
+- Nginx configs
+- Monitoring files such as Grafana dashboard, Prometheus config, and Alertmanager rules
+- Nginx SSL certificates using `certbot` to ensure I can restore HTTPS quickly
+- Server configuration files, including SSH keys, UFW rules
+- Application logs to help with debugging and auditing
+- Cron jobs and scheduled tasks
+- Environment variables and secrets using Docker secrets or `.env` files
 
-Regularly audit container images and dependencies
+Here's a sample backup script:
 
-Restrict container capabilities using Docker security flags
+```bash
+#!/bin/bash
+BACKUP_DIR="/path/to/backup/$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+# Backup Docker volumes
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$BACKUP_DIR":/backup \
+  -e BACKUP_DIR=/backup \
+  containrrr/watchtower backup
+  
+# Backup Nginx configs
+cp -r /etc/nginx "$BACKUP_DIR/nginx"
 
-Log and monitor everything
+# Backup Grafana dashboards
+cp -r /var/lib/grafana/dashboards "$BACKUP_DIR/grafana"
 
-## Basic Security
+# Backup Prometheus config
+cp -r /etc/prometheus "$BACKUP_DIR/prometheus"
 
-### Regular HouseKeeping
+# Backup SSL certificates
+cp -r /etc/letsencrypt "$BACKUP_DIR/letsencrypt"
 
-- Regularly `docker image prune` and `docker container prune` to clean up.
--
+# Backup server configuration files
+cp -r /etc/ssh "$BACKUP_DIR/ssh"
+cp -r /etc/ufw "$BACKUP_DIR/ufw"
+
+# Backup application logs
+cp -r /var/log/myapp "$BACKUP_DIR/logs"
+
+# Backup cron jobs
+crontab -l > "$BACKUP_DIR/cron_jobs.txt"
+
+# Backup environment variables
+cp -r /etc/environment "$BACKUP_DIR/environment"
+
+# Remote MongoDB Atlas backup
+mongodump --uri="mongodb+srv://user:pass@cluster.mongodb.net/mydb" \
+  --archive="$BACKUP_DIR/mongo_atlas.gz" --gzip
+
+# Compress the backup directory
+tar -czf "$BACKUP_DIR.tar.gz" -C "$BACKUP_DIR" .
+
+# Remove the uncompressed backup directory
+rm -rf "$BACKUP_DIR"
+
+# Cleanup old backups (older than 7 days)
+find /opt/backups/* -type d -mtime +7 -exec rm -rf {} \;
+```
+
+This script creates a timestamped backup directory, copies essential files and directories, compresses the backup, and
+cleans up old backups older than 7 days.
+
+## Regular HouseKeeping Tasks
+
+To keep your server running smoothly, it's important to perform regular housekeeping tasks:
+
+- Regularly remove stopped containers, unused volumes, and dangling images `docker system prune -af --volumes`.
+- Monitor disk space usage with `df -h` and clean up old logs or unused files.
+- `docker restart watchtower` to ensure Watchtower is running smoothly.
+- Verify HTTPS & Certificates with `certbot renew --dry-run` to ensure automatic renewal is working.
+- Check application logs for errors or warnings using `docker logs your-app-container`.
+- Review Prometheus and Grafana dashboards for any anomalies or performance issues.
 
 ## Conclusion
+
+Running your own VPS isn't just a tech project — it's a developer's dream come true. 💙
+
+You write the code, deploy it yourself, monitor it, secure it — and learn more than any tutorial can teach. It's simple,
+powerful, and fully yours.
+
+This journey isn’t about chasing perfection.    
+Start small. Stay curious. Build something you can be proud of.  
+Good luck on your self-hosting journey!
