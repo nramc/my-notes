@@ -8,3 +8,8 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/* Hide the sidebar in the post view */
+.md-content--post .md-sidebar {
+    display: none!important;
+}
