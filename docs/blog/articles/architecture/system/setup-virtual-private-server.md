@@ -21,6 +21,9 @@ links:
 
 ## Introduction
 
+Ever wondered how to host your own blog, monitor your applications, or deploy tools without relying on third-party
+services? Setting up a **Virtual Private Server (VPS)** might be the key.
+
 If you're a **software developer** like me, you've probably imagined it too — owning your own domain, deploying side
 projects or tools, hosting your blog, or running monitoring dashboards — all from your own private server. It's more
 than just hosting; it’s about **understanding the full lifecycle of software**: from writing clean code, packaging it in
