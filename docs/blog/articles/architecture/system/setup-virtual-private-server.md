@@ -706,7 +706,7 @@ services:
       - ./alertmanager:/etc/alertmanager
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
-  
+
   node-exporter:
     image: prom/node-exporter:latest
     container_name: node-exporter
@@ -720,6 +720,20 @@ services:
     cap_add:
       - SYS_TIME
       - SYS_ADMIN
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: unless-stopped
+    ports:
+      - "9094:8080"
+    networks:
+      - custom-apps-network
 
 volumes:
   grafana-storage:
@@ -738,6 +752,15 @@ below is a sample `prometheus/prometheus.yml` file:
 ```yaml
 global:
   scrape_interval: 15s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: [ "alertmanager:9093" ]
+
+rule_files:
+  - "alert.rules.yml"
 
 scrape_configs:
   - job_name: 'prometheus'
@@ -748,6 +771,10 @@ scrape_configs:
     static_configs:
       - targets: [ 'host.docker.internal:9100' ]
 
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: [ 'cadvisor:8080' ]
+
   - job_name: 'your-app-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
@@ -756,6 +783,17 @@ scrape_configs:
 ```
 
 below is sample grafana provisioning file `grafana/provisioning/datasources/datasource.yml` for data sources:
+
+```yaml
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+```
+
+Below is a sample Grafana provisioning file `grafana/provisioning/dashboards/dashboard.yml` for dashboards:
 
 ```yaml
 datasources:
@@ -780,7 +818,6 @@ datasources:
       sudo ufw allow from 127.0.0.1 to any port 9100 # node-exporter
       sudo ufw allow from 127.0.0.1 to any port 8081 # application metrics exporter
     ```
-
 
 I've created a few Grafana dashboards to visualize the metrics from my applications:
 
