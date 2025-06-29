@@ -186,6 +186,13 @@ sudo apt install unattended-upgrades -y
 sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
 
+Automatically reboot the server if necessary after updates `/etc/apt/apt.conf.d/50unattended-upgrades`:
+
+```bash
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "03:00";
+```
+
 ### Expanded Security Maintenance
 
 To keep your server secure, consider enabling **[Ubuntu Pro](https://ubuntu.com/security/esm)** for extended security
@@ -241,10 +248,16 @@ PasswordAuthentication no
 PubkeyAuthentication yes
 ```
 
+Test your SSH configuration,
+
+```bash
+sudo sshd -t
+```
+
 Restart the SSH service to apply changes:
 
 ```bash
-sudo systemctl restart sshd
+sudo systemctl restart ssh
 ```
 
 ### Install Fail2ban
@@ -280,6 +293,21 @@ Restart Fail2ban to apply changes:
 
 ```bash
 sudo systemctl restart fail2ban
+
+sudo fail2ban-client status sshd
+```
+
+Check the status of Fail2ban to ensure it's running correctly:
+
+```bash
+sudo fail2ban-client status
+sudo iptables -L -n
+```
+
+To unban an IP address, use the following command:
+
+```bash
+sudo fail2ban-client set sshd unbanip <IP_ADDRESS>
 ```
 
 ### Set Up Firewall (UFW)
@@ -290,11 +318,70 @@ Install and enable UFW (Uncomplicated Firewall) to restrict access to your serve
 sudo apt install ufw -y
 ```
 
+Deny all incoming connections and allow only outgoing by default:
+
+```bash
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+
 ```bash
 sudo ufw allow 2222/tcp  # your custom SSH port
 sudo ufw allow http
 sudo ufw allow https
+```
+
+Implement rate limiting for SSH connections to prevent brute-force attacks:
+
+```bash
+sudo ufw limit 2222/tcp  # your custom SSH port
+```
+
+Finally, enable UFW:
+
+```bash
 sudo ufw enable
+```
+
+Check the status of UFW to ensure it's active and rules are applied:
+
+```bash
+sudo ufw status verbose
+# or
+sudo ufw status numbered
+```
+
+To delete a specific rule, use the following command:
+
+```bash
+sudo ufw delete <rule_number>
+```
+
+Optionally, enable logging to monitor firewall activity `/var/log/ufw.log`:
+
+```bash
+sudo ufw logging on
+sudo ufw logging medium
+```
+
+Once you enable firewall, finally perform a security audit to ensure everything is set up correctly:
+
+```bash
+# Check all available user accounts
+getent passwd | cut -d: -f1
+
+# Check for users with UID >= 1000 (non-system users)
+awk -F: '$3 >= 1000 && $3 < 65534 { print $1 }' /etc/passwd
+
+# Check for users with shell access
+grep -vE '(/nologin|/false)' /etc/passwd | awk -F: '{print $1, $7}'
+
+# Check for users with sudo privileges
+getent group sudo | cut -d: -f4
+
+
+
+
 ```
 
 ### Use Security Scanner
