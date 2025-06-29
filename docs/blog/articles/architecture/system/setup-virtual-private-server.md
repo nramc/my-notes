@@ -579,6 +579,25 @@ networks:
     driver: bridge
 ```
 
+!!! tip "Tip"
+
+    To manage all your applications containers and services, you can create a custom network called `app-network`
+    and connect all your application containers to this network. This allows them to communicate with each other
+    without exposing ports to the host machine, enhancing security and isolation.
+    
+    ```bash
+      # To create the network, run the following command:
+      docker network create custom-apps--network
+      # To list all available networks
+      docker network ls
+      # To connect a container to the network, use the --network flag when running the container:
+      docker run -d --name your-app-container --network custom-apps-network your-docker-image:latest
+      # To inspect the network and see connected containers, use:
+      docker network inspect custom-apps-network
+      # To remove the network, use:
+        docker network rm custom-apps-network
+    ```
+
 This `docker-compose.yml` file defines a service named `app` that uses a Docker image, maps ports, sets environment
 variables, mounts a volume for persistent data, and connects to a custom network.
 
@@ -675,6 +694,19 @@ services:
     networks:
       - monitoring-network
 
+  alertmanager:
+    image: quay.io/prometheus/alertmanager
+    container_name: alertmanager
+    ports:
+      - "127.0.0.1:9093:9093"
+    restart: unless-stopped
+    networks:
+      - custom-apps-network
+    volumes:
+      - ./alertmanager:/etc/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+  
   node-exporter:
     image: prom/node-exporter:latest
     container_name: node-exporter
@@ -733,6 +765,22 @@ datasources:
     url: http://prometheus:9090
     isDefault: true
 ```
+
+!!! Note "Note"
+
+    Do not forget to enable firewall rules for Prometheus and Grafana ports in your UFW configuration:
+
+    ```bash
+      sudo ufw allow from 127.0.0.1 to any port 3000 # grafana
+      sudo ufw allow from 127.0.0.1 to any port 9090 # prometheus
+      sudo ufw allow from 127.0.0.1 to any port 9094 # 
+      sudo ufw allow from 127.0.0.1 to any port 9093 # alertmanager
+      sudo ufw allow from 127.0.0.1 to any port 9092 # 
+      sudo ufw allow from 127.0.0.1 to any port 9091 # 
+      sudo ufw allow from 127.0.0.1 to any port 9100 # node-exporter
+      sudo ufw allow from 127.0.0.1 to any port 8081 # application metrics exporter
+    ```
+
 
 I've created a few Grafana dashboards to visualize the metrics from my applications:
 
