@@ -840,8 +840,7 @@ To ensure your applications are running smoothly, set up health checks and alert
 Please refer to the [Prometheus Alertmanager documentation](https://prometheus.io/docs/alerting/latest/alertmanager/)
 for detailed instructions on configuring alerts based on your application metrics.
 
-I've set up alerts based
-on [this article](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/)
+For inspiration, you can refer to my [alert.rules.yml](alert.rules.yml).
 
 !!! tip "Tip"
 
