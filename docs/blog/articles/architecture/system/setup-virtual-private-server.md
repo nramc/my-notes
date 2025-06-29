@@ -1,5 +1,5 @@
 ---
-title: "Self-Hosting for Developers: A Practical Guide to Virtual Private Server (VPS) Hosting with Docker & Monitoring"
+title: "Self-Hosting for Developers: A Practical Guide to VPS Hosting with Docker & Monitoring"
 description: "From Code to Cloud: A Developer's Real-World Guide to VPS Hosting"
 author: Ramachandran Nellaiyappan
 date:
@@ -652,6 +652,7 @@ Below are the tools I use for monitoring and observability:
 | **[Grafana](https://grafana.com/)**                                                          | Visualizes metrics in real-time dashboards                                                  |
 | **[Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html)** | Exposes health & metrics endpoints for domain-specific counters and timers (via Micrometer) |
 | **[Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/)**                 | Manages alerts based on Prometheus metrics, sends notifications via email/Telegram          |
+| **[cAdvisor](https://prometheus.io/docs/guides/cadvisor/)**                                  | Collects resource usage and performance metrics from running containers                     |
 
 My spring boot application exposes metrics and health endpoints at `http://localhost:8080/actuator/prometheus` using
 [Spring Boot Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) and
@@ -782,17 +783,6 @@ scrape_configs:
 
 ```
 
-below is sample grafana provisioning file `grafana/provisioning/datasources/datasource.yml` for data sources:
-
-```yaml
-datasources:
-  - name: Prometheus
-    type: prometheus
-    access: proxy
-    url: http://prometheus:9090
-    isDefault: true
-```
-
 Below is a sample Grafana provisioning file `grafana/provisioning/dashboards/dashboard.yml` for dashboards:
 
 ```yaml
@@ -913,7 +903,7 @@ tar -czf "$BACKUP_DIR.tar.gz" -C "$BACKUP_DIR" .
 rm -rf "$BACKUP_DIR"
 
 # Cleanup old backups (older than 7 days)
-find /opt/backups/* -type d -mtime +7 -exec rm -rf {} \;
+find "/path/to/backup/" -type f -name "*.tar.gz" -mtime +7 -delete \;
 ```
 
 This script creates a timestamped backup directory, copies essential files and directories, compresses the backup, and
