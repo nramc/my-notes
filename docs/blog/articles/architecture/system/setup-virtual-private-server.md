@@ -378,10 +378,6 @@ grep -vE '(/nologin|/false)' /etc/passwd | awk -F: '{print $1, $7}'
 
 # Check for users with sudo privileges
 getent group sudo | cut -d: -f4
-
-
-
-
 ```
 
 ### Use Security Scanner
@@ -523,6 +519,15 @@ http {
 
 This configuration limits each IP address to 5 requests per second, with a burst capacity of 10 requests. If the limit
 is exceeded, Nginx will return a `503 Service Unavailable` response.
+
+Test the rate limiting configuration:
+
+```bash
+for i in {1..20}; do curl -s -o /dev/null -w "%{http_code}\n" https://codewithram.dev/; done
+```
+
+If the rate limit is working correctly, you should see `200 OK` responses for the approximately first 15 requests,
+followed by `503 Service Unavailable` for the subsequent requests that exceed the limit.
 
 ## Application Deployment
 
