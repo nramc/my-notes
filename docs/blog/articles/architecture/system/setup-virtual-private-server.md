@@ -326,6 +326,15 @@ logpath = /var/log/nginx/error.log
 maxretry = 10
 findtime = 1m
 bantime = 10m
+
+[recidive]
+enabled  = true
+logpath  = /var/log/fail2ban.log
+bantime  = 604800     # 1 week in seconds
+findtime = 86400      # 1 day
+maxretry = 5
+backend  = auto
+
 ```
 
 !!! note "Note"
