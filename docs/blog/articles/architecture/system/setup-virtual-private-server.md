@@ -363,6 +363,31 @@ To unban an IP address, use the following command:
 sudo fail2ban-client set sshd unbanip <IP_ADDRESS>
 ```
 
+Optionally you can send notifications to your email or Telegram when an IP is banned by Fail2ban.
+To set up telegram notifications, create a file `/etc/fail2ban/action.d/telegram.conf` with the following content:
+
+```ini
+[Definition]
+actionstart =
+actionstop =
+actioncheck =
+actionban = curl -s -X POST https://api.telegram.org/bot<TOKEN>/sendMessage -d chat_id=<CHAT_ID> -d text="🚨 Fail2Ban: <name> banned IP <ip> on <hostname>"
+actionunban = curl -s -X POST https://api.telegram.org/bot<TOKEN>/sendMessage -d chat_id=<CHAT_ID> -d text="✅ Fail2Ban: <name> unbanned IP <ip> on <hostname>"
+
+[Init]
+name = default
+```
+
+Replace `<TOKEN>` with your Telegram bot token and `<CHAT_ID>` with the chat ID where you want to receive notifications.
+
+now, add the action to your jail configuration file `/etc/fail2ban/jail.local`:
+
+```ini
+[sshd]
+...
+action = telegram
+```
+
 ### Set Up Firewall (UFW)
 
 Install and enable UFW (Uncomplicated Firewall) to restrict access to your server:
