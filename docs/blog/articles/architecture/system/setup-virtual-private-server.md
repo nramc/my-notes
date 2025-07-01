@@ -290,7 +290,48 @@ enabled = true
 port = 2222  # your custom SSH port
 maxretry = 5
 bantime = 3600  # ban for 1 hour
+
+[nginx-http-auth]
+enabled = true
+maxretry = 10
+findtime = 1m
+bantime = 10m
+backend = auto
+filter = nginx-http-auth
+logpath = /var/log/nginx/error.log
+
+[nginx-limit-req]
+enabled = true
+filter = nginx-limit-req
+backend = auto
+logpath = /var/log/nginx/error.log
+maxretry = 10
+findtime = 1m
+bantime = 10m
+
+[nginx-botsearch]
+enabled = true
+filter = nginx-botsearch
+maxretry = 10
+findtime = 1m
+bantime = 10m
+backend = auto
+logpath = /var/log/nginx/access.log
+
+[nginx-bad-request]
+enabled = true
+filter = nginx-bad-request
+backend = auto
+logpath = /var/log/nginx/error.log
+maxretry = 10
+findtime = 1m
+bantime = 10m
 ```
+
+!!! note "Note"
+
+    If you are running Nginx with Docker and Systemd, you may ignore logpath settings in the above configuration.
+    By default, Fail2ban will look for logs in nginx's journal logs, which are accessible via `journalctl -u nginx.service`.
 
 Restart Fail2ban to apply changes:
 
