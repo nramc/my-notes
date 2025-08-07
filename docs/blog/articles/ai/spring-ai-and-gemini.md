@@ -13,6 +13,7 @@ tags:
   - LLM
   - Java
   - Spring Boot
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---

@@ -15,7 +15,6 @@ tags:
   - Architecture
   - System Design
   - Nginx
-  - Latest
 links:
   - "[Author Profile] Ram": https://nramc.github.io/my-profile/
 ---
