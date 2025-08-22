@@ -22,7 +22,6 @@ setup.
     ```
 2. Setup Virtual Environment
    ```bash
-   cd my-notes
    python3 -m venv dev 
    ```
 3. Install required dependencies
