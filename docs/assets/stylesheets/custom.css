@@ -13,3 +13,11 @@ body {
 .md-content--post .md-sidebar {
     display: none!important;
 }
+
+#tag\:latest {
+    display: none!important;
+}
+
+.grid.cards.cols-1 {
+    font-size: medium;
+}

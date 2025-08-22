@@ -13,4 +13,8 @@ Hands-on guides, real-world tips, and lessons — for developers who build, ship
 
 ## 🚀 Recently Published Articles
 
+<div class="grid cards cols-1" markdown>
+
 <!-- material/tags { include: [Latest] } -->
+
+</div>

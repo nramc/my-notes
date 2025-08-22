@@ -14,6 +14,7 @@ tags:
   - Security
   - Automation
   - Checkstyle
+  - Latest
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
