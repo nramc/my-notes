@@ -10,6 +10,7 @@ categories:
 tags:
   - Code Refactoring
   - Automation
+  - OpenRewrite
   - Secure Coding
   - Clean Code
   - Java
