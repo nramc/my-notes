@@ -174,8 +174,10 @@ nav:
       - 'Secure Coding': 'security/secure-coding.md'
       - 'Secure Password': 'security/password-security.md'
       - 'Penetration Testing': 'security/penetration-testing.md'
-  - Career:
-      - 'Professional Feedback': 'career/feedback-template.md'
+  - Others:
+      - 'Personal Finance':
+          - 'Weekly Investment': 'others/personal-finance/prompt/weekly-fund-evaluation-for-lumpsum.md'
+
   - About: 'about.md'
 
 

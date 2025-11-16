@@ -15,7 +15,11 @@ links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
 ---
 
-# 📌 WEEKLY VALUATION CHECK & INVESTMENT DECISION
+!!! info "Info"
+
+    This is a AI prompt template to analyze weekly valuation of various indices and mutual funds to recommend where to invest a weekly lumpsum.
+
+# WEEKLY VALUATION CHECK & INVESTMENT DECISION
 
 I want you to analyze valuation of the following indices and fund categories and tell me where to invest my ₹5000 weekly
 lumpsum.
@@ -75,7 +79,7 @@ Choose ONE or TWO funds with justification, such as:
 
 A simple 4–6 line summary telling:
 
-- Where valuation is cheap 
+- Where valuation is cheap
 - Where it is expensive
 - Where I should invest my ₹5000
 - Any warning signals (overvalued or overheated segments)
