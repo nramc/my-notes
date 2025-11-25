@@ -3,17 +3,19 @@
 I want you to analyze valuation of the following indices and fund categories and tell me where to invest my ₹5000 weekly
 lumpsum.
 
-My funds:
+My options are:
 
 1. Nifty 50 Index Fund
 2. Nifty Next 50 Index Fund
 3. Nifty Midcap 150 Index Fund
 4. Nifty Smallcap 250 Index Fund
 5. Nifty LargeMidcap 250 Index Fund
+6. Gold ETF
+7. Silver ETF
 
 Please do the following:
 
-## 1. Fetch latest PE, PB, and Dividend Yield
+## 1. Fetch **latest** PE, PB, and Dividend Yield
 
 Retrieve the most recent publicly available valuation metrics for:
 
@@ -22,6 +24,8 @@ Retrieve the most recent publicly available valuation metrics for:
 - Nifty Midcap 150 Index
 - Nifty Smallcap 250 Index
 - Nifty LargeMidcap 250 Index
+- Gold ETF
+- Silver ETF
 
 ## 2. Compare current valuation to historical norms
 
@@ -31,7 +35,7 @@ For each index or fund:
 - Compare with its 5-year average (if accessible)
 - Mention the valuation trend (rising or falling vs last week)
 
-## 3. Give an undervaluation score
+## 3. Calculate an undervaluation score
 
 Rate each one on this scale:
 
@@ -40,7 +44,7 @@ Rate each one on this scale:
 - Hold (fairly valued)
 - Avoid for lumpsum (overvalued)
 
-## 4. Recommend where to invest my ₹5000 this week
+## 4. Recommendation where to invest my ₹5000 this week
 
 Choose ONE or TWO funds with justification, such as:
 
@@ -50,9 +54,9 @@ Choose ONE or TWO funds with justification, such as:
 - Safer for lumpsum vs SIP
 - Market sentiment considerations
 
-## 5. Provide a short summary
+## 5. Add a short summary
 
-A simple 4–6 line summary telling:
+A simple 1 line summary telling:
 
 - Where valuation is cheap
 - Where it is expensive
@@ -61,7 +65,7 @@ A simple 4–6 line summary telling:
 
 ===
 
-## ⭐ Example Output Format (You will give me this every week)
+## ⭐ Example Output Format to send text in telegram message: do not provide any other text outside this format.
 
 ```text
 Valuation Summary (This Week):
@@ -71,6 +75,8 @@ Nifty Next 50 → PE 20.4 (Slightly undervalued), PB 3.7
 Nifty Midcap 150 → PE 33.5 (Overvalued), PB 4.5  
 Nifty Smallcap 250 → PE 45.2 (Overvalued), PB 5.2  
 Nifty LargeMidcap 250 → PE 28.3 (Fair), PB 4.0
+Gold ETF → Price (Fairly valued)
+Silver ETF → Price (Overvalued)
 
 Recommendation:
 Invest ₹5000 into:  
