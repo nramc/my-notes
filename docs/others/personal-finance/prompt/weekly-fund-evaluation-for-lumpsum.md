@@ -1,7 +1,7 @@
 ---
-title: 'Weekly valuation check and investment decision'
-description: 'Analyse and recommend where to invest a weekly lumpsum across various index funds and mutual funds'
-author: Ramachandran Nellaiyappan
+title: 'Personal Finance AI Prompts'
+description: 'Personal Finance AI Prompts'
+author: "Ramachandran Nellaiyappan"
 date:
   created: '2025-11-16'
 categories:
