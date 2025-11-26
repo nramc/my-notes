@@ -20,5 +20,4 @@ links:
 This is an AI prompt template to analyze weekly valuation of various indices and mutual funds to recommend where to
 invest a weekly lumpsum.
 
-[Download Prompt](../../../assets/data/prompt/weekly-fund-evaluation-for-lumpsum.txt){ .md-button .md-button--primary
-download="weekly-fund-evaluation-for-lumpsum.txt" }
+[Download Prompt](../../../assets/data/prompt/weekly-fund-evaluation-for-lumpsum.txt){ .md-button .md-button--primary download="weekly-fund-evaluation-for-lumpsum.txt" }
