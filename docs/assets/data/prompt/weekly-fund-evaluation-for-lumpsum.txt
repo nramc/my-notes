@@ -9,9 +9,10 @@ My options are:
 2. Nifty Next 50 Index Fund
 3. Nifty Midcap 150 Index Fund
 4. Nifty Smallcap 250 Index Fund
-5. Nifty LargeMidcap 250 Index Fund
-6. Gold ETF
-7. Silver ETF
+5. Nifty 500 Index Fund
+6. CRISIL Hybrid 35+65 - Aggressive Index Fund
+7. Gold ETF
+8. Silver ETF
 
 Please do the following:
 
@@ -23,7 +24,8 @@ Retrieve the most recent publicly available valuation metrics for:
 - Nifty Next 50 Index
 - Nifty Midcap 150 Index
 - Nifty Smallcap 250 Index
-- Nifty LargeMidcap 250 Index
+- Nifty 500 Index
+- CRISIL Hybrid 35+65 - Aggressive Index Fund
 - Gold ETF
 - Silver ETF
 
