@@ -13,6 +13,7 @@ My options are:
 6. CRISIL Hybrid 35+65 - Aggressive Index Fund
 7. Gold ETF
 8. Silver ETF
+9. Dynamic Bond Debt funds (if possible)
 
 Please do the following:
 
@@ -28,6 +29,7 @@ Retrieve the most recent publicly available valuation metrics for:
 - CRISIL Hybrid 35+65 - Aggressive Index Fund
 - Gold ETF
 - Silver ETF
+- Dynamic Bond Debt funds (if possible)
 
 ## 2. Compare current valuation to historical norms
 
@@ -36,6 +38,8 @@ For each index or fund:
 - State whether current PE/PB is low, fair, or high
 - Compare with its 5-year average (if accessible)
 - Mention the valuation trend (rising or falling vs last week)
+- Note any significant market events impacting valuation
+- Market sentiment considerations (e.g., economic outlook, interest rates, inflation)
 
 ## 3. Calculate an undervaluation score
 
