@@ -43,6 +43,11 @@ The motivation behind creating this framework is:
 - To balance long-term wealth creation with limited, rule-based tactical flexibility
 - To manage risk systematically while pursuing sustainable growth
 
+**Primary Objectives** of This Framework:
+
+* **Primary goal**: Long-term wealth creation with controlled drawdowns
+* **Secondary goal**: Avoid emotional decisions during market extremes
+
 ### What This Framework Covers
 
 This framework provides guidance on:
@@ -87,51 +92,62 @@ market sentiment.
 
 ## Strategic Asset Allocation
 
-### Large Cap Strategy
+Strategic Asset Allocation defines the **default structure of my portfolio**.
+It represents how my investments are allocated under normal market conditions and serves as the anchor for all
+investment and rebalancing decisions.
+This allocation is designed to balance **long-term growth** with **risk control and stability**.
 
-- Role: Stability + compounding
-- Preferred: Index funds
-- Investment style:
-    - SIP in all conditions
-    - Lumpsum only during:
-        - 10–20% index correction
-        - Below long-term moving average
-- Exit rule: No tactical exit, only rebalance
+The framework follows a **60–20–10–10 structure**, which provides a well-balanced mix of growth-oriented and stabilizing
+assets.
 
-### Mid Cap Strategy
+### Asset Buckets
 
-- Role: Growth with controlled risk
-- Preferred: Index funds
-- Investment style:
-    - Lumpsum only when:
-        - Index below 200 DMA
-        - Valuation below long-term average
+Below are the primary asset buckets in my portfolio:
 
-### Small Cap Strategy
+* Equity
+* Hybrid
+* Fixed Income
+* Commodity: Gold & Silver
 
-- Role: Return enhancer (not wealth protector)
-- Preferred: Active funds with strong track record
-- Investment style:
-    - Lumpsum only when:
-        - Index below 200 DMA
-        - Valuation below long-term average
-- Exit = rebalance, not panic sell
+Yes, the framework considers Hybrid funds as a separate asset class. To keep things simple, Hybrid is treated as its own
+bucket rather than splitting it into equity and debt components during rebalancing.
 
-### Hybrid Strategy
+### Strategic Target Allocation (Base)
+
+| Asset Class   | Target Allocation |
+|---------------|-------------------|
+| Equity        | 60%               |
+| Hybrid        | 20%               |
+| Fixed Income  | 10%               |
+| Gold & Silver | 10%               |
+
+### Equity Allocation (Within 60%)
+
+| Market cap    | % of Equity | % of Portfolio |
+|---------------|-------------|----------------|
+| Large Cap     | 50%         | 30%            |
+| Mid Cap       | 20%         | 12%            |
+| Small Cap     | 10%         | 6%             |
+| Flexi / Value | 10%         | 6%             |
+| International | 10%         | 6%             |
+
+### Investment Strategies by Market Cap
+
+| Market Cap    | Role                                      | Preferred Funds                   | Investment Style                                                                                                        | Exit Rule                                                 |
+|---------------|-------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| Large Cap     | Stability + compounding                   | Index funds                       | SIP in all conditions; Lumpsum during 10–20% correction, Price > 200 DMA AND 100 DMA > 200 DMA (only for Nifty Next 50) | No tactical exit, only rebalance                          |
+| Mid Cap       | Growth with controlled risk               | Index funds                       | Lumpsum when Price > 200 DMA AND 100 DMA > 200 DMA                                                                      | Rebalance, tactical exit when Price < 200 DMA for 3 weeks |
+| Small Cap     | Return enhancer                           | Active funds due to wide exposure | Lumpsum when Price > 200 DMA and 150 DMA > 200 DMA                                                                      | Rebalance, tactical exit when Price < 200 DMA for 3 weeks |
+| Hybrid        | Stability + moderate growth               | Balanced funds                    | SIP in all conditions; Lumpsum during equity corrections                                                                | No tactical exit, only rebalance                          |
+| International | Diversification + growth                  | Global index funds                | SIP in all conditions                                                                                                   | No tactical exit, only rebalance                          |
+| Debt          | Capital preservation + income             | Debt funds, bonds                 | SIP in all conditions                                                                                                   | No tactical exit, only rebalance                          |
+| Gold & Silver | Hedge against inflation + diversification | Gold ETFs, sovereign gold bonds   | SIP in all conditions; Lumpsum during price dips                                                                        | No tactical exit, only rebalance                          |
 
 ### International Equity Strategy
 
 ### Debt Strategy
 
 ### Gold & Silver Strategy
-
-## Rules
-
-👉 Rule: Strategic allocation is adjusted only during life events or structural changes — not market noise.
-
-### What to Do
-
-### What Not to Do
 
 ## Risk Management
 
@@ -146,7 +162,29 @@ market sentiment.
 
 ## Tactical Rebalancing Strategy
 
+### Investment Execution Rules
+
+* Tactical moves only in 5–10% chunks
+* Use new inflows first before selling existing assets
+
 ### Rebalancing Triggers
+
+You rebalance only at bucket level:
+
+* Once a year
+* Or ±5–7% drift
+  You do not:
+* Split hybrid into equity/debt
+* Rebalance gold against equity monthly
+* Worry about internal fund changes
+
+Tactical rules I recommend
+
+* Rebalance once per year OR when any asset drifts ±7–10%
+* During equity euphoria → shift new money to Hybrid / Debt
+* During deep corrections → deploy Hybrid → Equity
+  Tactical allocation should be rule-based, not emotional.
+
 
 - Time-based: Once per year
 - Threshold-based:
@@ -159,6 +197,40 @@ market sentiment.
     - Debt: ±5%
     - Gold: ±5%
 
+## Rules
+
+* Strategic allocation is adjusted only during life events or structural changes — not market noise.
+* MidCap - lumpsum on index fund - no sip
+* Small Cap - lumpsum on actively managed fund - no sip
+* SIP runs automatically, Never stopped, Never paused
+
+### What to Do
+
+* Stick to strategic allocation bands
+* Rebalance only at bucket level
+* Use new inflows first for rebalancing
+* Strategic allocation remains stable across market cycles
+* Changes are made only due to life events or long-term structural reasons
+* Market movements alone do not justify altering the strategic mix
+* Rebalancing is a risk-management tool, not a market-timing mechanism
+
+### What Not to Do
+
+* Do not exit equity completely
+* Do not exit any asset class completely
+* Do not split Hybrid into equity/debt for rebalancing, keep it as a single bucket
+* Do not react daily, weekly
+* Never sell Core funds to fund Sandbox
+* Avoid chasing past performance
+* Avoid frequent switching between funds
+* Avoid market timing attempts, try to catch exact market bottoms
+* Avoid emotional decisions based on short-term market movements
+* Do not have more than 10 funds in the portfolio
+* Do not compare with others constantly
+* Do not redesign portfolio every year
+* Do not change rules mid-crisis
+* Do not add new funds without a clear role
+
 ## Review & Monitoring
 
 ### Core Indicators
@@ -168,11 +240,19 @@ market sentiment.
 - Advance–Decline ratio (monthly)
 - Asset allocation drift
 
-## Frequency
+### Frequency
 
 - Monthly: quick check
 - Quarterly: deeper review
 - Annual: rebalance decision
+
+### Review Checklist (Once a Year)
+
+✔ Asset allocation within bands
+✔ Equity risk aligned with comfort level
+✔ Hybrid doing its stabilizing job
+✔ Gold allocation intact
+✔ Rules followed — not emotions
 
 ## Decision-Making Checklist
 
@@ -206,3 +286,5 @@ If any answer is **unclear → don’t act**.
 - Focus on long-term goals and strategy
 
 ## Conclusion
+
+> This rulebook exists to protect me from myself.
