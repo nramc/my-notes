@@ -68,13 +68,22 @@ This framework intentionally does **not** address:
 
 ## Core Principles
 
-1. Asset allocation matters more than fund selection
-2. Index funds form the core, active funds are satellites
-3. Risk is managed via Diversification & Rebalancing
-4. There is no shortcut to be rich; consistent investing over time is key
-5. Avoid emotional decisions based on news, social media; stick to the plan 
-6. I am a investor, not a trader. 
-7. My core portfolio is built for the long term (10+ years).
+The following principles form the foundation of My Systematic Investment Framework.
+These principles are designed to remain valid across market cycles and are not changed based on recent performance or
+market sentiment.
+
+1. **Allocation First**: Asset allocation matters more than fund selection.
+2. **Core & Satellite**: Index funds form the core; active funds are satellites.
+3. **Manage Risk**: Diversify and rebalance; risk is controlled, not chased.
+4. **Consistency Wins**: No shortcuts—long-term investing beats timing.
+5. **Ignore Noise**: Stick to the plan; avoid decisions based on news or social media.
+6. **Investor, Not Trader**: Focus on long-term growth, not short-term trades.
+7. **Think Long-Term**: Core portfolio is built for 10+ years.
+8. **Review, Don’t Overreact**: Check regularly but change sparingly.
+9. **Discipline Over Timing**: Consistent investing beats market timing. Follow rules, not forecasts.
+10. **Keep It Simple**: Simple, clear strategies outperform complex ones.
+
+> When faced with uncertainty, I follow the framework—not emotions, opinions, or predictions.
 
 ## Strategic Asset Allocation
 
@@ -119,8 +128,6 @@ This framework intentionally does **not** address:
 ## Rules
 
 👉 Rule: Strategic allocation is adjusted only during life events or structural changes — not market noise.
-
-
 
 ### What to Do
 
