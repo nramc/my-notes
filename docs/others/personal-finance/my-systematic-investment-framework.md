@@ -267,98 +267,151 @@ through **structure, allocation, and discipline**, not through prediction or fre
     - Concentration risk
     - Alignment with risk tolerance and long-term objectives
 
-## Rules
-
-* Strategic allocation is adjusted only during life events or structural changes — not market noise.
-* MidCap - lumpsum on index fund - no sip
-* Small Cap - lumpsum on actively managed fund - no sip
-* SIP runs automatically, Never stopped, Never paused
-
-### What to Do
-
-* Stick to strategic allocation bands
-* Rebalance only at bucket level
-* Use new inflows first for rebalancing
-* Strategic allocation remains stable across market cycles
-* Changes are made only due to life events or long-term structural reasons
-* Market movements alone do not justify altering the strategic mix
-* Rebalancing is a risk-management tool, not a market-timing mechanism
-* When faced with uncertainty, I follow the framework—not emotions, opinions, or predictions.
-* Always check overlap between funds before adding new ones
-
-### What Not to Do
-
-* Do not exit equity completely
-* Do not exit any asset class completely
-* Do not split Hybrid into equity/debt for rebalancing, keep it as a single bucket
-* Do not add more than one fund per fund category
-* Do not add any new fund without a clear role
-* Do not react daily, weekly
-* Never sell Core funds to fund Sandbox
-* Avoid chasing past performance
-* Avoid frequent switching between funds
-* Avoid market timing attempts, try to catch exact market bottoms
-* Avoid emotional decisions based on short-term market movements
-* Do not have more than 10 funds in the portfolio
-* Do not compare with others constantly
-* Do not redesign portfolio every year
-* Do not change rules mid-crisis
-* Do not add new funds without a clear role
-* Do not invest in individual stocks, since stock picking is a zero-sum game for retail investors
-* Do not invest in high-risk, speculative assets that do not align with risk tolerance
-* Do not let recent market performance dictate investment decisions
-
 ## Review & Monitoring
 
-### Core Indicators
+Regular review and monitoring are essential components of My Systematic Investment Framework. They ensure that the
+portfolio remains aligned with strategic objectives, adheres to defined rules, and responds appropriately to changing
+market conditions without succumbing to emotional decision-making.
 
-- Index vs 200 DMA
-- PE / valuation band (broad, not precise)
-- Advance–Decline ratio (monthly)
-- Asset allocation drift
+### Moving Average Indicator (50 / 100 / 200 DMA)
+
+Moving averages are used only as trend and risk indicators, not as precise entry or exit signals.
+
+General Rules (Applicable to All Assets):
+
+- 200 DMA → Primary trend & risk filter
+- 100 DMA → Intermediate trend confirmation
+- 50 DMA → Short-term momentum (observational only)
+
+**Trend Zones and Actions**:
+
+| Price Position           | Interpretation           | Tactical Action               |
+|--------------------------|--------------------------|-------------------------------|
+| Above 50 / 100 / 200 DMA | Strong uptrend           | Continue SIPs, avoid lumpsum  |
+| Between 100 & 200 DMA    | Neutral / early weakness | SIPs only, pause lumpsum      |
+| Below 200 DMA            | Bearish / stress zone    | Gradual deployment of capital |
+| Far above 200 DMA        | Overheated               | Reduce risk via rebalancing   |
+
+**Tactical Action Matrix**:
+
+| Asset Class              | Role                       | Above 200 DMA | Between 100–200 DMA     | Below 200 DMA                                  | Extreme / Overheated     |
+|--------------------------|----------------------------|---------------|-------------------------|------------------------------------------------|--------------------------|
+| **Equity (Overall)**     | Core growth                | Continue SIPs | SIP only, pause lumpsum | Gradual increase via tranches                  | Trim via rebalance       |
+| **Large Cap**            | Stability & compounding    | SIP only      | SIP only                | Lumpsum in stages                              | Preferred over mid/small |
+| **Mid Cap**              | Growth                     | SIP only      | Pause lumpsum           | Selective staged lumpsum                       | Avoid aggressive adds    |
+| **Small Cap**            | Return enhancer            | SIP only      | SIP only                | SIP continues; lumpsum only in deep correction | Trim via rebalance       |
+| **Flexi / Value**        | Style diversification      | SIP only      | Monitor                 | Add selectively                                | Reduce if overweight     |
+| **International Equity** | Geographic diversification | SIP only      | Pause lumpsum           | Selective accumulation                         | Reduce excess exposure   |
+| **Hybrid**               | Volatility control         | SIP only      | SIP only                | No tactical increase                           | Maintain target          |
+| **Fixed Income**         | Stability & liquidity      | Maintain      | Maintain                | Source of capital                              | Rebuild post-rebalance   |
+| **Gold & Silver**        | Hedge                      | SIP only      | SIP only                | Accumulate gradually                           | Trim excess              |
 
 ### Frequency
 
-- Monthly: quick check
-- Quarterly: deeper review
-- Annual: rebalance decision
+Portfolio reviews are conducted on a fixed schedule. Reviews are observational and rule-based, not reactive.
+No changes are made outside this schedule unless triggered by predefined rules.
 
-### Review Checklist (Monthly)
+- Monthly: Quick Check (observe)
+- Quarterly: Deeper Review (prepare)
+- Annual: rebalance decision (execute if required)
 
-- TODO: check 15-20% corrections in Nifty 50 index
-- Review asset allocation drift
-- Nifty MidCap 150 index vs 200 DMA
-    - If Price > 200 DMA AND 100 DMA > 200 DMA → consider tactical entry
-    - If Price < 200 DMA for 3 weeks → consider tactical exit/rebalance
-- Nifty SmallCap 250 index vs 200 DMA
-    - If Price > 200 DMA AND 150 DMA > 200 DMA → consider tactical entry
-    - If Price < 200 DMA for 3 weeks → consider tactical exit/rebalance
+### Monthly Review Checklist (10–15 minutes)
 
-### Review Checklist (Once a Year)
+**Purpose**: Monitor health, ensure discipline, avoid drift
 
-✔ Asset allocation within bands
-✔ Equity risk aligned with comfort level
-✔ Hybrid doing its stabilizing job
-✔ Gold allocation intact
-✔ Rules followed — not emotions
+- SIPs executed successfully (no missed or paused SIPs)
+- Portfolio allocation broadly within strategic bands
+- No asset class materially breached risk limits
+- Tactical exposure within the 5% cap
+- Major market movements acknowledged but not acted upon
+- Review completed without any portfolio changes
 
-## Decision-Making Checklist
+### Quarterly Review Checklist (30–45 minutes)
 
-Before any buy/sell, ask:
+**Purpose**: Purpose: Risk control, alignment, and preparation
 
-- Is this allowed by my system?
-- Is this strategic or tactical?
-- What rule triggers this action?
-- Will this improve or harm discipline?
-- Would I repeat this decision again?
+- Allocation bands respected for all asset classes
+    - Asset allocation drift reviewed at bucket level
+    - Risk concentration (mid/small cap, active funds) within limits
+- Overlapping funds and redundant exposures reviewed
+- Tactical positions reviewed for relevance and size
+- Fixed income and liquidity adequacy confirmed
+- Gold & hybrid allocations aligned with stabilizing role
+- Rebalancing need identified (but executed only if rules trigger)
+- Monitor moving average indicators for tactical signals
+    - Check 15-20% corrections in Nifty index for lumpsum opportunities
+    - Nifty MidCap 150 index vs 200 DMA
+        - If Price > 200 DMA AND 100 DMA > 200 DMA → consider tactical entry
+        - If Price < 200 DMA for 3 weeks → consider tactical exit/rebalance
+    - Nifty SmallCap 250 index vs 200 DMA
+        - If Price > 200 DMA AND 150 DMA > 200 DMA → consider tactical entry
+        - If Price < 200 DMA for 3 weeks → consider tactical exit/rebalance
 
-If any answer is **unclear → don’t act**.
+### Annual Review Checklist (60–90 minutes)
 
-## Documentation & Logging
+**Purpose**: Structural review and disciplined rebalancing
 
-## Emergency Protocol
+- Full portfolio allocation vs strategic targets reviewed
+- Threshold breaches confirmed and documented
+- Rebalancing executed (if required) at bucket level
+- New inflows used preferentially for rebalancing
+- Tactical adjustments unwound or normalized
+- Risk tolerance and time horizon revalidated
+- Emergency fund adequacy reconfirmed
+- Fund count ≤ 10 and one fund per category maintained
+- Performance reviewed relative to process, not benchmarks
 
-### What to do in market crash ?
+## Rules
+
+This section defines the **non-negotiable rules** governing portfolio construction, investment execution, and behavior.
+These rules exist to protect discipline, reduce emotional errors, and ensure long-term consistency across market cycles.
+
+### Core Portfolio Rules
+
+* Strategic allocation is adjusted only during life events or structural changes — not market noise.
+* Systematic Investment Plans (SIPs) run automatically:
+    * SIPs are never paused or stopped, regardless of market conditions.
+* Category-specific execution rules:
+    * Mid-Cap Equity: Lumpsum investments in index funds only; no SIPs
+    * Small-Cap Equity: Lumpsum investments in actively managed funds only; no SIPs
+
+### What to Do
+
+- Adhere strictly to defined strategic allocation bands
+- Rebalance only at the asset-bucket level, not at individual fund level
+- Use new inflows first for rebalancing before selling existing holdings
+- Maintain the same strategic allocation across bull, bear, and sideways markets
+- Market movements alone do not justify altering the strategic mix
+- Treat rebalancing as a risk-management tool, not a return-enhancement or market-timing strategy
+- Follow the written framework during periods of uncertainty
+- Review fund overlap and exposure before adding any new fund
+
+### What Not to Do
+
+* Do not fully exit equity or any asset class
+* Do not rebalance by splitting hybrid funds into equity and debt components
+* Do not hold more than one fund per fund category
+* Do not add any fund without a clearly defined role in the portfolio
+* Do not react to daily or weekly market movements
+* Do not sell core portfolio holdings to fund tactical or experimental strategies
+* Do not chase past performance or recent winners
+* Do not switch funds frequently
+* Do not attempt to time market tops or bottoms
+* Do not make emotional decisions based on short-term volatility
+* Do not hold more than 10 funds in the entire portfolio
+* Do not compare portfolio performance frequently with others
+* Do not redesign the portfolio every year
+* Do not change rules during periods of market stress or crisis
+* Do not invest in individual stocks
+* Do not invest in speculative or high-risk assets outside defined risk tolerance
+* Do not let recent market performance dictate portfolio decisions
+
+## Emergency Protocol: What to do in market crash ?
+
+In the event of a significant market crash (e.g., a drop of 20% or more in major indices), it is crucial to follow a
+predefined emergency protocol to maintain discipline and avoid emotional decision-making.
+
+The following steps outline the actions to take during such market downturns:
 
 - Stay calm, avoid panic selling
 - Review portfolio against rules
