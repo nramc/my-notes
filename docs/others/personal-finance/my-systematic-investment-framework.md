@@ -166,7 +166,60 @@ Let's assume a monthly SIP of Rupees(₹) 10,000.
 | Fixed Income                 | 10%               | ₹1,000    |
 | Gold & Silver                | 10%               | ₹1,000    |
 
-## todo: Tactical Rebalancing Strategy
+## Tactical Rebalancing Strategy
+
+Tactical rebalancing provides **controlled flexibility** within the boundaries of the strategic asset allocation.
+It allows for **opportunistic adjustments** based on market conditions while maintaining overall portfolio discipline.
+
+All tactical actions operate within predefined limits and **must never compromise the integrity of the core portfolio**.
+
+### Strategic Allocation Bands
+
+Based on my risk tolerance and investment horizon, I have defined the following strategic allocation bands for each
+asset class. These bands act as both risk controls and rebalancing triggers.
+
+| Asset Class         | Target Allocation | Lower Band | Upper Band |
+|---------------------|-------------------|------------|------------|
+| Equity (±7%)        | 60%               | 53%        | 67%        |
+| Large Cap (±5%)     | 30%               | 25%        | 35%        |
+| Mid Cap (±4%)       | 12%               | 8%         | 16%        |
+| Small Cap (±3%)     | 6%                | 3%         | 9%         |
+| Flexi / Value (±4%) | 9%                | 5%         | 13%        |
+| International (±2%) | 3%                | 1%         | 5%         |
+| Hybrid (±5%)        | 20%               | 15%        | 25%        |
+| Fixed Income (±5%)  | 10%               | 5%         | 15%        |
+| Gold & Silver (±5%) | 10%               | 5%         | 15%        |
+
+### Investment Execution Rules
+
+* Tactical rebalancing is **incremental**, not all-in or all-out
+* No asset class is fully exited or aggressively overweighted
+* Tactical moves only in 5% chunks
+* New inflows are used first before selling existing holdings
+* Gains from tactical adjustments are absorbed back into the core portfolio
+
+### Rebalancing Triggers
+
+Rebalancing is triggered by either time-based or threshold-based criteria, whichever occurs first.
+
+- Time-based: Portfolio review and rebalance once per year
+- Threshold-based: When an asset class breaches its defined allocation band:
+    - Equity: ±7%
+    - Large cap: ±5%
+    - Mid cap: ±4%
+    - Small cap: ±3%
+    - Flexi / Value: ±4%
+    - International Equity: ±2%
+    - Hybrid: ±5%
+    - Fixed Income: ±5%
+    - Gold & Silver: ±5%
+
+### What Tactical Rebalancing Is Not
+
+- Not a short-term trading strategy
+- Not a prediction of market tops or bottoms
+- Not a frequent activity
+- Not driven by news, opinions, or market narratives
 
 ## Risk Management
 
@@ -213,58 +266,6 @@ through **structure, allocation, and discipline**, not through prediction or fre
     - Allocation drift
     - Concentration risk
     - Alignment with risk tolerance and long-term objectives
-
-## Tactical Rebalancing Strategy
-
-### Strategic Allocation Bands
-
-Based on my risk tolerance and investment horizon, I have defined the following strategic allocation bands for each
-asset class.
-
-| Asset Class         | Target Allocation | Lower Band | Upper Band |
-|---------------------|-------------------|------------|------------|
-| Equity (±7%)        | 60%               | 53%        | 67%        |
-| Large Cap (±5%)     | 30%               | 25%        | 35%        |
-| Mid Cap (±4%)       | 12%               | 8%         | 16%        |
-| Small Cap (±3%)     | 6%                | 3%         | 9%         |
-| Flexi / Value (±4%) | 9%                | 5%         | 13%        |
-| International (±2%) | 3%                | 1%         | 5%         |
-| Hybrid (±5%)        | 20%               | 15%        | 25%        |
-| Fixed Income (±5%)  | 10%               | 5%         | 15%        |
-| Gold & Silver (±5%) | 10%               | 5%         | 15%        |
-
-### Investment Execution Rules
-
-* Tactical moves only in 5–10% chunks
-* Use new inflows first before selling existing assets
-
-### Rebalancing Triggers
-
-You rebalance only at bucket level:
-
-* Once a year
-* Or ±5–7% drift
-  You do not:
-* Split hybrid into equity/debt
-* Rebalance gold against equity monthly
-* Worry about internal fund changes
-
-Tactical rules I recommend
-
-* Rebalance once per year OR when any asset drifts ±7–10%
-* During equity euphoria → shift new money to Hybrid / Debt
-* During deep corrections → deploy Hybrid → Equity
-  Tactical allocation should be rule-based, not emotional.
-
-
-- Time-based: Once per year
-- Threshold-based:
-
-    - Large cap: ±5%
-    - Mid cap: ±4%
-    - Small cap: ±3%
-    - Flexi / Value: ±4%
-    - International Equity: ±2%
 
 ## Rules
 
