@@ -413,23 +413,44 @@ predefined emergency protocol to maintain discipline and avoid emotional decisio
 
 The following steps outline the actions to take during such market downturns:
 
-- Stay calm, avoid panic selling
-- Review portfolio against rules
-- Identify buying opportunities based on framework
-- Consider gradual buying (staggered lumpsum) to average down
-- Avoid making hasty decisions based on fear
+- **Stay Calm and Assess**
+    - Do not panic sell. Market crashes are normal in long-term investing.
+    - Check strategic allocation bands for each asset class: identify breaches.
+- **Follow the Rulebook**
+    - Review Core Principles and Rules.
+    - Rebalance only if allocation bands are breached.
+    - Maintain SIPs in all eligible assets; never pause.
+    - Do not exit any asset class completely.
+- **Tactical Opportunities**
+    - Identify buying opportunities based on framework
+        - Consider deploying new inflows gradually into underweight asset classes.
+        - Use fixed income or cash buffers if available to add exposure to equity.
+    - Only increase exposure within strategic allocation bands.
+    - Avoid chasing “bottoms” or predicting the exact low point.
+- **Portfolio Safety Measures**
+    - Ensure liquidity buffer / emergency fund is untouched and available for personal needs.
+    - Do not use emergency capital to speculate.
+    - Check overlapping funds and avoid doubling exposure unintentionally.
+    - Verify that tactical strategies remain within the 5% cap.
 - Consult with a financial advisor if unsure
-- Maintain liquidity to take advantage of opportunities
 - Stick to long-term investment plan
 - Review emergency fund status
 - Document actions taken and rationale
-- Learn from the experience for future preparedness
-- Focus on long-term goals and strategy
 
-## Conclusion
+> A crash is not a signal to abandon strategy; it is an opportunity to reinforce discipline and invest incrementally
+> within defined rules.
 
 ## Final Thoughts
 
-First one million is hardest.
+Investing is a journey, not a sprint. Building wealth consistently over time requires **discipline, patience, and
+adherence to a well-defined framework**. The first million is often the hardest, not because of market
+complexity, but because of the mental discipline required to stay the course.
+
+Remember:
+
+> Time in the market, discipline, and consistency matter far more than timing the market or chasing short-term returns.
+
+Finally, investing is not just about numbers — it is about **behaving intelligently and calmly** when markets are
+uncertain. The framework ensures I act with confidence, even in the most challenging times.
 
 > This rulebook exists to protect me from myself.
