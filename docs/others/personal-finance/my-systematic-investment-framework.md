@@ -138,19 +138,16 @@ bucket rather than splitting it into equity and debt components during rebalanci
 
 ### Investment Strategies by Market Cap
 
-| Market Cap    | Role                                      | Preferred Funds                   | Investment Style                                                                                                        | Exit Rule                                                 |
-|---------------|-------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| Large Cap     | Stability + compounding                   | Index funds                       | SIP in all conditions; Lumpsum during 10–20% correction, Price > 200 DMA AND 100 DMA > 200 DMA (only for Nifty Next 50) | No tactical exit, only rebalance                          |
-| Mid Cap       | Growth with controlled risk               | Index funds                       | Lumpsum when Price > 200 DMA AND 100 DMA > 200 DMA                                                                      | Rebalance, tactical exit when Price < 200 DMA for 3 weeks |
-| Small Cap     | Return enhancer                           | Active funds due to wide exposure | Lumpsum when Price > 200 DMA and 150 DMA > 200 DMA                                                                      | Rebalance, tactical exit when Price < 200 DMA for 3 weeks |
-| Hybrid        | Stability + moderate growth               | Balanced funds                    | SIP in all conditions; Lumpsum during equity corrections                                                                | No tactical exit, only rebalance                          |
-| International | Diversification + growth                  | Global index funds                | SIP in all conditions                                                                                                   | No tactical exit, only rebalance                          |
-| Debt          | Capital preservation + income             | Debt funds, bonds                 | SIP in all conditions                                                                                                   | No tactical exit, only rebalance                          |
-| Gold & Silver | Hedge against inflation + diversification | Gold ETFs, sovereign gold bonds   | SIP in all conditions; Lumpsum during price dips                                                                        | No tactical exit, only rebalance                          |
-
-### Investment Strategy by Fund Type
-
-Fund Type:
+| Market Cap    | Role                                                  | Preferred Funds                   | Investment Style                                                                                                          | Exit Rule                                                                                                     |
+|---------------|-------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| Large Cap     | Core growth engine, Stability + compounding           | Index funds                       | SIP in all conditions; Lumpsum during 10–20% correction or Price > 200 DMA AND 100 DMA > 200 DMA (only for Nifty Next 50) | No tactical exit, only rebalance                                                                              |
+| Mid Cap       | Growth with controlled risk                           | Index funds                       | Lumpsum when Price > 200 DMA AND 100 DMA > 200 DMA                                                                        | Rebalance, tactical exit when Price < 200 DMA for 3 weeks due to high volatility and long drawdowns           |
+| Small Cap     | Return enhancer                                       | Active funds due to wide exposure | Lumpsum when Price > 200 DMA and 150 DMA > 200 DMA                                                                        | Rebalance, tactical exit when Price < 200 DMA for 3 weeks due to very high volatility and very long drawdowns |
+| Hybrid        | Stability + moderate growth                           | Balanced funds                    | SIP in all conditions; Lumpsum during equity corrections                                                                  | No tactical exit, only rebalance                                                                              |
+| Flexi / Value | Mid-Term goals, My interest, Opportunistic growth     | Active funds due to value finding | SIP in all conditions                                                                                                     | No tactical exit, only rebalance                                                                              |
+| International | Diversification + growth                              | Global index funds                | SIP in all conditions                                                                                                     | No tactical exit, only rebalance                                                                              |
+| Debt          | Capital preservation + income                         | Debt funds, bonds                 | SIP in all conditions                                                                                                     | No tactical exit, only rebalance                                                                              |
+| Gold & Silver | Liquidity + Hedge against inflation + diversification | Gold ETFs, sovereign gold bonds   | SIP in all conditions; Lumpsum during price dips                                                                          | No tactical exit, only rebalance                                                                              |
 
 ## Risk Management
 
@@ -255,6 +252,17 @@ Tactical rules I recommend
 - Monthly: quick check
 - Quarterly: deeper review
 - Annual: rebalance decision
+
+### Review Checklist (Monthly)
+
+- TODO: check 15-20% corrections in Nifty 50 index
+- Review asset allocation drift
+- Nifty MidCap 150 index vs 200 DMA
+    - If Price > 200 DMA AND 100 DMA > 200 DMA → consider tactical entry
+    - If Price < 200 DMA for 3 weeks → consider tactical exit/rebalance
+- Nifty SmallCap 250 index vs 200 DMA
+    - If Price > 200 DMA AND 150 DMA > 200 DMA → consider tactical entry
+    - If Price < 200 DMA for 3 weeks → consider tactical exit/rebalance
 
 ### Review Checklist (Once a Year)
 
