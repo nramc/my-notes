@@ -176,6 +176,7 @@ nav:
       - 'Penetration Testing': 'security/penetration-testing.md'
   - Others:
       - 'Personal Finance':
+          - "My Systematic Investment Framework": 'others/personal-finance/my-systematic-investment-framework.md'
           - 'Weekly Investment': 'others/personal-finance/prompt/weekly-fund-evaluation-for-lumpsum.md'
 
   - About: 'about.md'

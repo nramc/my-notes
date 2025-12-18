@@ -11,6 +11,8 @@ tags:
   - Investment
 links:
   - "[Author] Ram": https://nramc.github.io/my-profile/
+hide:
+  - toc
 ---
 
 # My Systematic Investment Framework
@@ -79,7 +81,7 @@ These principles are designed to remain valid across market cycles and are not c
 market sentiment.
 
 1. **Allocation First**: Asset allocation matters more than fund selection.
-2. **Core & Satellite**: Index funds form the core; active funds are satellites.
+2. **Core & Satellite**: Large cap Index funds form the core; all other funds are satellites.
 3. **Manage Risk**: Diversify and rebalance; risk is controlled, not chased.
 4. **Consistency Wins**: No shortcuts—long-term investing beats timing.
 5. **Ignore Noise**: Stick to the plan; avoid decisions based on news or social media.
@@ -92,8 +94,6 @@ market sentiment.
     zero-sum game and not worth the effort for retail investors.
 12. **Believe in Compounding**: Compounding is the eighth wonder of the world. Start early, stay invested, and let time
     work its magic.
-
-> When faced with uncertainty, I follow the framework—not emotions, opinions, or predictions.
 
 ## Strategic Asset Allocation
 
@@ -109,10 +109,10 @@ assets.
 
 Below are the primary asset buckets in my portfolio:
 
-* Equity
-* Hybrid
-* Fixed Income
-* Commodity: Gold & Silver
+1. Equity
+2. Hybrid
+3. Fixed Income
+4. Commodity: Gold & Silver
 
 Yes, the framework considers Hybrid funds as a separate asset class. To keep things simple, Hybrid is treated as its own
 bucket rather than splitting it into equity and debt components during rebalancing.
@@ -148,11 +148,9 @@ bucket rather than splitting it into equity and debt components during rebalanci
 | Debt          | Capital preservation + income             | Debt funds, bonds                 | SIP in all conditions                                                                                                   | No tactical exit, only rebalance                          |
 | Gold & Silver | Hedge against inflation + diversification | Gold ETFs, sovereign gold bonds   | SIP in all conditions; Lumpsum during price dips                                                                        | No tactical exit, only rebalance                          |
 
-### International Equity Strategy
+### Investment Strategy by Fund Type
 
-### Debt Strategy
-
-### Gold & Silver Strategy
+Fund Type:
 
 ## Risk Management
 
@@ -218,12 +216,16 @@ Tactical rules I recommend
 * Changes are made only due to life events or long-term structural reasons
 * Market movements alone do not justify altering the strategic mix
 * Rebalancing is a risk-management tool, not a market-timing mechanism
+* When faced with uncertainty, I follow the framework—not emotions, opinions, or predictions.
+* Always check overlap between funds before adding new ones
 
 ### What Not to Do
 
 * Do not exit equity completely
 * Do not exit any asset class completely
 * Do not split Hybrid into equity/debt for rebalancing, keep it as a single bucket
+* Do not add more than one fund per fund category
+* Do not add any new fund without a clear role
 * Do not react daily, weekly
 * Never sell Core funds to fund Sandbox
 * Avoid chasing past performance
@@ -294,5 +296,9 @@ If any answer is **unclear → don’t act**.
 - Focus on long-term goals and strategy
 
 ## Conclusion
+
+## Final Thoughts
+
+First one million is hardest.
 
 > This rulebook exists to protect me from myself.
