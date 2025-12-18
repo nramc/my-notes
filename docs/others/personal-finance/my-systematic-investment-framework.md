@@ -133,8 +133,8 @@ bucket rather than splitting it into equity and debt components during rebalanci
 | Large Cap     | 50%         | 30%            |
 | Mid Cap       | 20%         | 12%            |
 | Small Cap     | 10%         | 6%             |
-| Flexi / Value | 10%         | 6%             |
-| International | 10%         | 6%             |
+| Flexi / Value | 15%         | 9%             |
+| International | 5%          | 3%             |
 
 ### Investment Strategies by Market Cap
 
@@ -149,6 +149,23 @@ bucket rather than splitting it into equity and debt components during rebalanci
 | Debt          | Capital preservation + income                         | Debt funds, bonds                 | SIP in all conditions                                                                                                     | No tactical exit, only rebalance                                                                              |
 | Gold & Silver | Liquidity + Hedge against inflation + diversification | Gold ETFs, sovereign gold bonds   | SIP in all conditions; Lumpsum during price dips                                                                          | No tactical exit, only rebalance                                                                              |
 
+### Strategic Allocation for SIP
+
+SIP contributions are allocated according to the strategic target asset allocation, but except for Mid Cap and Small Cap
+(which are only lumpsum), all other asset classes receive SIP contributions. This is because of their nature of being
+more volatile and are better suited for opportunistic lumpsum investments rather than regular SIPs.
+
+Let's assume a monthly SIP of Rupees(₹) 10,000.
+
+| Asset Class                  | Target Allocation | Rupees(₹) |
+|------------------------------|-------------------|-----------|
+| Equity - Core Large Cap Fund | 40%               | ₹4,000    |
+| Equity - Flexi / Value Fund  | 15%               | ₹1,500    |
+| Equity - International Fund  | 5%                | ₹500      |
+| Hybrid                       | 20%               | ₹2,000    |
+| Fixed Income                 | 10%               | ₹1,000    |
+| Gold & Silver                | 10%               | ₹1,000    |
+
 ## Risk Management
 
 - Diversification across asset classes
@@ -161,6 +178,23 @@ bucket rather than splitting it into equity and debt components during rebalanci
 - Liquidity buffer (emergency fund)
 
 ## Tactical Rebalancing Strategy
+
+### Strategic Allocation Bands
+
+Based on my risk tolerance and investment horizon, I have defined the following strategic allocation bands for each
+asset class.
+
+| Asset Class         | Target Allocation | Lower Band | Upper Band |
+|---------------------|-------------------|------------|------------|
+| Equity (±7%)        | 60%               | 53%        | 67%        |
+| Large Cap (±5%)     | 30%               | 25%        | 35%        |
+| Mid Cap (±4%)       | 12%               | 8%         | 16%        |
+| Small Cap (±3%)     | 6%                | 3%         | 9%         |
+| Flexi / Value (±4%) | 9%                | 5%         | 13%        |
+| International (±2%) | 3%                | 1%         | 5%         |
+| Hybrid (±5%)        | 20%               | 15%        | 25%        |
+| Fixed Income (±5%)  | 10%               | 5%         | 15%        |
+| Gold & Silver (±5%) | 10%               | 5%         | 15%        |
 
 ### Investment Execution Rules
 
@@ -188,14 +222,12 @@ Tactical rules I recommend
 
 - Time-based: Once per year
 - Threshold-based:
-    - Equity: ±7%
+
     - Large cap: ±5%
     - Mid cap: ±4%
     - Small cap: ±3%
-    - Hybrid: ±5%
+    - Flexi / Value: ±4%
     - International Equity: ±2%
-    - Debt: ±5%
-    - Gold: ±5%
 
 ## Rules
 
