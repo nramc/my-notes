@@ -47,6 +47,7 @@ The motivation behind creating this framework is:
 
 * **Primary goal**: Long-term wealth creation with controlled drawdowns
 * **Secondary goal**: Avoid emotional decisions during market extremes
+* **Tertiary goal**: Transfer knowledge about financial literacy to family members and next generations
 
 ### What This Framework Covers
 
@@ -83,10 +84,14 @@ market sentiment.
 4. **Consistency Wins**: No shortcuts—long-term investing beats timing.
 5. **Ignore Noise**: Stick to the plan; avoid decisions based on news or social media.
 6. **Investor, Not Trader**: Focus on long-term growth, not short-term trades.
-7. **Think Long-Term**: Core portfolio is built for 10+ years.
+7. **Think Long-Term**: Core portfolio is built for 10+ years. Believe in compounding over time.
 8. **Review, Don’t Overreact**: Check regularly but change sparingly.
 9. **Discipline Over Timing**: Consistent investing beats market timing. Follow rules, not forecasts.
 10. **Keep It Simple**: Simple, clear strategies outperform complex ones.
+11. **Mutual Funds Over Stocks**: Use mutual funds rather than picking individual stocks. IMO, stock picking is a
+    zero-sum game and not worth the effort for retail investors.
+12. **Believe in Compounding**: Compounding is the eighth wonder of the world. Start early, stay invested, and let time
+    work its magic.
 
 > When faced with uncertainty, I follow the framework—not emotions, opinions, or predictions.
 
@@ -230,6 +235,9 @@ Tactical rules I recommend
 * Do not redesign portfolio every year
 * Do not change rules mid-crisis
 * Do not add new funds without a clear role
+* Do not invest in individual stocks, since stock picking is a zero-sum game for retail investors
+* Do not invest in high-risk, speculative assets that do not align with risk tolerance
+* Do not let recent market performance dictate investment decisions
 
 ## Review & Monitoring
 
