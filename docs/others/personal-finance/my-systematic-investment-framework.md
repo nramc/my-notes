@@ -102,8 +102,8 @@ It represents how my investments are allocated under normal market conditions an
 investment and rebalancing decisions.
 This allocation is designed to balance **long-term growth** with **risk control and stability**.
 
-The framework follows a **60–20–10–10 structure**, which provides a well-balanced mix of growth-oriented and stabilizing
-assets.
+The framework follows a similar **75-25 structure**, which provides a well-balanced mix of growth-oriented and
+stabilizing assets.
 
 ### Asset Buckets
 
@@ -116,6 +116,9 @@ Below are the primary asset buckets in my portfolio:
 
 Yes, the framework considers Hybrid funds as a separate asset class. To keep things simple, Hybrid is treated as its own
 bucket rather than splitting it into equity and debt components during rebalancing.
+
+**Note**: Calculated Portfolio Look-through: Total Effective Equity = ~75%." This ensures you don't underestimate your
+volatility.
 
 ### Strategic Target Allocation (Base)
 
@@ -285,12 +288,12 @@ General Rules (Applicable to All Assets):
 
 **Trend Zones and Actions**:
 
-| Price Position           | Interpretation           | Tactical Action               |
-|--------------------------|--------------------------|-------------------------------|
-| Above 50 / 100 / 200 DMA | Strong uptrend           | Continue SIPs, avoid lumpsum  |
-| Between 100 & 200 DMA    | Neutral / early weakness | SIPs only, pause lumpsum      |
-| Below 200 DMA            | Bearish / stress zone    | Gradual deployment of capital |
-| Far above 200 DMA        | Overheated               | Reduce risk via rebalancing   |
+| Market Condition | Technical Signal           | Framework Action                          |
+|------------------|----------------------------|-------------------------------------------|
+| Bullish          | Price > 100 & 200 DMA      | Status Quo: Continue SIPs; No Lumpsums    |
+| Correction       | Price between 100-200 DMA  | Caution: SIPs only; Prep Lumpsum tranches |
+| Bearish          | Price < 200 DMA            | Opportunity: Deploy Lumpsum Tranche 1     |
+| Capitulation     | Price 15-20% below 200 DMA | Aggressive: Deploy Lumpsum Tranche 2      |
 
 **Tactical Action Matrix**:
 
