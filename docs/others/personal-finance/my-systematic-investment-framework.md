@@ -155,16 +155,16 @@ SIP contributions are allocated according to the strategic target asset allocati
 (which are only lumpsum), all other asset classes receive SIP contributions. This is because of their nature of being
 more volatile and are better suited for opportunistic lumpsum investments rather than regular SIPs.
 
-Let's assume a monthly SIP of Rupees(₹) 10,000.
+Let's assume a monthly SIP of Rupees (₹) 10,000.
 
-| Asset Class                  | Target Allocation | Rupees(₹) |
-|------------------------------|-------------------|-----------|
-| Equity - Core Large Cap Fund | 40%               | ₹4,000    |
-| Equity - Flexi / Value Fund  | 15%               | ₹1,500    |
-| Equity - International Fund  | 5%                | ₹500      |
-| Hybrid                       | 20%               | ₹2,000    |
-| Fixed Income                 | 10%               | ₹1,000    |
-| Gold & Silver                | 10%               | ₹1,000    |
+| Asset Class                  | Target Allocation | Rupees (₹) |
+|------------------------------|-------------------|------------|
+| Equity - Core Large Cap Fund | 40%               | ₹4,000     |
+| Equity - Flexi / Value Fund  | 15%               | ₹1,500     |
+| Equity - International Fund  | 5%                | ₹500       |
+| Hybrid                       | 20%               | ₹2,000     |
+| Fixed Income                 | 10%               | ₹1,000     |
+| Gold & Silver                | 10%               | ₹1,000     |
 
 ## Tactical Rebalancing Strategy
 
@@ -454,3 +454,5 @@ Finally, investing is not just about numbers — it is about **behaving intellig
 uncertain. The framework ensures I act with confidence, even in the most challenging times.
 
 > This rulebook exists to protect me from myself.
+
+**Mutual Fund investments are subject to market risks, read all scheme related documents carefully.**
