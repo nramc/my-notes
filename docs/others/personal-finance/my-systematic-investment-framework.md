@@ -166,16 +166,53 @@ Let's assume a monthly SIP of Rupees(₹) 10,000.
 | Fixed Income                 | 10%               | ₹1,000    |
 | Gold & Silver                | 10%               | ₹1,000    |
 
+## todo: Tactical Rebalancing Strategy
+
 ## Risk Management
 
-- Diversification across asset classes
-- Regular rebalancing to maintain target allocations
-- Avoid over-concentration in any single asset or sector
-- Maintain an emergency fund to cover unexpected expenses
-- Use stop-loss orders judiciously to limit downside risk
-- Review portfolio risk profile annually
-- Avoid high-risk investments that do not align with risk tolerance
-- Liquidity buffer (emergency fund)
+Risk management is a core pillar of **My Systematic Investment Framework**. The objective is not to eliminate risk, but
+to **control downside, preserve capital, and ensure long-term sustainability** of the portfolio. All risk is managed
+through **structure, allocation, and discipline**, not through prediction or frequent trading.
+
+### Key Risk Management Principles
+
+- Risk is assessed at the portfolio level, not based on short-term market movements
+- No single asset class, fund category, or strategy is allowed to dominate the portfolio
+- Strategic asset allocation is the primary and first line of risk control
+- Allocation limits for each asset class are clearly defined and strictly respected
+- Rebalancing is used to reduce risk, not to chase returns or time the market
+
+### Exposure and Concentration Controls
+
+- Strict allocation caps are applied to: Small-cap equity, Mid-cap equity, Tactical strategies
+- Experimental or tactical strategies are limited to a maximum of 5% of the total portfolio
+- The integrity of the core portfolio is never compromised for short-term opportunities
+- Overlapping funds and redundant exposures are actively avoided
+
+### Diversification and Stability
+
+- Diversification is maintained across:
+    - Asset classes
+    - Market capitalizations
+    - Investment styles
+    - Geographies
+- Hybrid and fixed income allocations act as stabilizers during periods of equity market volatility
+- Over-concentration in any single asset, sector, or theme is avoided
+
+### Liquidity and Safety Buffer
+
+- A dedicated **liquidity buffer / emergency fund** is maintained **outside** the investment portfolio
+- Fixed income allocation provides: Capital stability, Liquidity for rebalancing during market corrections
+
+### Review and Oversight
+
+- Changes are made deliberately and never during periods of market stress
+- Portfolio risk exposure is reviewed at least **annually**
+- High-risk investments that do not align with risk tolerance are avoided
+- Reviews focus on:
+    - Allocation drift
+    - Concentration risk
+    - Alignment with risk tolerance and long-term objectives
 
 ## Tactical Rebalancing Strategy
 
