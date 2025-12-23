@@ -18,8 +18,8 @@ hide:
 # My Systematic Investment Framework
 
 **Review Checklist**:
-✅ [Monthly](#monthly-review-checklist-1015-minutes) | 
-✅ [Quarterly](#quarterly-review-checklist-3045-minutes) | 
+✅ [Monthly](#monthly-review-checklist-1015-minutes) |
+✅ [Quarterly](#quarterly-review-checklist-3045-minutes) |
 ✅ [Annual](#annual-review-checklist-6090-minutes)
 
 ## Overview
@@ -125,6 +125,15 @@ volatility.
 
 ### Strategic Target Allocation (Base)
 
+| Asset Class | %   |
+|-------------|-----|
+| Equity      | 70% |
+| Debt        | 20% |
+| Gold/Silver | 10% |
+
+To simplify implementation and monitoring, the above allocation is further broken down by adding Hybrid as a separate
+asset class.
+
 | Asset Class   | Target Allocation |
 |---------------|-------------------|
 | Equity        | 60%               |
@@ -136,10 +145,10 @@ volatility.
 
 | Market cap    | % of Equity | % of Portfolio |
 |---------------|-------------|----------------|
-| Large Cap     | 50%         | 30%            |
+| Large Cap     | 55%         | 33%            |
 | Mid Cap       | 20%         | 12%            |
 | Small Cap     | 10%         | 6%             |
-| Flexi / Value | 15%         | 9%             |
+| Flexi / Value | 10%         | 6%             |
 | International | 5%          | 3%             |
 
 ### Investment Strategies by Market Cap
@@ -165,8 +174,8 @@ Let's assume a monthly SIP of Rupees (₹) 10,000.
 
 | Asset Class                  | Target Allocation | Rupees (₹) |
 |------------------------------|-------------------|------------|
-| Equity - Core Large Cap Fund | 40%               | ₹4,000     |
-| Equity - Flexi / Value Fund  | 15%               | ₹1,500     |
+| Equity - Core Large Cap Fund | 40%               | ₹4,500     |
+| Equity - Flexi / Value Fund  | 10%               | ₹1,000     |
 | Equity - International Fund  | 5%                | ₹500       |
 | Hybrid                       | 20%               | ₹2,000     |
 | Fixed Income                 | 10%               | ₹1,000     |
