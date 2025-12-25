@@ -113,17 +113,10 @@ stabilizing assets.
 Below are the primary asset buckets in my portfolio:
 
 1. Equity
-2. Hybrid
-3. Fixed Income
-4. Commodity: Gold & Silver
+2. Fixed Income
+3. Commodity: Gold & Silver
 
-Yes, the framework considers Hybrid funds as a separate asset class. To keep things simple, Hybrid is treated as its own
-bucket rather than splitting it into equity and debt components during rebalancing.
-
-**Note**: Calculated Portfolio Look-through: Total Effective Equity = ~75%." This ensures you don't underestimate your
-volatility.
-
-### Strategic Target Allocation (Base)
+### Strategic Asset Allocation (Base)
 
 | Asset Class | %   |
 |-------------|-----|
@@ -131,25 +124,24 @@ volatility.
 | Debt        | 20% |
 | Gold/Silver | 10% |
 
-To simplify implementation and monitoring, the above allocation is further broken down by adding Hybrid as a separate
-asset class.
+### Detailed Strategic Allocation
 
-| Asset Class   | Target Allocation |
-|---------------|-------------------|
-| Equity        | 60%               |
-| Hybrid        | 20%               |
-| Fixed Income  | 10%               |
-| Gold & Silver | 10%               |
+- Core layer is built around Large Cap Index funds for stability and compounding.
+- Satellites later include Mid Cap, Small Cap, Flexi/Value, and International funds for growth and diversification.
+- stability/allocation layer includes Hybrid funds for volatility control, shock absorbers, and moderate growth.
+- Debt allocation is maintained separately for capital preservation and income.
 
-### Equity Allocation (Within 60%)
-
-| Market cap    | % of Equity | % of Portfolio |
-|---------------|-------------|----------------|
-| Large Cap     | 55%         | 33%            |
-| Mid Cap       | 20%         | 12%            |
-| Small Cap     | 10%         | 6%             |
-| Flexi / Value | 10%         | 6%             |
-| International | 5%          | 3%             |
+| Role                 | Segment                      | % of Equity (70%) | % of Debt (20%) | % of Gold/Silver(10%) | % of Portfolio |
+|----------------------|------------------------------|-------------------|-----------------|-----------------------|----------------|
+| Core                 | Large Cap                    | 65%               | -               | -                     | 45%            |
+| Satellite            | Mid Cap                      | 15%               | -               | -                     | 10%            |
+| Satellite            | Small Cap                    | 10%               | -               | -                     | 7%             |
+| Satellite            | Flexi / Value                | 10%               | -               | -                     | 7%             |
+| Satellite            | International                | 7%                | -               | -                     | 5%             |
+| Stability/Allocation | Hybrid - Aggresive (65E/35D) | 5%                | 8%              | 0%                    | 5%             |
+| Stability/Allocation | Hybrid - Multi Asset         | 2%                | 18%             | 30%                   | 5%             |
+| Defensive            | Debt                         | 0%                | 75%             | 0%                    | 10%            |
+| Defensive Assets     | Gold & Silver                | 0%                | 0%              | 70%                   | 7%             |
 
 ### Investment Strategies by Market Cap
 
