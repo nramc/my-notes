@@ -138,10 +138,10 @@ Below are the primary asset buckets in my portfolio:
 | Satellite            | Small Cap                    | 10%               | -               | -                     | 7%             |
 | Satellite            | Flexi / Value                | 10%               | -               | -                     | 7%             |
 | Satellite            | International                | 7%                | -               | -                     | 5%             |
-| Stability/Allocation | Hybrid - Aggresive (65E/35D) | 5%                | 8%              | 0%                    | 5%             |
-| Stability/Allocation | Hybrid - Multi Asset         | 2%                | 18%             | 30%                   | 5%             |
-| Defensive            | Debt                         | 0%                | 75%             | 0%                    | 10%            |
-| Defensive Assets     | Gold & Silver                | 0%                | 0%              | 70%                   | 7%             |
+| Stability/Allocation | Hybrid - Aggresive (65E/35D) | 5%                | 8%              | -                     | 5%             |
+| Stability/Allocation | Hybrid - Multi Asset         | 4%                | 18%             | 30%                   | 5%             |
+| Defensive            | Debt                         | -                 | 75%             | -                     | 10%            |
+| Defensive Assets     | Gold & Silver                | -                 | -               | 70%                   | 7%             |
 
 ### Investment Strategies by Market Cap
 
