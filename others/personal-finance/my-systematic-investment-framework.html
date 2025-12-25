@@ -2150,10 +2150,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#strategic-target-allocation-base" class="md-nav__link">
+  <a href="#strategic-asset-allocation-base" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Strategic Target Allocation (Base)
+        Strategic Asset Allocation (Base)
       
     </span>
   </a>
@@ -2161,10 +2161,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#equity-allocation-within-60" class="md-nav__link">
+  <a href="#detailed-strategic-allocation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Equity Allocation (Within 60%)
+        Detailed Strategic Allocation
       
     </span>
   </a>
@@ -2218,6 +2218,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Strategic Allocation Bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-strategic-allocation-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Strategic Allocation Bands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-tactical-allocation-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Tactical Allocation Cap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2667,10 +2695,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#strategic-target-allocation-base" class="md-nav__link">
+  <a href="#strategic-asset-allocation-base" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Strategic Target Allocation (Base)
+        Strategic Asset Allocation (Base)
       
     </span>
   </a>
@@ -2678,10 +2706,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#equity-allocation-within-60" class="md-nav__link">
+  <a href="#detailed-strategic-allocation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Equity Allocation (Within 60%)
+        Detailed Strategic Allocation
       
     </span>
   </a>
@@ -2735,6 +2763,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Strategic Allocation Bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1-strategic-allocation-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Strategic Allocation Bands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2-tactical-allocation-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Tactical Allocation Cap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3182,15 +3238,10 @@ stabilizing assets.</p>
 <p>Below are the primary asset buckets in my portfolio:</p>
 <ol>
 <li>Equity</li>
-<li>Hybrid</li>
 <li>Fixed Income</li>
 <li>Commodity: Gold &amp; Silver</li>
 </ol>
-<p>Yes, the framework considers Hybrid funds as a separate asset class. To keep things simple, Hybrid is treated as its own
-bucket rather than splitting it into equity and debt components during rebalancing.</p>
-<p><strong>Note</strong>: Calculated Portfolio Look-through: Total Effective Equity = ~75%." This ensures you don't underestimate your
-volatility.</p>
-<h3 id="strategic-target-allocation-base">Strategic Target Allocation (Base)</h3>
+<h3 id="strategic-asset-allocation-base">Strategic Asset Allocation (Base)</h3>
 <table>
 <thead>
 <tr>
@@ -3213,68 +3264,96 @@ volatility.</p>
 </tr>
 </tbody>
 </table>
-<p>To simplify implementation and monitoring, the above allocation is further broken down by adding Hybrid as a separate
-asset class.</p>
+<h3 id="detailed-strategic-allocation">Detailed Strategic Allocation</h3>
+<ul>
+<li>Core layer is built around Large Cap Index funds for stability and compounding.</li>
+<li>Satellites later include Mid Cap, Small Cap, Flexi/Value, and International funds for growth and diversification.</li>
+<li>stability/allocation layer includes Hybrid funds for volatility control, shock absorbers, and moderate growth.</li>
+<li>Debt allocation is maintained separately for capital preservation and income.</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>Asset Class</th>
-<th>Target Allocation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Equity</td>
-<td>60%</td>
-</tr>
-<tr>
-<td>Hybrid</td>
-<td>20%</td>
-</tr>
-<tr>
-<td>Fixed Income</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>Gold &amp; Silver</td>
-<td>10%</td>
-</tr>
-</tbody>
-</table>
-<h3 id="equity-allocation-within-60">Equity Allocation (Within 60%)</h3>
-<table>
-<thead>
-<tr>
-<th>Market cap</th>
-<th>% of Equity</th>
+<th>Role</th>
+<th>Segment</th>
+<th>% of Equity (70%)</th>
+<th>% of Debt (20%)</th>
+<th>% of Gold/Silver(10%)</th>
 <th>% of Portfolio</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Core</td>
 <td>Large Cap</td>
-<td>55%</td>
-<td>33%</td>
+<td>65%</td>
+<td>-</td>
+<td>-</td>
+<td>45%</td>
 </tr>
 <tr>
+<td>Satellite</td>
 <td>Mid Cap</td>
-<td>20%</td>
-<td>12%</td>
+<td>15%</td>
+<td>-</td>
+<td>-</td>
+<td>10%</td>
 </tr>
 <tr>
+<td>Satellite</td>
 <td>Small Cap</td>
 <td>10%</td>
-<td>6%</td>
+<td>-</td>
+<td>-</td>
+<td>7%</td>
 </tr>
 <tr>
+<td>Satellite</td>
 <td>Flexi / Value</td>
 <td>10%</td>
-<td>6%</td>
+<td>-</td>
+<td>-</td>
+<td>7%</td>
 </tr>
 <tr>
+<td>Satellite</td>
 <td>International</td>
+<td>7%</td>
+<td>-</td>
+<td>-</td>
 <td>5%</td>
-<td>3%</td>
+</tr>
+<tr>
+<td>Stability/Allocation</td>
+<td>Hybrid - Aggresive (65E/35D)</td>
+<td>5%</td>
+<td>8%</td>
+<td>0%</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Stability/Allocation</td>
+<td>Hybrid - Multi Asset</td>
+<td>2%</td>
+<td>18%</td>
+<td>30%</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Defensive</td>
+<td>Debt</td>
+<td>0%</td>
+<td>75%</td>
+<td>0%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Defensive Assets</td>
+<td>Gold &amp; Silver</td>
+<td>0%</td>
+<td>0%</td>
+<td>70%</td>
+<td>7%</td>
 </tr>
 </tbody>
 </table>
@@ -3401,6 +3480,7 @@ It allows for <strong>opportunistic adjustments</strong> based on market conditi
 <h3 id="strategic-allocation-bands">Strategic Allocation Bands</h3>
 <p>Based on my risk tolerance and investment horizon, I have defined the following strategic allocation bands for each
 asset class. These bands act as both risk controls and rebalancing triggers.</p>
+<h4 id="level-1-strategic-allocation-bands">Level 1: Strategic Allocation Bands</h4>
 <table>
 <thead>
 <tr>
@@ -3413,54 +3493,67 @@ asset class. These bands act as both risk controls and rebalancing triggers.</p>
 <tbody>
 <tr>
 <td>Equity (±7%)</td>
-<td>60%</td>
-<td>53%</td>
-<td>67%</td>
+<td>70%</td>
+<td>63%</td>
+<td>77%</td>
 </tr>
 <tr>
-<td>Large Cap (±5%)</td>
-<td>30%</td>
-<td>25%</td>
-<td>35%</td>
-</tr>
-<tr>
-<td>Mid Cap (±4%)</td>
-<td>12%</td>
-<td>8%</td>
-<td>16%</td>
-</tr>
-<tr>
-<td>Small Cap (±3%)</td>
-<td>6%</td>
-<td>3%</td>
-<td>9%</td>
-</tr>
-<tr>
-<td>Flexi / Value (±4%)</td>
-<td>9%</td>
-<td>5%</td>
-<td>13%</td>
-</tr>
-<tr>
-<td>International (±2%)</td>
-<td>3%</td>
-<td>1%</td>
-<td>5%</td>
-</tr>
-<tr>
-<td>Hybrid (±5%)</td>
+<td>Fixed Income (±5%)</td>
 <td>20%</td>
 <td>15%</td>
 <td>25%</td>
 </tr>
 <tr>
-<td>Fixed Income (±5%)</td>
+<td>Gold &amp; Silver (±5%)</td>
 <td>10%</td>
 <td>5%</td>
 <td>15%</td>
 </tr>
+</tbody>
+</table>
+<h4 id="level-2-tactical-allocation-cap">Level 2: Tactical Allocation Cap</h4>
+<table>
+<thead>
 <tr>
-<td>Gold &amp; Silver (±5%)</td>
+<th>Asset Class</th>
+<th>Target Allocation</th>
+<th>Lower Band</th>
+<th>Upper Band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large Cap (±5%)</td>
+<td>45%</td>
+<td>40%</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>Mid Cap (±4%)</td>
+<td>10%</td>
+<td>8%</td>
+<td>14%</td>
+</tr>
+<tr>
+<td>Small Cap (±3%)</td>
+<td>7%</td>
+<td>4%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Flexi / Value (±4%)</td>
+<td>7%</td>
+<td>3%</td>
+<td>11%</td>
+</tr>
+<tr>
+<td>International (±2%)</td>
+<td>5%</td>
+<td>3%</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>Hybrid (±5%)</td>
 <td>10%</td>
 <td>5%</td>
 <td>15%</td>
