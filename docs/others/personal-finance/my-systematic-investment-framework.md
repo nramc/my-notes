@@ -113,17 +113,10 @@ stabilizing assets.
 Below are the primary asset buckets in my portfolio:
 
 1. Equity
-2. Hybrid
-3. Fixed Income
-4. Commodity: Gold & Silver
+2. Fixed Income
+3. Commodity: Gold & Silver
 
-Yes, the framework considers Hybrid funds as a separate asset class. To keep things simple, Hybrid is treated as its own
-bucket rather than splitting it into equity and debt components during rebalancing.
-
-**Note**: Calculated Portfolio Look-through: Total Effective Equity = ~75%." This ensures you don't underestimate your
-volatility.
-
-### Strategic Target Allocation (Base)
+### Strategic Asset Allocation (Base)
 
 | Asset Class | %   |
 |-------------|-----|
@@ -131,25 +124,24 @@ volatility.
 | Debt        | 20% |
 | Gold/Silver | 10% |
 
-To simplify implementation and monitoring, the above allocation is further broken down by adding Hybrid as a separate
-asset class.
+### Detailed Strategic Allocation
 
-| Asset Class   | Target Allocation |
-|---------------|-------------------|
-| Equity        | 60%               |
-| Hybrid        | 20%               |
-| Fixed Income  | 10%               |
-| Gold & Silver | 10%               |
+- Core layer is built around Large Cap Index funds for stability and compounding.
+- Satellites later include Mid Cap, Small Cap, Flexi/Value, and International funds for growth and diversification.
+- stability/allocation layer includes Hybrid funds for volatility control, shock absorbers, and moderate growth.
+- Debt allocation is maintained separately for capital preservation and income.
 
-### Equity Allocation (Within 60%)
-
-| Market cap    | % of Equity | % of Portfolio |
-|---------------|-------------|----------------|
-| Large Cap     | 55%         | 33%            |
-| Mid Cap       | 20%         | 12%            |
-| Small Cap     | 10%         | 6%             |
-| Flexi / Value | 10%         | 6%             |
-| International | 5%          | 3%             |
+| Role                 | Segment                      | % of Equity (70%) | % of Debt (20%) | % of Gold/Silver(10%) | % of Portfolio |
+|----------------------|------------------------------|-------------------|-----------------|-----------------------|----------------|
+| Core                 | Large Cap                    | 65%               | -               | -                     | 45%            |
+| Satellite            | Mid Cap                      | 15%               | -               | -                     | 10%            |
+| Satellite            | Small Cap                    | 10%               | -               | -                     | 7%             |
+| Satellite            | Flexi / Value                | 10%               | -               | -                     | 7%             |
+| Satellite            | International                | 7%                | -               | -                     | 5%             |
+| Stability/Allocation | Hybrid - Aggresive (65E/35D) | 5%                | 8%              | 0%                    | 5%             |
+| Stability/Allocation | Hybrid - Multi Asset         | 2%                | 18%             | 30%                   | 5%             |
+| Defensive            | Debt                         | 0%                | 75%             | 0%                    | 10%            |
+| Defensive Assets     | Gold & Silver                | 0%                | 0%              | 70%                   | 7%             |
 
 ### Investment Strategies by Market Cap
 
@@ -193,17 +185,24 @@ All tactical actions operate within predefined limits and **must never compromis
 Based on my risk tolerance and investment horizon, I have defined the following strategic allocation bands for each
 asset class. These bands act as both risk controls and rebalancing triggers.
 
+#### Level 1: Strategic Allocation Bands
+
 | Asset Class         | Target Allocation | Lower Band | Upper Band |
 |---------------------|-------------------|------------|------------|
-| Equity (±7%)        | 60%               | 53%        | 67%        |
-| Large Cap (±5%)     | 30%               | 25%        | 35%        |
-| Mid Cap (±4%)       | 12%               | 8%         | 16%        |
-| Small Cap (±3%)     | 6%                | 3%         | 9%         |
-| Flexi / Value (±4%) | 9%                | 5%         | 13%        |
-| International (±2%) | 3%                | 1%         | 5%         |
-| Hybrid (±5%)        | 20%               | 15%        | 25%        |
-| Fixed Income (±5%)  | 10%               | 5%         | 15%        |
+| Equity (±7%)        | 70%               | 63%        | 77%        |
+| Fixed Income (±5%)  | 20%               | 15%        | 25%        |
 | Gold & Silver (±5%) | 10%               | 5%         | 15%        |
+
+#### Level 2: Tactical Allocation Cap
+
+| Asset Class         | Target Allocation | Lower Band | Upper Band |
+|---------------------|-------------------|------------|------------|
+| Large Cap (±5%)     | 45%               | 40%        | 50%        |
+| Mid Cap (±4%)       | 10%               | 8%         | 14%        |
+| Small Cap (±3%)     | 7%                | 4%         | 10%        |
+| Flexi / Value (±4%) | 7%                | 3%         | 11%        |
+| International (±2%) | 5%                | 3%         | 8%         |
+| Hybrid (±5%)        | 10%               | 5%         | 15%        |
 
 ### Investment Execution Rules
 
