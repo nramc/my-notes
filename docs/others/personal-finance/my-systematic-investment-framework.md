@@ -143,7 +143,7 @@ Below are the primary asset buckets in my portfolio:
 | Defensive            | Debt                         | -                 | 75%             | -                     | 10%            |
 | Defensive            | Gold & Silver                | -                 | -               | 70%                   | 7%             |
 
-### Investment Strategies by Market Cap
+### Investment Strategies by Segment
 
 | Market Cap    | Role                                                  | Preferred Funds                   | Investment Style                                                                                                          | Exit Rule                                                                                                     |
 |---------------|-------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
