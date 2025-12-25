@@ -185,17 +185,24 @@ All tactical actions operate within predefined limits and **must never compromis
 Based on my risk tolerance and investment horizon, I have defined the following strategic allocation bands for each
 asset class. These bands act as both risk controls and rebalancing triggers.
 
+#### Level 1: Strategic Allocation Bands
+
 | Asset Class         | Target Allocation | Lower Band | Upper Band |
 |---------------------|-------------------|------------|------------|
-| Equity (±7%)        | 60%               | 53%        | 67%        |
-| Large Cap (±5%)     | 30%               | 25%        | 35%        |
-| Mid Cap (±4%)       | 12%               | 8%         | 16%        |
-| Small Cap (±3%)     | 6%                | 3%         | 9%         |
-| Flexi / Value (±4%) | 9%                | 5%         | 13%        |
-| International (±2%) | 3%                | 1%         | 5%         |
-| Hybrid (±5%)        | 20%               | 15%        | 25%        |
-| Fixed Income (±5%)  | 10%               | 5%         | 15%        |
+| Equity (±7%)        | 70%               | 63%        | 77%        |
+| Fixed Income (±5%)  | 20%               | 15%        | 25%        |
 | Gold & Silver (±5%) | 10%               | 5%         | 15%        |
+
+#### Level 2: Tactical Allocation Cap
+
+| Asset Class         | Target Allocation | Lower Band | Upper Band |
+|---------------------|-------------------|------------|------------|
+| Large Cap (±5%)     | 45%               | 40%        | 50%        |
+| Mid Cap (±4%)       | 10%               | 8%         | 14%        |
+| Small Cap (±3%)     | 7%                | 4%         | 10%        |
+| Flexi / Value (±4%) | 7%                | 3%         | 11%        |
+| International (±2%) | 5%                | 3%         | 8%         |
+| Hybrid (±5%)        | 10%               | 5%         | 15%        |
 
 ### Investment Execution Rules
 
