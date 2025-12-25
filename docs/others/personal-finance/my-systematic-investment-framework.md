@@ -141,7 +141,7 @@ Below are the primary asset buckets in my portfolio:
 | Stability/Allocation | Hybrid - Aggresive (65E/35D) | 5%                | 8%              | -                     | 5%             |
 | Stability/Allocation | Hybrid - Multi Asset         | 4%                | 18%             | 30%                   | 5%             |
 | Defensive            | Debt                         | -                 | 75%             | -                     | 10%            |
-| Defensive Assets     | Gold & Silver                | -                 | -               | 70%                   | 7%             |
+| Defensive            | Gold & Silver                | -                 | -               | 70%                   | 7%             |
 
 ### Investment Strategies by Market Cap
 
