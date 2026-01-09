@@ -138,8 +138,8 @@ Below are the primary asset buckets in my portfolio:
 
 | Role     | Fund Type         | Portfolio % | Equity Contribution | Debt Contribution | Lower Band (%) | Upper Band (%) | SIP Contribution |
 |----------|-------------------|-------------|---------------------|-------------------|----------------|----------------|------------------|
-| Core     | Aggressive Hybrid | **75%**     | ~50%                | ~25%              | 70%            | 80%            | 75000            |
-| Satelite | Flexi Cap         | **25%**     | ~25%                | 0%                | 20%            | 30%            | 25000            |
+| Core     | Aggressive Hybrid | **75%**     | ~50%                | ~25%              | 70%            | 80%            | 7,500            |
+| Satelite | Flexi Cap         | **25%**     | ~25%                | 0%                | 20%            | 30%            | 2,500            |
 
 **Note**:
 
@@ -168,15 +168,15 @@ Below are the primary asset buckets in my portfolio:
 - Satellites later include Mid Cap, Small Cap, Value, and International funds for growth and diversification.
 - Debt allocation is maintained separately for capital preservation and income.
 
-| Role      | Segment       | % of Equity (70%) | % of Debt (20%) | % of Gold/Silver(10%) | % of Portfolio | Lower Band (%) | Upper Band (%) |
-|-----------|---------------|-------------------|-----------------|-----------------------|----------------|----------------|----------------|
-| Core      | Large Cap     | 60%               | -               | -                     | 45%            | 40%            | 50%            |
-| Satellite | Mid Cap       | 15%               | -               | -                     | 10%            | 6%             | 14%            |
-| Satellite | Small Cap     | 10%               | -               | -                     | 7%             | 4%             | 10%            |
-| Satellite | Value         | 5%                | -               | -                     | 5%             | 1%             | 9%             |
-| Satellite | International | 5%                | -               | -                     | 5%             | 3%             | 7%             |
-| Defensive | Debt          | -                 | 100%            | -                     | 10%            | 5%             | 15%            |
-| Defensive | Gold & Silver | -                 | -               | 100%                  | 7%             | 5%             | 15%            |
+| Role      | Segment       | % of Equity (70%) | % of Portfolio | Lower Band (%) | Upper Band (%) |
+|-----------|---------------|-------------------|----------------|----------------|----------------|
+| Core      | Large Cap     | 60%               | 45%            | 40%            | 50%            |
+| Satellite | Mid Cap       | 15%               | 10%            | 6%             | 14%            |
+| Satellite | Small Cap     | 10%               | 7%             | 4%             | 10%            |
+| Satellite | Value         | 5%                | 5%             | 1%             | 9%             |
+| Satellite | International | 5%                | 5%             | 3%             | 7%             |
+| Defensive | Debt          | -                 | 10%            | 5%             | 15%            |
+| Defensive | Gold & Silver | -                 | 7%             | 5%             | 15%            |
 
 ## Investment Strategies by Segment
 
