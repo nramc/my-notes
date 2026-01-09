@@ -48,7 +48,7 @@ The motivation behind creating this framework is:
 - To balance long-term wealth creation with limited, rule-based tactical flexibility
 - To manage risk systematically while pursuing sustainable growth
 
-**Primary Objectives** of This Framework:
+**Objectives** of This Framework:
 
 * **Primary goal**: Long-term wealth creation with controlled drawdowns
 * **Secondary goal**: Avoid emotional decisions during market extremes
@@ -73,7 +73,6 @@ This framework intentionally does **not** address:
 - Specific investment products, securities, or stock selection
 - Detailed financial planning, tax planning, or goal quantification
 - Day-to-day trading or short-term speculative strategies
-- Market predictions or return guarantees
 - Get-rich-quick or high-risk trading approaches
 - A replacement for professional financial advice
 
@@ -84,13 +83,13 @@ These principles are designed to remain valid across market cycles and are not c
 market sentiment.
 
 1. **Allocation First**: Asset allocation matters more than fund selection.
-2. **Core & Satellite**: Large cap Index funds form the core; all other funds are satellites.
+2. **Core & Satellite**: Large cap funds form the core; all other funds are satellites.
 3. **Manage Risk**: Diversify and rebalance; risk is controlled, not chased.
-4. **Consistency Wins**: No shortcuts—long-term investing beats timing.
+4. **Consistency Wins**: No shortcuts, long-term investing beats timing.
 5. **Ignore Noise**: Stick to the plan; avoid decisions based on news or social media.
 6. **Investor, Not Trader**: Focus on long-term growth, not short-term trades.
 7. **Think Long-Term**: Core portfolio is built for 10+ years. Believe in compounding over time.
-8. **Review, Don’t Overreact**: Check regularly but change sparingly.
+8. **Review, Don't Overreact**: Check regularly but change sparingly.
 9. **Discipline Over Timing**: Consistent investing beats market timing. Follow rules, not forecasts.
 10. **Keep It Simple**: Simple, clear strategies outperform complex ones.
 11. **Mutual Funds Over Stocks**: Use mutual funds rather than picking individual stocks. IMO, stock picking is a
@@ -108,6 +107,14 @@ This allocation is designed to balance **long-term growth** with **risk control 
 The framework follows a similar **75-25 structure**, which provides a well-balanced mix of growth-oriented and
 stabilizing assets.
 
+### Portfolio Goals & Time Horizons
+
+| Goal                  | Time Horizon    | Risk Tolerance   |
+|-----------------------|-----------------|------------------|
+| Ram Retirement        | 25 years (2055) | Moderate to High |
+| Sakunthala Retirement | 30 years (2060) | Moderate         |
+| Family Goals          | 5-10 years      | Low to Moderate  |
+
 ### Asset Buckets
 
 Below are the primary asset buckets in my portfolio:
@@ -124,26 +131,54 @@ Below are the primary asset buckets in my portfolio:
 | Debt        | 20% |
 | Gold/Silver | 10% |
 
-### Detailed Strategic Allocation
+### Sakunthala's Retirement Portfolio: Detailed Allocation
+
+- Core layer is built around Large Cap and Debt Hybrid funds for stability and compounding.
+- Satellites include Flexi cap for growth and diversification.
+
+| Role     | Fund Type         | Portfolio % | Equity Contribution | Debt Contribution | Lower Band (%) | Upper Band (%) | SIP Contribution |
+|----------|-------------------|-------------|---------------------|-------------------|----------------|----------------|------------------|
+| Core     | Aggressive Hybrid | **75%**     | ~50%                | ~25%              | 70%            | 80%            | 75000            |
+| Satelite | Flexi Cap         | **25%**     | ~25%                | 0%                | 20%            | 30%            | 25000            |
+
+**Note**:
+
+- Debt allocation is not maintained separately since Hybrid funds already have a significant debt component.
+- For rebalancing, Ram's Retirement portfolio's Debt allocation is considered.
+- Gold & Silver allocation is not maintained separately for simplicity.
+
+### Family Goals Portfolio: Detailed Allocation
+
+- Core layer is built around Large Cap funds for stability and compounding.
+
+| Role | Fund Type               | Portfolio % | Equity Contribution | Debt Contribution | Other Contribution | SIP Contribution |
+|------|-------------------------|-------------|---------------------|-------------------|--------------------|------------------|
+| Core | Hybrid Multi Asset Fund | **100%**    | ~70%                | ~20%              | ~10%               | 10,000           |
+
+**Note**:
+
+- No Debt allocation is maintained separately since Hybrid funds already have a significant debt component.
+- No Gold & Silver allocation is maintained separately for simplicity.
+- No satellites are used for the portfolio to keep things simple.
+- No tactical rebalancing is done for the portfolio.
+
+### Ram's Retirement Portfolio: Detailed Allocation
 
 - Core layer is built around Large Cap Index funds for stability and compounding.
-- Satellites later include Mid Cap, Small Cap, Flexi/Value, and International funds for growth and diversification.
-- stability/allocation layer includes Hybrid funds for volatility control, shock absorbers, and moderate growth.
+- Satellites later include Mid Cap, Small Cap, Value, and International funds for growth and diversification.
 - Debt allocation is maintained separately for capital preservation and income.
 
-| Role                 | Segment                      | % of Equity (70%) | % of Debt (20%) | % of Gold/Silver(10%) | % of Portfolio |
-|----------------------|------------------------------|-------------------|-----------------|-----------------------|----------------|
-| Core                 | Large Cap                    | 65%               | -               | -                     | 45%            |
-| Satellite            | Mid Cap                      | 15%               | -               | -                     | 10%            |
-| Satellite            | Small Cap                    | 10%               | -               | -                     | 7%             |
-| Satellite            | Flexi / Value                | 10%               | -               | -                     | 7%             |
-| Satellite            | International                | 7%                | -               | -                     | 5%             |
-| Stability/Allocation | Hybrid - Aggresive (65E/35D) | 5%                | 8%              | -                     | 5%             |
-| Stability/Allocation | Hybrid - Multi Asset         | 4%                | 18%             | 30%                   | 5%             |
-| Defensive            | Debt                         | -                 | 75%             | -                     | 10%            |
-| Defensive            | Gold & Silver                | -                 | -               | 70%                   | 7%             |
+| Role      | Segment       | % of Equity (70%) | % of Debt (20%) | % of Gold/Silver(10%) | % of Portfolio | Lower Band (%) | Upper Band (%) |
+|-----------|---------------|-------------------|-----------------|-----------------------|----------------|----------------|----------------|
+| Core      | Large Cap     | 60%               | -               | -                     | 45%            | 40%            | 50%            |
+| Satellite | Mid Cap       | 15%               | -               | -                     | 10%            | 6%             | 14%            |
+| Satellite | Small Cap     | 10%               | -               | -                     | 7%             | 4%             | 10%            |
+| Satellite | Value         | 5%                | -               | -                     | 5%             | 1%             | 9%             |
+| Satellite | International | 5%                | -               | -                     | 5%             | 3%             | 7%             |
+| Defensive | Debt          | -                 | 100%            | -                     | 10%            | 5%             | 15%            |
+| Defensive | Gold & Silver | -                 | -               | 100%                  | 7%             | 5%             | 15%            |
 
-### Investment Strategies by Segment
+## Investment Strategies by Segment
 
 | Market Cap    | Role                                                  | Preferred Funds                   | Investment Style                                                                                                          | Exit Rule                                                                                                     |
 |---------------|-------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -155,23 +190,6 @@ Below are the primary asset buckets in my portfolio:
 | International | Diversification + growth                              | Global index funds                | SIP in all conditions                                                                                                     | No tactical exit, only rebalance                                                                              |
 | Debt          | Capital preservation + income                         | Debt funds, bonds                 | SIP in all conditions                                                                                                     | No tactical exit, only rebalance                                                                              |
 | Gold & Silver | Liquidity + Hedge against inflation + diversification | Gold ETFs, sovereign gold bonds   | SIP in all conditions; Lumpsum during price dips                                                                          | No tactical exit, only rebalance                                                                              |
-
-### Strategic Allocation for SIP
-
-SIP contributions are allocated according to the strategic target asset allocation, but except for Mid Cap and Small Cap
-(which are only lumpsum), all other asset classes receive SIP contributions. This is because of their nature of being
-more volatile and are better suited for opportunistic lumpsum investments rather than regular SIPs.
-
-Let's assume a monthly SIP of Rupees (₹) 10,000.
-
-| Asset Class                  | Target Allocation | Rupees (₹) |
-|------------------------------|-------------------|------------|
-| Equity - Core Large Cap Fund | 40%               | ₹4,500     |
-| Equity - Flexi / Value Fund  | 10%               | ₹1,000     |
-| Equity - International Fund  | 5%                | ₹500       |
-| Hybrid                       | 20%               | ₹2,000     |
-| Fixed Income                 | 10%               | ₹1,000     |
-| Gold & Silver                | 10%               | ₹1,000     |
 
 ## Tactical Rebalancing Strategy
 
@@ -217,16 +235,7 @@ asset class. These bands act as both risk controls and rebalancing triggers.
 Rebalancing is triggered by either time-based or threshold-based criteria, whichever occurs first.
 
 - Time-based: Portfolio review and rebalance once per year
-- Threshold-based: When an asset class breaches its defined allocation band:
-    - Equity: ±7%
-    - Large cap: ±5%
-    - Mid cap: ±4%
-    - Small cap: ±3%
-    - Flexi / Value: ±4%
-    - International Equity: ±2%
-    - Hybrid: ±5%
-    - Fixed Income: ±5%
-    - Gold & Silver: ±5%
+- Threshold-based: When an asset class breaches its defined allocation band
 
 ### What Tactical Rebalancing Is Not
 
@@ -305,20 +314,6 @@ General Rules (Applicable to All Assets):
 | Correction       | Price between 100-200 DMA  | Caution: SIPs only; Prep Lumpsum tranches |
 | Bearish          | Price < 200 DMA            | Opportunity: Deploy Lumpsum Tranche 1     |
 | Capitulation     | Price 15-20% below 200 DMA | Aggressive: Deploy Lumpsum Tranche 2      |
-
-**Tactical Action Matrix**:
-
-| Asset Class              | Role                       | Above 200 DMA | Between 100–200 DMA     | Below 200 DMA                                  | Extreme / Overheated     |
-|--------------------------|----------------------------|---------------|-------------------------|------------------------------------------------|--------------------------|
-| **Equity (Overall)**     | Core growth                | Continue SIPs | SIP only, pause lumpsum | Gradual increase via tranches                  | Trim via rebalance       |
-| **Large Cap**            | Stability & compounding    | SIP only      | SIP only                | Lumpsum in stages                              | Preferred over mid/small |
-| **Mid Cap**              | Growth                     | SIP only      | Pause lumpsum           | Selective staged lumpsum                       | Avoid aggressive adds    |
-| **Small Cap**            | Return enhancer            | SIP only      | SIP only                | SIP continues; lumpsum only in deep correction | Trim via rebalance       |
-| **Flexi / Value**        | Style diversification      | SIP only      | Monitor                 | Add selectively                                | Reduce if overweight     |
-| **International Equity** | Geographic diversification | SIP only      | Pause lumpsum           | Selective accumulation                         | Reduce excess exposure   |
-| **Hybrid**               | Volatility control         | SIP only      | SIP only                | No tactical increase                           | Maintain target          |
-| **Fixed Income**         | Stability & liquidity      | Maintain      | Maintain                | Source of capital                              | Rebuild post-rebalance   |
-| **Gold & Silver**        | Hedge                      | SIP only      | SIP only                | Accumulate gradually                           | Trim excess              |
 
 ### Frequency
 
