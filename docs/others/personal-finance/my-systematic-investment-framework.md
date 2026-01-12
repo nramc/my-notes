@@ -170,13 +170,13 @@ Below are the primary asset buckets in my portfolio:
 
 | Role      | Segment       | % of Equity (70%) | % of Portfolio | Lower Band (%) | Upper Band (%) |
 |-----------|---------------|-------------------|----------------|----------------|----------------|
-| Core      | Large Cap     | 60%               | 45%            | 40%            | 50%            |
+| Core      | Large Cap     | 70%               | 50%            | 45%            | 55%            |
 | Satellite | Mid Cap       | 15%               | 10%            | 6%             | 14%            |
-| Satellite | Small Cap     | 10%               | 7%             | 4%             | 10%            |
-| Satellite | Value         | 5%                | 5%             | 1%             | 9%             |
+| Satellite | Small Cap     | 5%                | 5%             | 3%             | 7%             |
+| Satellite | Value         | 5%                | 5%             | 3%             | 7%             |
 | Satellite | International | 5%                | 5%             | 3%             | 7%             |
-| Defensive | Debt          | -                 | 10%            | 5%             | 15%            |
-| Defensive | Gold & Silver | -                 | 7%             | 5%             | 15%            |
+| Defensive | Debt          | -                 | 15%            | 10%            | 20%            |
+| Defensive | Gold & Silver | -                 | 15%            | 10%            | 20%            |
 
 ## Investment Strategies by Segment
 
