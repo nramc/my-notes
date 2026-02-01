@@ -464,4 +464,4 @@ uncertain. The framework ensures I act with confidence, even in the most challen
 
 > This rulebook exists to protect me from myself.
 
-**Mutual Fund investments are subject to market risks, read all scheme related documents carefully.**
+**Disclaimer** - Mutual Fund investments are subject to market risks; read all scheme-related documents carefully.
